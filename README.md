@@ -36,6 +36,6 @@ to also leverage the same tool.
 ## Generating the docs site
 
 Following the tutorial at [Antora Docs](https://docs.antora.org/antora/latest/run-antora/) 
-we can run a `npx antora antora-playbook.yml` command and have everything being generated 
+we can run a `npx antora master-playbook.yml` command and have everything being generated 
 at the same directory level. (Don't forget to run a `pnpm install` first otherwise 
 the tool won't be installed yet).
