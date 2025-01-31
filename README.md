@@ -170,3 +170,49 @@ _In short:_ There are many options to generate diagrams through syntax, kroki, p
 siren, and many others, and there are tons of tools that can help with that both on the 
 npm side (js) and on gems (ruby). It's up to you and what the API allows for you to 
 do in order to leverage them correctly.
+
+### Shiki Highlighter
+
+Whilst Antora makes use of `Highlight.js` by default, this project required for 
+something a bit more refined, besides, Antora itself took away some of the previous 
+integrations that allowed for it to extend however you wanted, without documenting 
+the process of putting them back in.
+
+And so, an amazing solution was found in the form of an extension: 
+[Antora Shiki Extension](https://github.com/lask79/antora-shiki-extension?tab=readme-ov-file).
+
+The GitHub page is amazing, it details almost everything you need in order to set 
+up the extension. It is basically a node package that gets installed inside of the 
+playbook repository, and it can be extended to cover multiple languages that you 
+have to download from [Shiki's Repo](https://github.com/shikijs/textmate-grammars-themes/tree/main/packages/tm-grammars). 
+
+For this specific project 3 grammars were added under `shiki_syntaxes/`:
+
+- csharp
+- tsx
+- typescript
+
+Theme's are listed [here](https://github.com/shikijs/textmate-grammars-themes/tree/main/packages/tm-themes) 
+however, some of them are not inside of the `shiki` package (this could be due to 
+the shiki version being outdated), but in order to not run into errors, it's best 
+to look into the `node_modules` folder to see what themes are available.
+
+#### Anatomy of a language registration
+
+````yml
+register_languages:
+  - id: 'typescript'
+    scope_name: 'source.ts'
+    grammar_path: ./shiki_syntaxes/typescript.json
+    alias: ['ts']
+````
+
+What you need to know is that the `id` value can be mined from the grammar's repo 
+`README`. From that same repo you only need to search for the respective language's 
+`json` file, download it, and point to it in the relative path to the playbook. 
+The `scope_name` is something detailed inside of the same `json` file. The `id` 
+can be used to write in code blocks as the identifier for what language and grammar 
+to use, however `alias` can be used to add different identifiers that will be matched 
+to the same grammar. E.g: If you put an alias such as `great`, and that is under 
+the language for `typescript` if you write in a code block `[source, great]`, then 
+the highlighting will be of `typescript`.

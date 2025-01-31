@@ -11,6 +11,28 @@ content:
     # the same thing can be achieved by adding empty credentials (i.e., @) in front of the domain in the URL
     edit_url: false
     start_path: content
+antora:
+  extensions:
+    - require: 'antora-shiki-extension'
+      theme: 'dracula'
+      languages:
+        - js
+        - asciidoc
+        - yaml
+      register_languages:
+        - id: 'typescript'
+          scope_name: 'source.ts'
+          grammar_path: ./shiki_syntaxes/typescript.json
+          alias: ['ts']
+        - id: 'tsx'
+          scope_name: 'source.tsx'
+          grammar_path: ./shiki_syntaxes/tsx.json
+          alias: ['tsx']
+        - id: 'csharp'
+          scope_name: 'source.cs'
+          grammar_path: ./shiki_syntaxes/csharp.json
+          alias: ['cs']
+      use_line_numbers: true
 asciidoc:
   attributes:
     experimental: ''
@@ -19,6 +41,7 @@ asciidoc:
     page-pagination: ''
     plantuml-server-url: http://www.plantuml.com/plantuml
     plantuml-fetch-diagram: true
+    source-highlighter: shiki
   extensions:
   - asciidoctor-plantuml
 ui:
