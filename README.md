@@ -197,6 +197,11 @@ however, some of them are not inside of the `shiki` package (this could be due t
 the shiki version being outdated), but in order to not run into errors, it's best 
 to look into the `node_modules` folder to see what themes are available.
 
+There's a slight _bug_ with the extension and that's whenever adding line explanations 
+to source code blocks (e.g: <1>) The background melds together with the font color of 
+these numbers, at least with `nord`, `monokai`. But one theme that doesn't completely 
+show them as invisible is `rose-pine`. So the project makes use of it.
+
 #### Anatomy of a language registration
 
 ````yml
