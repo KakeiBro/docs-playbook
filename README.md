@@ -171,7 +171,7 @@ siren, and many others, and there are tons of tools that can help with that both
 npm side (js) and on gems (ruby). It's up to you and what the API allows for you to 
 do in order to leverage them correctly.
 
-### Shiki Highlighter
+## Shiki Highlighter
 
 Whilst Antora makes use of `Highlight.js` by default, this project required for 
 something a bit more refined, besides, Antora itself took away some of the previous 
@@ -202,7 +202,7 @@ to source code blocks (e.g: <1>) The background melds together with the font col
 these numbers, at least with `nord`, `monokai`. But one theme that doesn't completely 
 show them as invisible is `rose-pine`. So the project makes use of it.
 
-#### Anatomy of a language registration
+### Anatomy of a language registration
 
 ````yml
 register_languages:
