@@ -42,6 +42,7 @@ asciidoc:
     plantuml-server-url: http://www.plantuml.com/plantuml
     plantuml-fetch-diagram: true
     source-highlighter: shiki
+    page-toclevels: 4@
   extensions:
   - asciidoctor-plantuml
 ui:
