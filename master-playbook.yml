@@ -32,6 +32,10 @@ antora:
           scope_name: 'source.cs'
           grammar_path: ./shiki_syntaxes/csharp.json
           alias: ['cs']
+        - id: 'json'
+          scope_name: 'source.json'
+          grammar_path: ./shiki_syntaxes/json.json
+          alias: ['json']
       use_line_numbers: true
 asciidoc:
   attributes:
