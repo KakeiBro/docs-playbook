@@ -36,6 +36,10 @@ antora:
           scope_name: 'source.json'
           grammar_path: ./shiki_syntaxes/json.json
           alias: ['json']
+        - id: 'xml'
+          scope_name: 'text.xml'
+          grammar_path: ./shiki_syntaxes/xml.json
+          alias: ['xml']
       use_line_numbers: true
 asciidoc:
   attributes:
