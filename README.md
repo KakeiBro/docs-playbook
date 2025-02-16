@@ -56,8 +56,10 @@ is:
 Compress-Archive -Path "./ui/*" -DestinationPath "./ui.zip" -CompressionLevel Optimal
 ````
 
-Always commit a `.zip` file, never the plain folder, `.gitignore` has a path marked 
-for `ui/` but that's definitely not enough for a circumvent to take place.
+Don't forget to commit a `.zip` file with the latest bundled version of the template, 
+the playbook should always point at this. We have a `ui` folder as well, but this 
+should only be leveraged to make editions to the default antora template if we 
+need something specific to it.
 
 Both `master-playbook.yml` and `local-playbook.yml` will now attempt to always search 
 for the `ui.zip` file at the executing path.
