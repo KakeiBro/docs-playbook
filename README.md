@@ -188,11 +188,12 @@ up the extension. It is basically a node package that gets installed inside of t
 playbook repository, and it can be extended to cover multiple languages that you 
 have to download from [Shiki's Repo](https://github.com/shikijs/textmate-grammars-themes/tree/main/packages/tm-grammars). 
 
-For this specific project 3 grammars were added under `shiki_syntaxes/`:
+For this specific project these grammars were added under `shiki_syntaxes/`:
 
 - csharp
 - tsx
 - typescript
+- json
 
 Theme's are listed [here](https://github.com/shikijs/textmate-grammars-themes/tree/main/packages/tm-themes) 
 however, some of them are not inside of the `shiki` package (this could be due to 
