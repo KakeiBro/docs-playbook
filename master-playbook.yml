@@ -39,6 +39,8 @@ antora:
           grammar_path: ./shiki_syntaxes/json.json
           alias: ['json']
       use_line_numbers: true
+      conums_override: true
+      conums_fg_color: '#ffffff'
 asciidoc:
   attributes:
     experimental: ''

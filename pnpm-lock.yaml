@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       antora-shiki-extension:
-        specifier: 1.0.0-alpha.6
-        version: 1.0.0-alpha.6(@asciidoctor/core@2.2.8)
+        specifier: 1.0.0
+        version: 1.0.0(@asciidoctor/core@2.2.8)
     devDependencies:
       '@antora/cli':
         specifier: '3.1'
@@ -187,8 +187,8 @@ packages:
     resolution: {integrity: sha512-kmCevFghRiWM7HB5zTPULl4r9bVFSWjz62MhqizDGUrq2NWuNMQyuv4tHHoKJHs69M/MF64lEcHdYIocrdWQYA==}
     engines: {node: '>=0.10.0'}
 
-  antora-shiki-extension@1.0.0-alpha.6:
-    resolution: {integrity: sha512-uBxA5D69w6SI1UHHKXXfBm7QdoxJYrfSnqS0DSPNViM+e83cGtR827u8E1J1VlxqdKYqEaieSRBHlndL4+QE4Q==}
+  antora-shiki-extension@1.0.0:
+    resolution: {integrity: sha512-iSN8VXyapwmgjWtXxx4wQupGLIvdPK4aLoP4wiAxKoh2TTfZQCzDABIEBGKlsqI2KzYM8EQt18tzFk+2qB9zaw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@asciidoctor/core': ~ 2.2
@@ -1704,7 +1704,7 @@ snapshots:
 
   ansi-styles@2.2.1: {}
 
-  antora-shiki-extension@1.0.0-alpha.6(@asciidoctor/core@2.2.8):
+  antora-shiki-extension@1.0.0(@asciidoctor/core@2.2.8):
     dependencies:
       '@asciidoctor/core': 2.2.8
       '@browserify/uglifyify': 6.0.0
