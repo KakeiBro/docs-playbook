@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # Allows manual trigger
 
 env:
-  DOCS_REPO: https://github.com/KakeiBro/docs/commits/main
+  DOCS_REPO: https://api.github.com/repos/KakeiBro/docs/commits/main
   NODE_VERSION: 22
 
 jobs:
