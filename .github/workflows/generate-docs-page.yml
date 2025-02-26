@@ -42,15 +42,19 @@ jobs:
         run: |
           if [[ "$LATEST_COMMIT" == "$PREVIOUS_COMMIT" ]]; then
             echo "Docs without change. Skipping web page generation."
-            exit 0
+          else
+            echo "CHANGED=true" >> $GITHUB_ENV
+            echo "CNAME=$(cat ./CNAME)" >> $GITHUB_ENV
           fi
 
       - name: Setup pnpm
+        if: ${{ env.CHANGED == 'true' }}
         uses: pnpm/action-setup@v4
         with:
           version: latest
 
       - name: Set up Node.js
+        if: ${{ env.CHANGED == 'true' }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -58,21 +62,25 @@ jobs:
           cache-dependency-path: "./pnpm-lock.yaml"
 
       - name: Install dependencies
+        if: ${{ env.CHANGED == 'true' }}
         run: pnpm i --frozen-lockfile
 
       - name: Run main logic
+        if: ${{ env.CHANGED == 'true' }}
         run: |
           echo "Docs have changed! Publishing new state..."
           npx antora ./master-playbook.yml
       
       - name: Deploy static content to GH Pages
+        if: ${{ env.CHANGED == 'true' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/site
-          cname: cat ./CNAME
+          cname: ${{ env.CNAME }}
 
       - name: Store latest commit for next run
+        if: ${{ env.CHANGED == 'true' }}
         run: |
           echo "$LATEST_COMMIT" > .latest_commit
           git config --global user.name "github-actions"
