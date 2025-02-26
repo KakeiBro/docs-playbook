@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CI/CD :: KakeiBro</title>
+    <link rel="prev" href="onboarding/backend.html">
+    <link rel="next" href="domain/index.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="ci-cd.html">CI/CD</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Introduction</a></li>
+    <li><a href="ci-cd.html">CI/CD</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">CI/CD</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the root of the <a href="https://github.com/KakeiBro/docs-playbook">docs playbook repository</a>
+we have a github action in charge of building and publishing the website to GitHub
+Pages.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="github-pages-setup"><a class="anchor" href="#github-pages-setup"></a>Github Pages Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First of all, we need to have configured at a <strong>DNS level</strong> two records that can point
+to our GitHub Pages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CNAME www.kakeibro.docs.dsbalderrama.top diegowrhasta.github.io</p>
+</li>
+<li>
+<p>CNAME kakeibro.docs.dsbalderrama.top diegowrhasta.github.io</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The documentation as to why of these values is at: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites">Github Reference</a>.</p>
+</div>
+<div class="paragraph">
+<p><em>HINT:</em> Depending on the user or organization access we might have to change the
+domain for redirection. The repository that will publish the content is the reference
+entity.</p>
+</div>
+<div class="paragraph">
+<p>And it&#8217;s right after that we need a <code>CNAME</code> file that should contain in one line the
+subdomain that will map to our GH Page. <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">Reference</a></p>
+</div>
+<div class="paragraph">
+<p><strong><em>As a concept:</em></strong> We have to be aware of the convention used by Github and the
+<a href="https://github.com/peaceiris/actions-gh-pages">Pre-built Action</a> we are consuming,
+in the sense that we will need to have a <code>gh-pages</code> branch in our repository, this
+branch is used in order to serve the site by going into <code>Settings &gt; Pages &gt; Branch source</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>gh-pages</code> branch needs to be created after an initial run of the action. It&#8217;s after
+that, that <em>under the hood</em> GitHub creates its own action in charge of reading pushes to
+said branch and then publishing all of that into the respective urls.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="breakdown-of-action"><a class="anchor" href="#breakdown-of-action"></a>Breakdown of Action</h3>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">CRON for Docs Page deployment</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #AE81FF">on</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">schedule</span><span style="color: #F8F8F2">: </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    - </span><span style="color: #F92672">cron</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">"0 0 * * *"</span><span style="color: #F8F8F2"> </span><span style="color: #88846F"># Runs at 12:00 AM UTC daily</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">workflow_dispatch</span><span style="color: #F8F8F2">: </span><span style="color: #88846F"># Allows manual trigger</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">env</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">DOCS_REPO</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">https://api.github.com/repos/KakeiBro/docs/commits/main</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">NODE_VERSION</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">22</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">permissions</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">contents</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">write</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">jobs</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">check-external-repo</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">runs-on</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">ubuntu-latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">steps</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Checkout this repository</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">actions/checkout@v4</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Fetch latest commit from external repo</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          LATEST_COMMIT=$(curl -s ${{ env.DOCS_REPO }} | jq -r '.sha') </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #E6DB74">          echo "Latest commit: $LATEST_COMMIT" </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #E6DB74">          echo "LATEST_COMMIT=$LATEST_COMMIT" &gt;&gt; $GITHUB_ENV </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The action at the playbook repository is a CRON job, it will run at 00:00 UTC
+every day. But it also has been setup to take in manual triggers in case it needs
+them.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We will leverage Github&#8217;s API to retrieve RESTful API responses, this is an endpoint
+specifically to get a a structure with the commits that have been made to the <a href="https://github.com/KakeiBro/docs">docs repository</a>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We will worth the most modern LTS version (to date), Node 22</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We will have to commit a <code>.latest_commit</code> file at the root of the repository to
+keep track of the SHA, this is the main mechanism to detect if the docs have been
+updated and then trigger a new publish.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>We initially run a <code>GET</code> to the Github API endpoint, and from the response payload
+we extract what&#8217;s under the <code>sha</code> key, this refers to the latest commit, and that is
+saved under a <code>LATEST_COMMIT</code> variable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>We then print that SHA value with a message.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>And lasty a good pattern that was used here is to inject into the runner&#8217;s env
+variables this extracted variable&#8217;s value. This is a great way to share state across
+multiple steps. The anatomy of it is: <code>&lt;NAME_OF_ENV_VARIABLE&gt;=&lt;VALUE&gt; &gt;&gt; $GITHUB.ENV</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After the initial checking steps, we have to start defining if we will publish a
+new state for the docs or not.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Retrieve previous commit</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">id</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">get_previous_commit</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">    CACHE_FILE=".latest_commit" </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #E6DB74">    if [[ -f $CACHE_FILE ]]; then </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #E6DB74">      PREVIOUS_COMMIT=$(cat $CACHE_FILE) </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #E6DB74">    else</span></span>
+<span class="line"><span style="color: #E6DB74">      PREVIOUS_COMMIT="" </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">    fi</span></span>
+<span class="line"><span style="color: #E6DB74">    echo "Previous commit: $PREVIOUS_COMMIT"</span></span>
+<span class="line"><span style="color: #E6DB74">    echo "PREVIOUS_COMMIT=$PREVIOUS_COMMIT" &gt;&gt; $GITHUB_ENV </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Compare commits and exit if unchanged</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">    if [[ "$LATEST_COMMIT" == "$PREVIOUS_COMMIT" ]]; then</span></span>
+<span class="line"><span style="color: #E6DB74">      echo "Docs without change. Skipping web page generation." </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #E6DB74">    else</span></span>
+<span class="line"><span style="color: #E6DB74">      echo "CHANGED=true" &gt;&gt; $GITHUB_ENV</span></span>
+<span class="line"><span style="color: #E6DB74">      echo "CNAME=$(cat ./CNAME)" &gt;&gt; $GITHUB_ENV </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #E6DB74">    fi</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We initially define a runtime variable <code>CACHE_FILE</code>, since we mentioned that at the
+root of the repo we will have a <code>.latest_commit</code> file, this is the path to it.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We then run a check to see if the file exists.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>If it does, we save under a <code>PREVIOUS_COMMIT</code> variable the value of that file, (it should
+be one sole line with a SHA).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>If we don&#8217;t find a file, we simply save an empty string under the same variable name,
+this enables idempotency to the script.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>After printing the previous comit SHA value, we also make sure to save that same
+value as an env variable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>In a subsequent step we make a comparison between the previously injected
+<code>$LATEST_COMMIT</code> and <code>$PREVIOUS_COMMIT</code> variables. We are comparing a saved SHA
+from a possible previous <em>RUN</em> at which a page was published and the at-the-moment
+SHA of the repository. In case the values are the same, we just print a message indicating
+this.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>In case the SHA values vary, meaning that since the last time we published a
+page, changes have been made, we will save a <code>CHANGED</code> and <code>CNAME</code> environment
+variables so that we use them later. The first one being a flag and the second one
+a value we will need to consume later when configuring our custom domain when publishing
+our GH Page.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The pipeline is intelligent enough to try to publish a website, only when new content
+has been added:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Setup pnpm</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CHANGED == 'true' }}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">pnpm/action-setup@v4</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">with</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">version</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Set up Node.js</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CHANGED == 'true' }}</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">actions/setup-node@v4</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">with</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">node-version</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.NODE_VERSION }}</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">cache</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">"pnpm"</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">cache-dependency-path</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">"./pnpm-lock.yaml"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Install dependencies</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CHANGED == 'true' }}</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">pnpm i --frozen-lockfile</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Run main logic</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CHANGED == 'true' }}</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">    echo "Docs have changed! Publishing new state..."</span></span>
+<span class="line"><span style="color: #E6DB74">    npx antora ./master-playbook.yml </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A <em>pain point</em> with GitHub Actions is that you can&#8217;t configure them to just skip
+over everything after a certain point. And so, since we want to short-circuit any subsequent
+steps in case no change to the docs was detected, we will have to add a conditional step
+instruction in every subsequent step.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We do a normal setup of dependencies we need to work with node modules, (by taking
+advantage of caching and pnpm). After we have setup everything, we run the <code>antora</code>
+module and then use as a playbook reference the <code>master-playbook</code>. This will take
+care of cloning the <a href="https://github.com/KakeiBro/docs">docs</a> repository and then bringing
+everything together to then have an artifact that&#8217;s a folder <code>build/site/</code>. In here we
+have an <code>index.html</code> site</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In case we should publish a new state for the docs site, we will leverage an already built
+action plus some extra things:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Deploy static content to GH Pages</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CHANGED == 'true' }}</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">peaceiris/actions-gh-pages@v4</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">with</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">github_token</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ secrets.GITHUB_TOKEN }}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">publish_dir</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">./build/site</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">cname</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CNAME }}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Store latest commit for next run</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ env.CHANGED == 'true' }}</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">    echo "$LATEST_COMMIT" &gt; .latest_commit </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">    git config --global user.name "github-actions" </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #E6DB74">    git config --global user.email "github-actions@github.com"</span></span>
+<span class="line"><span style="color: #E6DB74">    git add .latest_commit</span></span>
+<span class="line"><span style="color: #E6DB74">    git commit -m "Updates docs latest commit SHA" </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #E6DB74">    git push</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The pre-built action to "publish to Github pages" is only in charge of setting up
+a specific layout under a <code>gh-pages</code> branch, it will need a token so that it can run all
+the neccesary logic to setup the branch and commit files to it. It&#8217;s also neccesary
+for our <code>permissions</code> set to <code>write</code> way up above so that we can make all these changes
+on the repo.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Since <code>antora</code> creates the deployable build at a specific folder structure, we will
+point the action to that specific folder with <code>index.html</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>In order to configure our custom domain name correctly we will now feed the value
+we got from the <code>CNAME</code> file at the root of the repo in the previous steps to its
+<code>cname</code> option.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And lastly we need to now keep track of the commit (the representation of the docs
+repo) from which we just published. And so the <code>LATEST_COMMIT</code> value is saved to the
+<code>.latest_commit</code> file on the repo.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>We have to setup credentials that identify that the change here was done by
+a github action (always do things right, tracking changes will be beneficial one way
+or another).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>And we then commit the change we are setting for the latest SHA file and pushing
+it.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The action will leverage the <code>master-playbook.yml</code> file since he takes care of cloning
+the <a href="https://github.com/KakeiBro/docs">Docs Repository</a> in order to then build the whole
+website out of its contents.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>${{ env.DOCS_REPO }}</code> syntax is <strong>Github Actions Expression Syntax</strong>, you can use
+it to reference in the YAML file environment variables. You can use them inside of
+workflow definitions (e.g., <code>run</code>, <code>env</code>, <code>if</code> conditions). This is handy when you
+need some abstracted value to be referenced in these places, and also interpolating
+values that we might need sometimes. This is different from a simple variable reference
+that&#8217;s entirely dependent on the CLI, (e.g., In bash: <code>echo $NAME!</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verifying-a-domain"><a class="anchor" href="#verifying-a-domain"></a>Verifying a domain.</h3>
+<div class="paragraph">
+<p><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">REFERENCE</a>.</p>
+</div>
+<div class="paragraph">
+<p>None of the screens there are working. However, I did make use of the <em>Custom Domain</em>
+section to add the <code>www.kakeibro.docs.dsbalderrama.top</code> url so that it redirects
+to the Github Pages published site.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dns"><a class="anchor" href="#dns"></a>DNS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First of all, through theory and clever usage of conventions, we can leverage an
+already owned <em>apex domain</em>. In our case that&#8217;s <code>dsbalderrama.top</code>. An <strong>apex domain</strong>
+is also called a <em>root domain</em> or <em>naked domain</em>. It doesn&#8217;t have any subdomains
+attached to it. (i.e., <code>example.com</code> is an apex domain, <code>www.example.com</code> <strong>is not</strong>,
+it has the <code>www</code> subdomain attached to it).</p>
+</div>
+<div class="paragraph">
+<p>When it comes to DNS records that you can add so that you redirect different subdomains
+and domains to hard coded IPs and or other services we have:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">A</dt>
+<dd>
+<p>An <strong>A Record</strong> or <em>Address Record</em> maps a domain to an <em>IPv4 address</em>.
+AAAA: An <strong>AAAA Record</strong> or <em>Quad-A Record</em> maps a domain to an <em>IPv6 address</em>.</p>
+</dd>
+<dt class="hdlist1">CNAME</dt>
+<dd>
+<p>A <strong>CNAME Record</strong> or <em>Canonical Name Record</em> maps one domain name (an alias)
+to another domain name (the canonical name). <strong>IMPORTANT:</strong> You can&#8217;t make use of
+this for an apex domain.</p>
+</dd>
+<dt class="hdlist1">ALIAS</dt>
+<dd>
+<p>An <strong>ALIAS Record</strong> behaves the same as a <em>CNAME</em> however it is allowed at the
+root of the domain (for an apex), it is also provided by some DNS providers.</p>
+</dd>
+<dt class="hdlist1">ANAME</dt>
+<dd>
+<p>An <strong>ANAME Record</strong> is similar to an <em>ALIAS</em>, however this is less used and it
+might be proprietary for certain DNS providers.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong><em>Example</em></strong></p>
+</div>
+<div class="paragraph">
+<p>If you wanted to make <code>yourdomain.com</code> (and optionally <code>www.yourdomain.com</code>) to point
+to a web server, we can configure the <strong>DNS records</strong> such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add an <strong>A Record</strong> with the setup: <code>A @ 203.0.113.10</code></p>
+</li>
+<li>
+<p>Add an <strong>AAAA Record</strong> with the setup <code>AAAA 2001:db8::ff00:42</code></p>
+</li>
+<li>
+<p>Add a <strong>CNAME Record</strong> with the setup <code>CNAME www yourdomain.com</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And with this the moment that anyone on the web tries to hit our domain (may it be the
+apex) or one of its subdomains, the DNS will make sure that that URL redirects to the
+machine that hosts the content, may it be through an IP address or another domain
+that will of course be resolved by the end to an IP.</p>
+</div>
+<div class="sect2">
+<h3 id="subdomains"><a class="anchor" href="#subdomains"></a>Subdomains</h3>
+<div class="paragraph">
+<p>In order to "re-use" our already bought domain, you can leverage its <strong>authority</strong>,
+by attaching other "paths" to it. This will result in subdomains for the <em>apex domain</em>.
+(E.g., We have the <code>test.com</code> domain, a subdomain for it can be <code>a.b.test.com</code>).</p>
+</div>
+<div class="paragraph">
+<p>Technically anything is possible, but this is where engineering and logic come into place.
+If we want organize content in a hierarchical manner, isolating functionality, also
+integrating with search engines so that they treat two URLs differently (separate
+entities), plus an easier management of multiple services or microsites under the same
+<em>root domain</em>. We can leverage subdomains, meaning, separating everything with dots,
+every dote will denote a new <strong>subdomain level</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>brother.app.test.dev</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>brother</code>: This is the first-level subdomain. It could represent:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A specific product, feature, or service (e.g., a tool named "Brother").</p>
+</li>
+<li>
+<p>A team, project, or environment (e.g., a development team named "Brother").</p>
+</li>
+<li>
+<p>A user or organization (e.g., a user account or namespace).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>app</code>: This is the second-level subdomain. It suggests that the site is related
+to an application, likely a web or mobile app.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It could be a dashboard, interface, or tool for managing or interacting with
+the "Brother" service.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>test</code>: This is the third-level subdomain. It indicates that the site is likely
+a testing or staging environment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s probably not the production version of the app but rather a sandbox for
+development, QA, or experimentation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>dev</code>: This is the top-level domain (TLD). While .dev is a valid TLD, it&#8217;s often
+associated with development-related sites.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It reinforces the idea that this is a development or testing environment.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As you can see, you can give it meaning depending on your own requirements.</p>
+</div>
+<div class="paragraph">
+<p>Having something like <code>brother-app.test.dev</code> would change that structure, having now
+only three levels to the sub-domain (still under the same TLD though). Depending
+on branding, technical requirements, and just plain accepted conventions we can
+decide what will be the rules for our project.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="onboarding/backend.html">.NET Solution</a></span>
+  <span class="next"><a href="domain/index.html">Domain</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
