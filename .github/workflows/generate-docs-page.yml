@@ -1,4 +1,4 @@
-name: Check External Repo and Run If Updated
+name: CRON for Docs Page deployment
 
 on:
   schedule:
