@@ -14,7 +14,7 @@ content:
 antora:
   extensions:
     - require: 'antora-shiki-extension'
-      theme: 'rose-pine'
+      theme: 'monokai'
       languages:
         - js
         - asciidoc

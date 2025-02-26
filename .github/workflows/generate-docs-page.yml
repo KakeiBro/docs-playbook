@@ -1,0 +1,77 @@
+name: Check External Repo and Run If Updated
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs at 12:00 AM UTC daily
+  workflow_dispatch: # Allows manual trigger
+
+env:
+  DOCS_REPO: https://github.com/KakeiBro/docs/commits/main
+  NODE_VERSION: 22
+
+jobs:
+  check-external-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+
+      - name: Fetch latest commit from external repo
+        run: |
+          LATEST_COMMIT=$(curl -s ${{ env.DOCS_REPO }} | jq -r '.sha')
+          echo "Latest commit: $LATEST_COMMIT"
+          echo "LATEST_COMMIT=$LATEST_COMMIT" >> $GITHUB_ENV
+
+      - name: Retrieve previous commit
+        id: get_previous_commit
+        run: |
+          CACHE_FILE=".latest_commit"
+          if [[ -f $CACHE_FILE ]]; then
+            PREVIOUS_COMMIT=$(cat $CACHE_FILE)
+          else
+            PREVIOUS_COMMIT=""
+          fi
+          echo "Previous commit: $PREVIOUS_COMMIT"
+          echo "PREVIOUS_COMMIT=$PREVIOUS_COMMIT" >> $GITHUB_ENV
+
+      - name: Compare commits and exit if unchanged
+        run: |
+          if [[ "$LATEST_COMMIT" == "$PREVIOUS_COMMIT" ]]; then
+            echo "Docs without change. Skipping web page generation."
+            exit 0
+          fi
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+          cache-dependency-path: "./pnpm-lock.yaml"
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Run main logic
+        run: |
+          echo "Docs have changed! Publishing new state..."
+          npx antora ./master-playbook.yml
+      
+      - name: Deploy static content to GH Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/site
+
+      - name: Store latest commit for next run
+        run: |
+          echo "$LATEST_COMMIT" > .latest_commit
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .latest_commit
+          git commit -m "Updates docs latest commit SHA"
+          git push
