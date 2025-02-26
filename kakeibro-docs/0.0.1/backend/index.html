@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Backend :: KakeiBro</title>
+    <link rel="prev" href="../prototypes/react-hook-form.html">
+    <link rel="next" href="git-hooks.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Backend</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Backend</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>As mentioned in the <a href="../domain/index.html" class="xref page">domain</a> section of the docs, we are powering
+the backend with <strong>.NET Core 9</strong>. It will be organized in a Modular Monolith manner,
+powered through <strong>Redis</strong> as its backing service.</p>
+</div>
+<div class="paragraph">
+<p>On top of that we will have it orchestrated with Docker (docker-compose), all living
+in its own repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="static-code-analyzer-and-coding-conventions"><a class="anchor" href="#static-code-analyzer-and-coding-conventions"></a>Static Code Analyzer and Coding Conventions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A common issue when working in teams is to enforce consistent coding styles whilst
+also maintaining a high level of code quality.</p>
+</div>
+<div class="paragraph">
+<p>One tool we have at our disposal is an <code>.editorconfig</code> file. Inside of this file you
+can setup coding styling rules you want to be enforced for a whole solution. (This is
+if you save the file as a Solution Item). Now, if you are using <code>Rider</code> things might
+be a bit different, however its support for the <code>.editorconfig</code> file is great, it will
+highlight if you are setting some rule that&#8217;s not supported and even give you suggestions
+to be available values, this is all fed through documentation and up to date syntax:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.jetbrains.com/help/rider/Using_EditorConfig.html#in_solution">Rider .editorconfig</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options">.NET Code Analysis</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Unlike the <a href="../frontend/index.html#formatter-and-linter" class="xref page">Frontend</a>, we should not be
+comitting <code>.vs/</code> nor <code>.idea/</code> folders, since these are <strong>IDE-specific settings</strong> and
+<strong>user-specific configurations</strong> that are not relevant to the project itself and can
+cause issues for other developers or build systems.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>However, besides just having this conventions file, we can install NuGet packages as well:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>StyleCop.Analyzers</p>
+</li>
+<li>
+<p>SonarAnalyzer.CSharp</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Having both of the packages installed might seem illogical, but there&#8217;s a clear
+separation of concerns for both of these packages.</p>
+</div>
+<div class="sect2">
+<h3 id="stylecop-analyzers"><a class="anchor" href="#stylecop-analyzers"></a>StyleCop.Analyzers</h3>
+<div class="paragraph">
+<p>This NuGet package focuses on <strong>C# coding style and formatting rules (e.g., spacing,
+naming conventions, indentation)</strong>. Based on <strong>Microsoft&#8217;s C# coding guidelines</strong> it
+helps maintaining a consistent code style across the team.</p>
+</div>
+<div class="paragraph">
+<p><em>Example Rule:</em> Requires XML documentation comments for public members.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sonaranalyzer-csharp"><a class="anchor" href="#sonaranalyzer-csharp"></a>SonarAnalyzer.CSharp</h3>
+<div class="paragraph">
+<p>This static code analyzer focuses on <strong>code quality, maintainability, and security</strong>.
+Meaning that it will provide <em>static analysis</em> to detect issues like <strong>code smells,
+bugs, and vulnerabilities.</strong></p>
+</div>
+<div class="paragraph">
+<p>It is often paired with SonarQube or SonarCloud for continous code quality monitoring,
+however these services are paid, so bear that in mind. (An extra layer into the process
+with direct budgeting impact).</p>
+</div>
+<div class="paragraph">
+<p><em>Example Rule:</em> Detects potential null reference exceptions or inefficient LINQ queries.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-styling-and-code-quality"><a class="anchor" href="#code-styling-and-code-quality"></a>Code Styling and Code Quality</h3>
+<div class="paragraph">
+<p>We will use both of the tools to enforce both <em>style</em> and a <em>deeper static code analysis</em>,
+the aim of the project (and the team) is to have <strong>consistent formatting</strong> alongside
+<strong>quality/security insights</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s true that this robustness should be aimed at <strong>large-scale projects</strong>, however,
+even in small teams and environments this can be setup and set a good precedent for
+further projects that are built with the foresight of making the dev process mroe agile
+yet with more quality.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="packages-and-rules-setup"><a class="anchor" href="#packages-and-rules-setup"></a>Packages and Rules Setup</h3>
+<div class="paragraph">
+<p>At the root of the solution we have and <code>.editorconfig</code> file, this file will be picked
+up by the IDE and will start enforcing all the rules that are stated there as we
+go through code. By reading documentation laid out at <a href="#static-code-analyzer-and-coding-conventions">Static Code Analyzer and Coding Conventions</a>
+we can extend and fine-tune the rules to our liking.</p>
+</div>
+<div class="paragraph">
+<p>With that in mind, the <code>.editorconfig</code> file should be understood as different layers to
+setup warnings and errors we might want to enforce on the whole codebase, this can have
+multiple type of rules turned off/on. At the beggining of the file we have general usage
+rules setout (indent style, tab_width, pascal_casing, others). And by the end we can
+have different sections for different analyzers' rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>StyleCop.Analyzers (<strong>prefix:</strong> SA)</p>
+</li>
+<li>
+<p>SonarAnalyzers.CSharp (<strong>prefix:</strong> S)</p>
+</li>
+<li>
+<p>NET.CodeAnalyzers (<strong>prefix:</strong> CA)</p>
+</li>
+<li>
+<p>Visual Studio.Analyzers (<strong>prefix:</strong> IDE)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As the project is being developed, there might be rules or things we do not like,
+so we can configure them to our liking at this file and the specific rule number.</p>
+</div>
+<div class="paragraph">
+<p>With this in mind, the second step of how to start enforcing code quality, is to
+change the warnings that might start showing up with the analyzers as errors. (Why?)
+Because we want for any coding convention infraction to be treated as an error and
+stop the build from happening, this can even go further into CI/CD pipelines; the
+moment someone pushes a change that breaks coding guidelines, the CI/CD pipeline
+will fail immediately.</p>
+</div>
+<div class="paragraph">
+<p>The way to enforce this would take place normally at a <code>.csproj</code> file:</p>
+</div>
+<div id="project-file" class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="xml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #F92672">PropertyGroup</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">AnalysisLevel</span><span style="color: #F8F8F2">&gt;latest&lt;/</span><span style="color: #F92672">AnalysisLevel</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">AnalysisMode</span><span style="color: #F8F8F2">&gt;All&lt;/</span><span style="color: #F92672">AnalysisMode</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">TreatWarningsAsErrors</span><span style="color: #F8F8F2">&gt;true&lt;/</span><span style="color: #F92672">TreatWarningsAsErrors</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">CodeAnalysisTreatWarningsAsErrors</span><span style="color: #F8F8F2">&gt;true&lt;/</span><span style="color: #F92672">CodeAnalysisTreatWarningsAsErrors</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">EnforceCodeStyleInBuild</span><span style="color: #F8F8F2">&gt;true&lt;/</span><span style="color: #F92672">EnforceCodeStyleInBuild</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">PropertyGroup</span><span style="color: #F8F8F2">&gt;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The moment some IDE analyzer picks up on a rule infraction, it will no longer just show
+as a warning, but as an error.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>And the moment a static analyzer picks up on some warning, it will immediately be
+treated as an error.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Lastly, we want for the build to fail the moment some code smell makes its way into
+the codebase.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>And this is fine, but depending on the size of the project (solution) having to configure
+this in every single project is cumbersome rather than useful. Luckily we have extensions
+on the framework and IDE levels that help centralize these types of cross-cutting concerns.</p>
+</div>
+<div class="paragraph">
+<p>Hence, there&#8217;s a <a href="net-modulith.html#centralized-build-props" class="xref page">Directory.Build.props</a>
+file at the root of the solution, this is an <code>xml</code> file that will take care of
+setting up the enforcement of specific settings at a solution level. Think of it
+as a super-layer that gets applied to <strong>all solution&#8217;s projects</strong>. When it comes to our
+code quality concerns, the same settings that would be applied to a
+<a href="#project-file">csproj file</a> will now be stated there.</p>
+</div>
+<div id="line-endings" class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>One really important setting we need to take into consideration at the <code>.editorconfig</code>
+level is line endings. Since it applies as layered rules for different patterns, we should
+not enforce a specific line ending, <code>[\*] end_of_line = unset</code>, but for our source files
+we should normalize to Unix' Line Feed <code>[\\*.cs] end_of_line lf</code>. This will do two things:
+<strong>1st:</strong> When running a <code>dotnet format</code> it will pick up on files that go against the rule
+and highlight an error in them, <strong>2nd:</strong> If we run the formatter with fixing, and or
+use formatting with the IDE it will apply this line ending automatically. We mostly
+have to do this to ensure that Cross-Platform compabitility doesn&#8217;t break, and things
+such as <strong>pipelines</strong> also don&#8217;t break.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nuget-packages"><a class="anchor" href="#nuget-packages"></a>NuGet Packages</h3>
+<div class="paragraph">
+<p>As it was mentioned before, we will be installing <strong>StyleCop.Analyzers</strong> alongside
+<strong>SonarAnalyzer.CSharp</strong>, that&#8217;s pretty straightforward, however, since we want for
+this to be centralized, we will have to configure them in a specific way so that they
+get installed in all projects:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="xml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #F92672">ItemGroup</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">PackageVersion</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"SonarAnalyzer.CSharp"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Version</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"10.6.0.109712"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">PackageVersion</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"StyleCop.Analyzers"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Version</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"1.2.0-beta.556"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">ItemGroup</span><span style="color: #F8F8F2">&gt;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>The versions of the packages will vary as time moves on.</p>
+</div>
+<div class="paragraph">
+<p>For further information in regards to how packages are being centrally managed,
+you can head down to <a href="net-modulith.html#centralized-nuget-packages" class="xref page">Directory.Packages.props</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="shaping-rules-to-ones-liking"><a class="anchor" href="#shaping-rules-to-ones-liking"></a>Shaping rules to one&#8217;s liking</h3>
+<div class="paragraph">
+<p>And so, once we have installed the static analyzers and setup and wired a project
+to be using centralized build props alongside centralized package managing. We will
+definitely start getting errors immediately. Some rules might overlap between analyzers
+and perhaps some rules that they enforce might not be to our liking, and so we can start
+customizing those rules to our liking. The <code>.editorconfig</code> file will be the place to
+setup all these things.</p>
+</div>
+<div class="paragraph">
+<p>As mentioned in <a href="#static-code-analyzer-and-coding-conventions">Static Code Analyzer and Coding Conventions</a>, we will add specific
+rules for the code style of the project, but it&#8217;s also in here that we can add overrides
+to ignore some analyzer errors:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2"># StyleCop.Analyzers (SA...)</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.SA1649.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.SA1600.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.SA1400.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.SA1101.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.SA1633.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.SA0001.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2"></span></span>
+<span class="line"><span style="color: #F8F8F2"># SonarAnalyzers.CSharp (S...)</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.S3903.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2"></span></span>
+<span class="line"><span style="color: #F8F8F2"># NET.CodeAnalyzers (CA...)</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.CA2007.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2">dotnet_diagnostic.CA5394.severity = none</span></span>
+<span class="line"><span style="color: #F8F8F2"></span></span>
+<span class="line"><span style="color: #F8F8F2"># Visual Studio.Analyzers (IDE...)</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>By the end, we can separate the different rules we are ignoring by which analyzer is
+it that it&#8217;s generating the rule, this also keeps it documented for other developers
+to see the rules that were skipped. To read more on them and the reasoning behind them
+you can google each rule ID and read up on the specific documentation for them.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also worth noting that some IDE&#8217;s (such as Rider) might detect the settings
+in <code>.editorconfig</code> as invalid or with warnings. This is expected and in the end the IDE
+will stil pick up on the overrides as it should, by running the project we should be
+getting errors as expected and overrides for specific ones should also be taken
+into consideration.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Whilst these rules might become a bit annoying at first, reading
+up on the reason for them to exist in the first place is a great opportunity to deepen
+the developers knowledge, and it should always be leveraged in a way that makes the code
+the developer makes of higher quality.</p>
+</div>
+<div class="paragraph">
+<p>In the end, it should be discussed and documented with facts and logic when a rule will end
+up being ignored. Once should always aim at using as much as he can from tools and
+recommendations, but also think for themselves.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Another thing worthy of note is the fact that sometimes we might end up trying to
+save files <em>With BOM</em> by default (at least on Windows). We can even configure our
+<code>.editorconfig</code> to not let pass files that have this setting applied to them. (this
+is enforced by the <code>charset = utf-8</code> setting). If we get an error on "file format"
+or "unexpected character", we might have to save the file that&#8217;s failing the check
+<em>without BOM</em>.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../prototypes/react-hook-form.html">React Hook Form</a></span>
+  <span class="next"><a href="git-hooks.html">Git Hooks</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

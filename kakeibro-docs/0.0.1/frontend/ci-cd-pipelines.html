@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CI/CD Pipelines :: KakeiBro</title>
+    <link rel="prev" href="ui-folder-structure-patterns.html">
+    <link rel="next" href="vitest.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Frontend</a></li>
+    <li><a href="ci-cd-pipelines.html">CI/CD Pipelines</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">CI/CD Pipelines</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>First of all, the pipelines will be built using Github Actions, and they will be
+all the way to deployment (Continous Integration/Continuous <strong>Deployment</strong>). With
+that in mind we will break down the phylosophy of how they are setup and key points
+to take into consideration.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By convention pipelines are setup in <code>.yml</code> files that are comitted to the repository.
+They should be all under <code>.github/workflows/</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="philosophy"><a class="anchor" href="#philosophy"></a>Philosophy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A robust CI/CD pipeline for any modern application is crucial for ensuring smooth
+development, testing, and deployment processes. This specific project takes both
+personal experience, but also nuggets of wisdom coming from across experts in the field,
+a source for the ideas applied is: <a href="https://www.amazon.com/Hands-Continuous-Integration-Delivery-software-ebook/dp/B07F2KCM75/ref=sr_1_1?crid=BDMDGLVNFVVG&amp;dib=eyJ2IjoiMSJ9.v9neNylqRvqVl8MRAQV2Eetm9ahsqk0XnKJIYkuCKQRFYSRwsoC2KDl40AHiyOX2j5h-7-FzRIqbFwfDJwPaakrOYH_NoHUZud6Ll1BkUmAq0CWLJboij5BqgGKZom-n.lyWaPFA_05QDnljjt2BUT4ykH4G5eTElz8-jDr7zJjQ&amp;dib_tag=se&amp;keywords=Hands-On+Continuous+Delivery&amp;qid=1739626506&amp;sprefix=hands-on+continuous+deliver%2Caps%2C182&amp;sr=8-1">Hands-On Continuous Integration and Delivery</a>.</p>
+</div>
+<div class="paragraph">
+<p>In short, manual processes, and desorganized processes should be mitigated as much
+as possible, and it&#8217;s through communication with different areas of the business that we
+can find areas of improvement. <strong>Automation</strong> should be a key word when it comes to
+relegating processes that are grunt-work in nature and that only take away from more
+important tasks for a developer. Besides that, we should have a clear flow of work
+in order for the software we build to be fast on delivery and health checking. If
+someone coded something that breaks the system, we should pick up on that as quickly
+as possible.</p>
+</div>
+<div class="paragraph">
+<p>Whilst we already have put a set of automation steps focused on each workstation through
+<a href="husky.html" class="xref page">Husky</a>, there are definitely many ways to circumvent those, and we shouldn&#8217;t
+have to rely entirely on each developer&#8217;s willingness to adhere to protocol but a centralized
+and (in theory) incorruptible source of thruth. Hence there are other mechanisms to
+keep tabs on code quality and correctness (according to a in-house set of rules).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pull Requests</p>
+</li>
+<li>
+<p>CI/CD Pipelines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Due to the nature of this project, <strong>pull requests</strong> will definitely won&#8217;t be leveraged
+as much, unless the need or opportunity for them arises, however they should be still
+be in place so that a whole team can have a look at code changes that are about to be
+integrated into the codebase and give feedback, and also pick up on possible issues
+or opportunities for improvement.</p>
+</div>
+<div class="paragraph">
+<p>But, <strong>Pipelines</strong>, on the other hand will be leveraged in the form of <strong>GitHub Actions</strong>,
+there will be one pipeline for <strong>PRs</strong> and another pipeline for CI in <strong>main</strong>. (It&#8217;s
+here that you can see that PRs and Pipelines should also come in hand and have arguments
+when it comes to trimming down checks for one use case and then adding others for another).</p>
+</div>
+<div class="paragraph">
+<p>Even if a developer has already go through the <strong>layers we have setup</strong> in the form of
+<strong>hooks</strong>, we will have pipelines with <strong>some of the same steps</strong> plus others specific
+to it so that the process is faster when running on the Remote Repository platform (GitHub).</p>
+</div>
+<div class="paragraph">
+<p>The idea behind <strong>Continous Deployment</strong> is <em>Agile</em> in nature. Always be building
+something, testing, and publishing it. It will depend highly on the <em>team and product</em>
+if you want to get up until that point, since there might be justified use cases in
+which you only want to go all the way to <strong>Continous Delivery</strong>. And by some manual
+intervention, the deployment has to be done by someone assigned to said task.</p>
+</div>
+<div class="paragraph">
+<p><strong>In our case</strong>, we are going all the way to deployment, but be aware that this is
+extremely taxing in nature, since we are running on a build machine. So be sure to
+optimize when pipelines should run and not incurr in them becoming a hassle and source
+of frustation, when they should be there to make things easier.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>And in that endeavor of making the pipelines to be as fast as possible, we will leverage
+caching, and specifically caching with <code>pnpm</code>. PNPM is already a tool aimed at
+reusing node modules if we have them across multiple projects, and it also has optimized
+performance built-into it. With that plus a correct usage of <strong>module caching</strong> we
+can aim at having cold starts for our frontend builds, but later builds to be much faster
+since they will leverage all previously installed node modules, instead of having
+to always install them from scratch.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pr-pipeline"><a class="anchor" href="#pr-pipeline"></a>PR Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This consists in <strong>one job</strong> called "Lint, Build, Check". <strong>It will only run on PRs pointed at master</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="ci"><a class="anchor" href="#ci"></a>CI</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run on a base Ubuntu image, and from the root of the repo, head down to the <code>./kakeibro-web</code> folder.</p>
+</li>
+<li>
+<p>Establish a strategy: Run in parallel two instances of the pipeline (<em>matrix</em>),
+one with Node 20 and another one with Node 22</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>A good practice is to test out the build process in different node versions</em>.
+Since we are following <a href="../onboarding/index.html#philosophy" class="xref page">best practices</a>,
+we should be testing on the <em>Active LTS</em> and <em>Active Maintenance</em> versions of node.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We checkout the code with a pre-defined <code>actions/checkout@v4</code> action</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Note:</em> At the time of writing the pre-defined actions are at <strong>v4</strong> this could
+end up getting updated later, and we should be mindful of this in case there are
+actions that are still on other versions such as <strong>v3</strong>.</p>
+</li>
+<li>
+<p><em>Note 2:</em> We have to use these pre-defined sub-routines since github encourages it
+and are meant to <strong>abstract</strong> really general use cases such as cloning the repo first,
+(the build machine will always start with an empty state), they get the added bonus
+of having other syntax that can build on top of the base functionality without us having
+to code it from scratch (e.g: Fetch specific commits, optimize performance, attaching submodules)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We install <code>pnpm</code> with <code>pnpm/action-setup@v4</code>. Just like the previous step it will
+work with a pre-defined script aimed at abstracting logic and making the file look cleaner</p>
+</li>
+<li>
+<p>We install node with <code>actions/setup-node@v4</code>, in this specific instance we want to tie
+it to <code>pnpm</code>, and due to the <em>matrix</em> we setup at the beginning we have to now query the <code>matrix.node-version</code>
+variable in order to accomodate node with the respective node version, besides that we can setup
+<strong>caching</strong> by simply pointing at it to use a strategy that caches with <code>pnpm</code>. We
+also have to point specifically to the <code>pnpm-lock.yaml</code> file so that the pipeline and the
+build machine can read it and check their own cache of packages and if all the hashes match
+it will then use the cache instead of trying to install everything again from scratch</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>IMPORTANT:</strong> It is for these types of use cases that comitting the <code>-lock</code> file can
+be extremely helpful.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We install all the dependencies with <code>pnpm</code> and with the <code>--frozen-lockfile</code> flag so
+that it doesn&#8217;t try to overwrite something on the lockfile.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Note:</em> <code>pnpm i --frozen-lockfile</code> is recommended to be used on CI/CD pipelines, to ensure
+consistency. The command install dependencies without modifying the <code>pnpm-lock.yaml</code>
+file.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We then run <strong>ESLint</strong> by leveraging the scripts that are also leveraged by <a href="husky.html" class="xref page">Husky</a>.</p>
+</li>
+<li>
+<p>We then run a <strong>build</strong> to check that all the code is okay and nothing broke.</p>
+</li>
+<li>
+<p>We then leverage a script called <code>debug-check.js</code> that&#8217;s under a <code>scripts</code> folder at
+the web app folder. This is used by both <em>Husky</em> and now the CI/CD pipeline in order to
+check for <code>console.log</code> or <code>debugger</code> statements in the code and failing if it does find
+them.</p>
+</li>
+<li>
+<p>We then run a <strong>check for outdated packages</strong>, but we fail silently, still the table of
+all dependencies that are outdated will show in the pipeline summary.</p>
+</li>
+<li>
+<p>We will then run a script that <strong>checks for package versions that have vulnerabilities</strong>
+in them that were found.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="master-pipeline"><a class="anchor" href="#master-pipeline"></a>Master Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This consists of <strong>two jobs</strong>, "Lint, Build, Check", "Deploy to Firebase"</p>
+</div>
+<div class="sect2">
+<h3 id="ci-2"><a class="anchor" href="#ci-2"></a>CI</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run on a base Ubuntu image, and from the root of the repo, head down to the <code>./kakeibro-web</code> folder.</p>
+</li>
+<li>
+<p>Establish a strategy: Run in parallel two instances of the pipeline (<em>matrix</em>),
+one with Node 20 and another one with Node 22</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>A good practice is to test out the build process in different node versions</em>.
+Since we are following <a href="../onboarding/index.html#philosophy" class="xref page">best practices</a>,
+we should be testing on the <em>Active LTS</em> and <em>Active Maintenance</em> versions of node.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We checkout the code with a pre-defined <code>actions/checkout@v4</code> action</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Note:</em> At the time of writing the pre-defined actions are at <strong>v4</strong> this could
+end up getting updated later, and we should be mindful of this in case there are
+actions that are still on other versions such as <strong>v3</strong>.</p>
+</li>
+<li>
+<p><em>Note 2:</em> We have to use these pre-defined sub-routines since github encourages it
+and are meant to <strong>abstract</strong> really general use cases such as cloning the repo first,
+(the build machine will always start with an empty state), they get the added bonus
+of having other syntax that can build on top of the base functionality without us having
+to code it from scratch (e.g: Fetch specific commits, optimize performance, attaching submodules)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We install <code>pnpm</code> with <code>pnpm/action-setup@v4</code>. Just like the previous step it will
+work with a pre-defined script aimed at abstracting logic and making the file look cleaner</p>
+</li>
+<li>
+<p>We install node with <code>actions/setup-node@v4</code>, in this specific instance we want to tie
+it to <code>pnpm</code>, and due to the <em>matrix</em> we setup at the beginning we have to now query the <code>matrix.node-version</code>
+variable in order to accomodate node with the respective node version, besides that we can setup
+<strong>caching</strong> by simply pointing at it to use a strategy that caches with <code>pnpm</code>. We
+also have to point specifically to the <code>pnpm-lock.yaml</code> file so that the pipeline and the
+build machine can read it and check their own cache of packages and if all the hashes match
+it will then use the cache instead of trying to install everything again from scratch</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>IMPORTANT:</strong> It is for these types of use cases that comitting the <code>-lock</code> file can
+be extremely helpful.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We install all the dependencies with <code>pnpm</code> and with the <code>--frozen-lockfile</code> flag so
+that it doesn&#8217;t try to overwrite something on the lockfile.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Note:</em> <code>pnpm i --frozen-lockfile</code> is recommended to be used on CI/CD pipelines, to ensure
+consistency. The command install dependencies without modifying the <code>pnpm-lock.yaml</code>
+file.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We then run <strong>ESLint</strong> by leveraging the scripts that are also leveraged by <a href="husky.html" class="xref page">Husky</a>.</p>
+</li>
+<li>
+<p>We then run a <strong>build</strong> to check that all the code is okay and nothing broke.</p>
+</li>
+<li>
+<p>We then leverage a script called <code>debug-check.js</code> that&#8217;s under a <code>scripts</code> folder at
+the web app folder. This is used by both <em>Husky</em> and now the CI/CD pipeline in order to
+check for <code>console.log</code> or <code>debugger</code> statements in the code and failing if it does find
+them.</p>
+</li>
+<li>
+<p>We then run a <strong>check for outdated packages</strong>, but we fail silently, still the table of
+all dependencies that are outdated will show in the pipeline summary.</p>
+</li>
+<li>
+<p>We will then run a script that <strong>checks for package versions that have vulnerabilities</strong>
+in them that were found.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy"><a class="anchor" href="#deploy"></a>Deploy</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This will depend on the previous <a href="#ci-2">CI</a> step, if it doesn&#8217;t fail then deploy will
+run normally</p>
+</li>
+<li>
+<p>Run checkout recipe</p>
+</li>
+<li>
+<p>Run pnpm recipe</p>
+</li>
+<li>
+<p>Run node repice, <strong>with a specific node version</strong>, we are aiming at staying up to
+date and with the most modern yet in <em>Active LTS</em> or <em>Maintenance LTS</em> from Node,
+and so we setup node with <strong>Version 22</strong>. Same setup to take from cache for modules
+if we have them there.</p>
+</li>
+<li>
+<p>Install dependencies with frozen-lockfile</p>
+</li>
+<li>
+<p>Build the project, this isn&#8217;t for a simple validation check, but so that we get a
+<code>dist</code> folder that can then be published to the web.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="possible-audit-blockers"><a class="anchor" href="#possible-audit-blockers"></a>Possible audit blockers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When running the <code>pnpm audit</code> step and we do find a vulnerability for a package,
+then that immediately returns a <strong>1</strong>. And a pipeline will fail, whilst this is great
+because our controls are in check, it might end up blocking development if we don&#8217;t do
+something about it, and this is due to the fact that sometimes this package might
+be a <em>transitive dependency</em>. And until that gets fixed in our direct referenced packages
+with a version bump, we will be stuck, this depends on other&#8217;s and we can&#8217;t block
+the development flow due to this.</p>
+</div>
+<div class="paragraph">
+<p>And so, an options is to fail silently, <strong>but staying on top updates</strong>, this can be
+done as easily as <code>pnpm audit || echo 'Failing audit silently, waiting for esbuild bump'</code>.</p>
+</div>
+<div class="paragraph">
+<p>We could even go further and automate this, but nevertheless, this is just part of
+the workflow that&#8217;s established, some of the pains we have to accept and how to still
+get value out of everything that was setup.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As mentioned in <a href="#ci">CI</a>, we have a <strong>matrix</strong>, one cool thing about GitHub is that it will
+indeed try to optimize runs, and that is in the form that if some of the matrix instances
+fails, if another one is still in the middle of running, it will stop immediately and
+be cancelled.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A way to be on top of updates is to always be checking on forums (hopefully GitHub)
+about how the maintainers will deal with this dependency.</p>
+</div>
+<div class="paragraph">
+<p>E.g: <a href="https://github.com/vitejs/vite/pull/19389#issuecomment-2671015753">GitHub Issue</a>.</p>
+</div>
+<div class="paragraph">
+<p>Depending on how people are looking at it you might even want to start adding the specific
+vulnerability to exceptions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">  "pnpm":{</span></span>
+<span class="line"><span style="color: #F8F8F2">    "auditConfig": {</span></span>
+<span class="line"><span style="color: #F8F8F2">      "ignoreGhsas": [</span></span>
+<span class="line"><span style="color: #F8F8F2">        "GHSA-67mh-4wv8-2f99"</span></span>
+<span class="line"><span style="color: #F8F8F2">      ]</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>This, for example, takes care of an <code>esbuild</code> vulnerability that won&#8217;t be fixed until
+a next major release for Vite, hence we will have to make do with the vulnerability.
+(And also adds extra info to our end as developers with a dependency), a decision
+in this specific use case was to make an update to V6.2 (for example) the moment it&#8217;s
+available since that will get rid of this vulnerability.</p>
+</div>
+<div class="paragraph">
+<p><strong>Outdated:</strong> Depending on the versions, we could get the <code>pnpm outdated</code> package
+failing instead of just adding "warnings". E.g.: <code>globals</code> went from version <code>15.15.0</code>
+to <code>16.0.0</code> and the step now started failing. How would you fix this? Try to run a
+<code>pnpm update</code>, if this doesn&#8217;t bump it to the version that is the latest, manually
+edit it and then run <code>pnpm update</code> again.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="ui-folder-structure-patterns.html">UI Folder Structure Patterns</a></span>
+  <span class="next"><a href="vitest.html">Vitest</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

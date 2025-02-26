@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Husky Setup :: KakeiBro</title>
+    <link rel="prev" href="screens/authentication.html">
+    <link rel="next" href="ui-folder-structure-patterns.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Frontend</a></li>
+    <li><a href="husky.html">Husky Setup</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Husky Setup</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Husky is a <a href="https://typicode.github.io/husky/">tool</a> in charge of policing git commits
+and/or pushes, before comitting anything to version control, before even saving a commit
+it can run linting, formatting, and other type of logic, that in case it fails it
+will short-circuit the process.</p>
+</div>
+<div class="paragraph">
+<p>Husky is installed as a node package:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pnpm add --save-dev husky</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And due to the nature of our setup we have to setup husky in a specific way so that
+it makes use of the parent folder&#8217;s <code>.git</code> whilst being inside of a folder one level
+below: (<a href="https://typicode.github.io/husky/how-to.html#project-not-in-git-root-directory">reference</a>).</p>
+</div>
+<div class="paragraph">
+<p>After adding husky we can try and run <code>npx husky init</code>. However this will fail since
+it doesn&#8217;t find the <code>.git</code> folder at our React App folder, hence we have to set it
+up manually.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="json" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #E6DB74">"scripts"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"dev"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"vite"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"build"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"tsc -b &amp;&amp; vite build"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"lint"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"eslint ."</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"preview"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"vite preview"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"prepare"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"cd .. &amp;&amp; husky kakeibro-web/.husky"</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  },</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>prepare</code> script will be created already, however you have to configure it
+so that we go to the <code>.git</code> folder level. And then apply husky from the <code>.husky</code>
+folder at the app folder level.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Right after this, the <code>pre-commit</code> hook should be configured as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">cd kakeibro-web</span></span>
+<span class="line"><span style="color: #F8F8F2">pnpm lint</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>Once that&#8217;s done, by running a <code>pnpm run prepare</code>, inside of the <code>.husky/</code> folder
+necessary files that hook into git and add the logic will be auto-generated. Right
+after those files are generated every time we try to commit something, all the logic
+in the hooks under <code>.husky/</code> should run and stop us from comitting things that are not up to
+snuff.</p>
+</div>
+<div class="paragraph">
+<p>Now, this is setup for <strong>a setup installation</strong>, the power of having setup husky in
+a <code>prepare</code> script is that next time someone runs a <code>pnpm install</code> <strong>this script will
+run as well</strong> and <strong>it will have husky setup for that specific workstation</strong>. This
+is great, since developers will not have to worry about this setup whatsoever.</p>
+</div>
+<div class="paragraph">
+<p>The main reasons as to why husky is so great is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One-time setup, open for extensions.</p>
+</li>
+<li>
+<p>Eases up the onboarding project, since any new workstation that wants to run the project
+will have the pre-commit and hooks already configured after a <code>pnpm install</code>. We leverage
+node and the module to take care of all the grunt work (<em>seamless</em>).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-huskys-hooks"><a class="anchor" href="#about-huskys-hooks"></a>About Husky&#8217;s Hooks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unlike the <a href="../backend/git-hooks.html" class="xref page">Backend Hooks</a> approach, we will simplify things
+a bit by leveraging <strong>Node</strong>. And so, all hooks that are under <code>.husky/*</code> in theory
+are expecting to run on a <a href="https://typicode.github.io/husky/how-to.html#non-shell-hooks">POSIX compliant CLI</a>
+however, due to our cross-platform requirement, we are going to put all the logic behind
+a javascript file and we are going to run it with <code>Node</code>.</p>
+</div>
+<div class="paragraph">
+<p>And so the raw hook files should just reference the respective <code>.js</code> file, e.g:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">cd kakeibro-web</span></span>
+<span class="line"><span style="color: #F8F8F2">node .husky/pre-commit.js</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>Just as normal git hooks, the starting path will always be the root repository where
+<code>.git</code> is at. But it&#8217;s here where things can get a bit different than the raw git hooks approach.</p>
+</div>
+<div class="paragraph">
+<p>First of all, we are leveraging <strong>pnpm</strong>, so everything is catered to how that specific tool works. Since
+we will be running on <code>node</code>, we get access to <code>pnpm</code>, however, it&#8217;s through the leveraging of its
+<a href="https://pnpm.io/pnpm-cli#commands">fallback configuration</a> that we can simply register scripts at <code>package.json</code>
+and then try to run them by inputting something like <code>pnpm &lt;script-name&gt;</code>.
+Looking at the <code>.js</code> files that are next to the husky hooks, we will see how we are by the
+most part making usage of those scripts. Except for the one specific check that will be explained
+in a moment.</p>
+</div>
+<div class="sect2">
+<h3 id="pre-commit-script"><a class="anchor" href="#pre-commit-script"></a>Pre-Commit Script</h3>
+<div class="paragraph">
+<p>The <code>pre-commit.js</code> hook script takes care of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Running <code>ESLint</code> (it will not auto-fix the errors, developers will be forced to take notice of this and hopefully
+learn from it).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>HINT:</strong> Since <code>prettier</code> is installed, the command can be run to take care of stragglers.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Running <code>tsc and vite build</code> to make sure nothing in the solution is broken.</p>
+</li>
+<li>
+<p>Running <strong><em>custom node logic</em></strong> to scan all files in the project and pick up on any <code>console.log</code> or
+<code>debugger</code> statements and fail if it does find them. A way to do it with a script and "easier" would be by
+using <code>grep</code>, but since <strong>Windows</strong> is not POSIX compliant, it doesn&#8217;t have <code>grep</code> installed by default and
+this accounts for that possible error case.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="pre-push-script"><a class="anchor" href="#pre-push-script"></a>Pre-Push Script</h3>
+<div class="paragraph">
+<p>The <code>pre-push.js</code> hook script takes care of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Running <code>ESLint</code> (it will not auto-fix the errors, developers will be forced to take notice of this and hopefully
+learn from it).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>HINT:</strong> Since <code>prettier</code> is installed, the command can be run to take care of stragglers.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Running <code>tsc and vite build</code> to make sure nothing in the solution is broken.</p>
+</li>
+<li>
+<p>Running a check for possible <strong>outdated packages</strong>, this follows the idea of the <em>backend hooks</em> behavior, in the
+sense that it has been configured to not fail, (this would fail if it does find it), it will only be a
+warning, and hopefully a point when pushing for a developer to take notice that some packages might be
+getting left behind on the release lifecycle.</p>
+</li>
+<li>
+<p>Running <strong><em>custom node logic</em></strong> to scan all files in the project and pick up on any <code>console.log</code> or
+<code>debugger</code> statements and fail if it does find them. A way to do it with a script and "easier" would be by
+using <code>grep</code>, but since <strong>Windows</strong> is not POSIX compliant, it doesn&#8217;t have <code>grep</code> installed by default and
+this accounts for that possible error case.</p>
+</li>
+<li>
+<p>Running a script to <strong>check for outdated packages</strong> we have, <em>if any new version is found its default
+behavior is to fail</em>. Updating node packages sometimes might be really disruptive, hence we don&#8217;t want
+to just update for the sake of updating, hence this will fail silently, whilst still
+printing about the new versions found to the developer to be mindful about them.</p>
+</li>
+<li>
+<p>Running a script to <strong>check for packages with vulnerabilities</strong>, this is way more important
+than just outdated packages, so this will fail if something is found and the dev team should
+put efforts immediately to update the package (alongside all possible errors that might show due to said
+update).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The difference between the amount of operations each stage has has been configured with intent.
+Whilst simply comitting we shouldn&#8217;t have to disrupt the developer experience as much since changes might
+get overwritten later, and the <em>flow state</em> might end up taking a hit. However, before trying to push
+something to version control we will run as many checks as we can so that we are not pushing bad code
+that could end up breaking the build. <strong><em>However</em></strong>, the amount of time it takes for the frontend hooks
+to run is way shorter than the ones at the <strong>backend</strong> side, hence the differences in here are not as many.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="a-study-case"><a class="anchor" href="#a-study-case"></a>A study case</h4>
+<div class="paragraph">
+<p><em>'Date: 23/02/2025'</em></p>
+</div>
+<div class="paragraph">
+<p>When developing, after trying to make a push to GitHub, <code>pnpm audit</code> detected a
+dependency that had a vulnerability detected (esbuild). <a href="https://github.com/advisories/GHSA-67mh-4wv8-2f99">Reference</a>.
+It was <em>Moderate</em>, and it was already patched. The <code>pre-push</code> hook took care of letting
+us know about that, and immediately dev effort was put in order to remedy this issue.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to another command <code>pnpm why esbuild</code>, it outputted a tree of the different
+packages we had declared plus their dependencies, <code>esbuild</code> isn&#8217;t noted in <code>package.json</code>,
+but it&#8217;s a transitive dependency used by <code>vite</code> and <code>vitest</code> libraries.</p>
+</div>
+<div class="paragraph">
+<p>The way to remedy this was to run a <code>pnpm update</code>, the tool is great and it bumped up
+everything, however if your tool wouldn&#8217;t help with that you would have to go looking
+at the output, and then editing the <code>package.json</code> file so that all versions
+start from those updated versions only. (e.g: 1.1.0 &#8658; 1.1.3).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>However, and you have to be aware of this, the packages, sometimes might not get updated
+up until later, for whatever reason, and this would end up blocking your flow, since
+audit will keep complaining about the vulnerability that was found. You have two choices,
+fail silently, or just wait. <em>No one in their right mind would go for the second one</em>.
+<strong>Stay on top of it still!</strong></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="screens/authentication.html">Authentication Screens</a></span>
+  <span class="next"><a href="ui-folder-structure-patterns.html">UI Folder Structure Patterns</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Multi Factor Authentication :: KakeiBro</title>
+    <link rel="prev" href="o-auth.html">
+    <link rel="next" href="apache-graphs-react.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Prototypes</a></li>
+    <li><a href="mfa.html">Multi Factor Authentication</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Multi Factor Authentication</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Source: <a href="https://learn.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-9.0">MS Docs</a></p>
+</div>
+<div class="paragraph">
+<p>Multi-factor authentication (MFA) is a process in which a user is requested during
+a sign-in event for additional forms of identification. This prompt could be to enter
+a code from a cellphone, use a FIDO2 key, or to provide a fingerprint scan. <strong>When
+you require a second form of authentication, security is enhanced. The additional
+factor isn&#8217;t easily obtained or duplicated by a cyberattacker.</strong></p>
+</div>
+<div class="paragraph">
+<p>MFA requires at least two or more types of proof for an identity like something you
+know, something you possess, or biometric validation for the user to authenticate.</p>
+</div>
+<div class="paragraph">
+<p>Two-factor authentication (2FA) is like a subset of MFA, but the difference being that
+MFA can require two or more factors to prove the identity.</p>
+</div>
+<div class="paragraph">
+<p><em>Small note:</em> 2FA is supported by default when using ASP.NET Core Identity. To enable
+or disable 2FA for a specific user, set the <code>IdentityUser&lt;TKey&gt;.TwoFactorEnabled</code>
+property.</p>
+</div>
+<div class="paragraph">
+<p>Inside of MFA, there&#8217;s <strong>TOTP</strong>, (Time-based One-time Password Algorithm). Compliant
+apps such as Microsoft Authenticator and Google Authenticator can be tied to any
+implementation following said algorithm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2fa-and-totp"><a class="anchor" href="#2fa-and-totp"></a>2FA and TOTP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Just as a preamble, we have RFCs with all details when it comes to how these algorithms
+should work and their considerations: <a href="https://datatracker.ietf.org/doc/html/rfc6238">RFC 6238</a>
+and <a href="https://datatracker.ietf.org/doc/html/rfc4226">RFC 4226</a>.</p>
+</div>
+<div class="paragraph">
+<p>In short we have to generate a key, (as per <em>OWASP Recommendations</em> these should be
+random, could even be put on a rotation, and should also use strong hashing algorithms,
+such as SHA-512). And with this key we can then generate a URL that could be encoded
+to a QR. Said URL should follow the <code>otpauth://</code> URL format. That would be a standard.
+And in there through query params, we could be passing metadata that can then the application
+use as inputs. Once it saves this TOTP, it should be generating codes in time that we
+can then validate on the backend side with the same key we used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-rundown"><a class="anchor" href="#project-rundown"></a>Project Rundown</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is another ASP.NET Restful API, it focuses on the leverage of two libraries
+<code>QRCoder</code> and <code>Otp.NET</code>. One will make sure of generating all the neccesary pieces
+of information neccesary for the TOTP algorithm to take place. And the other one
+will be focused entirely on generating a QR Code that can be then read by an Auth
+App, and then start generating on its own a TOTP.</p>
+</div>
+<div class="paragraph">
+<p>At a physical level the folder structure follows the solution structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- TotpPrototype</span></span>
+<span class="line"><span style="color: #F8F8F2">|-- src</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |-- TotpPrototype.Application</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |-- TotpFunctions.cs</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |-- Program.cs</span></span>
+<span class="line"><span style="color: #F8F8F2">|-- test</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t need much else in here since it&#8217;s pretty self-contained, the endpoints are
+as follows:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">/api/generate-key</dt>
+<dd>
+<p>This endpoint focuses solely on the usage of the <code>OtpNet</code>, it will generate a random
+key (secret) at byte level, and it will then encode those bytes into base32 so
+that we can print a string.</p>
+</dd>
+<dt class="hdlist1">/api/generate-qr</dt>
+<dd>
+<p>This endpoint receives one request param under <code>secret=&lt;KEY&gt;</code>, and it will then try
+to save locally a QR that an Authentication App can scan and add to its vault.</p>
+</dd>
+<dt class="hdlist1">/api/validate-code</dt>
+<dd>
+<p>This endpoint will receive the TOTP sent through a request param <code>totp=&lt;CODE&gt;</code>,
+and the key to validate it with through <code>secret=&lt;SECRET&gt;</code> in base32. It will then
+in that specific point in time attempt to return if the code is valid or not.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cross-cutting-concerns"><a class="anchor" href="#cross-cutting-concerns"></a>Cross-Cutting Concerns</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="security"><a class="anchor" href="#security"></a>Security</h3>
+<div class="paragraph">
+<p>The <code>Base32Key</code> is a shared secret between the server and the user&#8217;s 2FA app. If someone
+else obtains this key, they can generate valid TOTP codes for that user. To
+mitigate this risk:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only display the QR code temporarily. Once the user sets up their 2FA, the secret
+key should never be displayed again.</p>
+</li>
+<li>
+<p>Avoid logging or caching the key anywhere (e.g. logs, temporary files).</p>
+</li>
+<li>
+<p>When storing the <code>Base32Key</code> in your database, always encrypt it to protect it at rest.
+Use a robust encryption library, to encrypt and decrypt the secret key securely.</p>
+</li>
+<li>
+<p>Ensure HTTPS Everywhere, if the <code>otpAuth://</code> ORL or QR code is ever transmitted over
+the network (e.g., to a front end), ensure the connection is secured using <strong>HTTPS</strong>.
+This prevents interception of the secret key during setup.</p>
+</li>
+<li>
+<p>Once the user scans the QR code and sets up 2FA, avoid showing the secret key or
+QR code again. If the user loses access, you can generate a new key but never reuse the
+old one.</p>
+</li>
+<li>
+<p>Don&#8217;t log the Key or URL: Ensure you don&#8217;t log sensitive details like the base32Key
+or the otpauth:// URL.</p>
+</li>
+<li>
+<p>If an attacker obtains the secret key, they could generate codes indefinitely.
+To mitigate this:&#8201;&#8212;&#8201;Consider implementing device-based trust where users must re-authenticate for new
+devices.&#8201;&#8212;&#8201;Use the secret key <strong>only for authentication</strong> and avoid repurposing it for other
+use cases.</p>
+</li>
+<li>
+<p><strong>Server-Side Key Verification:</strong> Instead of exposing the base32Key to the frontend,
+you can handle the TOTP directly on the server side.&#8201;&#8212;&#8201;Generate and store the secret key on the server.&#8201;&#8212;&#8201;Create and display only the QR code (without sending the raw base32Key to the user).&#8201;&#8212;&#8201;Validate user-entered TOTP codes directly against the server-stored secret key.</p>
+</li>
+<li>
+<p><strong>Backup Codes for Recovery</strong>&#8201;&#8212;&#8201;Provide users with one-time backup codes during setup to allow them to regain access
+if they lose their 2FA device. These codes should:
+--- Be stored hashed in your database, like passwords.
+--- Only be shown to the user during setup.
+--- Be invalidated upon use.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="platform-independence"><a class="anchor" href="#platform-independence"></a>Platform Independence</h3>
+<div class="paragraph">
+<p>Since we don&#8217;t want to be hard-coupled to an operative system we have to use cross-platform
+libraries and classes. <strong>QRCoder</strong> has a way to work with MS' <code>Bitmap</code>. But if we were to
+put the system in Linux this implementation would break, luckily there&#8217;s a <code>QRCoder-ImageSharp</code>
+NuGet that can enable us using <code>ImageSharp</code> to work with graphics in a cross-platform
+manner.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usability"><a class="anchor" href="#usability"></a>Usability</h3>
+<div class="sect3">
+<h4 id="qr-codes"><a class="anchor" href="#qr-codes"></a>QR Codes</h4>
+<div class="paragraph">
+<p>Inside of <code>OtpNet</code> there are a couple of settings to keep in mind in order to understand
+how they serve a purpose.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s specifically a line of code that goes like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">using var qrCodeData = qrGenerator.CreateQrCode(otpAuthUrl, QRCodeGenerator.ECCLevel.Q);</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>ECCLevel</code> Enum hints at different levels for this specific setting, we can
+break it down as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ECCLevel means <em>Code Error Correction Levels</em>. QR codes specifically use <strong>Reed-Solomon</strong>
+error correction, which allows them to recover lost or corrupted data. There are four levels
+of error correction, each balancing data recovery and storage capacity:&#8201;&#8212;&#8201;L (Low): Recovers up to <strong>7%</strong> of the QR code data. This is the best when the QR
+Code is expected to be in pristine condition and you need to maximize storage capacity
+(more data fits in the QR code).&#8201;&#8212;&#8201;M (Medium): Recovers up to <strong>15%</strong> of the QR code data. This is the <code>default level</code>
+and provides a balance between storage capacity and error correction. Good for general
+use cases where slight damage or distortion might occur.&#8201;&#8212;&#8201;Q (Quartile): Recovers up to <strong>25%</strong> of the QR code data. Used in situations where
+moderate damage is expected, such as printing QR codes on physical materials.&#8201;&#8212;&#8201;H (High): Recovers up to <strong>30%</strong> of the QR code data. Provides the highest level
+of error correction but reduces storage capacity (the QR code size will increase to
+compensate). Suitable for highly critical scenarios such as Outdoor signage, QR codes
+in rough environments (e.g., packaging or industrial use), artistic designs (logos or
+overlays) that intentionally obscure parts of the QR code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A higher ECC levels result in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>More redundancy, which increases the QR code&#8217;s robustness.</p>
+</li>
+<li>
+<p>Larger QR codes (more pixels or modules) because additional space is used for error
+correction data.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Lower ECC levels prioritize compactness but are less tolerant to damage.</p>
+</div>
+<div class="paragraph">
+<p><em>For general use (like digital screens), the default <code>M</code> is usually sufficient</em>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="time-sensitiveness"><a class="anchor" href="#time-sensitiveness"></a>Time Sensitiveness</h4>
+<div class="paragraph">
+<p>The TOTP algorithm makes use of the Unix Time, and its epochs, tied into intervals
+of time that can be then matched with an external secret key, in order to validate if
+across time, the code provided at <strong>a</strong> specific time was valid.</p>
+</div>
+<div class="paragraph">
+<p>The <code>RFC 6238 standard</code> specifices how OTPs (TOTP) work. It is there that the Verification
+Windows is stated to accept slightly out-of-sync codes. (Server looking at a code from
+a client, meaning client could be slightly out of sync). The network delay considers
+this small of window under the assumptions that there could be: network delays, slight
+clock skews between the server and the client device.</p>
+</div>
+<div class="paragraph">
+<p>By default the <strong>verification window</strong> accepts one time step before and after the current
+time step. For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the time step interval is 30 seconds: It will accept codes generated up to 30 seconds
+before and 30 seconds after the current time.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>What is a time step?</strong></p>
+</div>
+<div class="paragraph">
+<p>In TOTP, the <em>time step</em> is a small interval of time (usually 30 seconds) during which
+a single OTP code is valid. The TOTP algorithm generates a new code for each time step,
+based on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The shared secret key (<code>key</code> in your code).</p>
+</li>
+<li>
+<p>The number of time steps that you have elapsed since the Unix epoch</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If a code is valid, it means that said code matched to some specific time step for
+a specific key. You can use that time step number for debugging or logging to see
+if the user&#8217;s device is out-of-sync with the server.</p>
+</div>
+<div class="paragraph">
+<p>A time step number is based on the intervals that go from the Unix epoch to an arbitrary
+point in time. Say today <em>10-December-2024 11:35:22</em>, in 30-second intervals, we would be
+at step (not actually calculated) 12345. We would use the TOTP algorithm to see if a code
+provided as an input matches to this step (or at least to the previous and/or following step).
+If we can match it to them, then the code should be valid.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="o-auth.html">Google OAuth 2.0</a></span>
+  <span class="next"><a href="apache-graphs-react.html">Apache Graphs on React</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

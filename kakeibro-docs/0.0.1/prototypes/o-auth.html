@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Google OAuth 2.0 :: KakeiBro</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="mfa.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Prototypes</a></li>
+    <li><a href="o-auth.html">Google OAuth 2.0</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Google OAuth 2.0</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Following <a href="https://developers.google.com/api-client-library/dotnet/guide/aaa_oauth">documentation</a>,
+a prototype has been built in order to understand better how to integrate with
+Google OAuth.</p>
+</div>
+<div class="paragraph">
+<p>The prototype itself is an ASP.NET Core Restful Web API built on .NET 9. The
+repository can be found at <a href="https://github.com/KakeiBro/google-oauth">GitHub</a>.</p>
+</div>
+<div class="paragraph">
+<p>Google has different levels of access, and it has a clear separation between <em>Authorization</em>
+and <em>Authentication</em>. But this application itself only leverages half of what Google
+might offer, since we simply want for google to take care of the authentication
+flow for us through a Google Account, we will be using a <code>web</code> client type for
+the Google exchange that takes place.</p>
+</div>
+<div class="paragraph">
+<p>The steps that one would normally take for a web client authentication flow will
+be:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Your application (UI) redirects a browser to a Google URL; the URL includes query
+parameters that indicate the type of access being requested.</p>
+</li>
+<li>
+<p>Google handles the user authentication, session selection, and user consent.
+The result is an authorization code, which the application can exchange for an
+access token and refresh token.</p>
+</li>
+<li>
+<p>The application gets an authorization code that we can later exchange for an
+access token and a refresh token.</p>
+</li>
+<li>
+<p>The application should store the refresh token for future use and use the access
+token to access a Google API. Once the access token expires, the application uses the
+refresh token to obtain a new one.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="google-oauth-setup"><a class="anchor" href="#google-oauth-setup"></a>Google OAuth Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The tutorials that were used in order to find out how to integrate with Google&#8217;s OAuth
+were:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developers.google.com/api-client-library/dotnet/get_started">Dotnet Library</a></p>
+</li>
+<li>
+<p><a href="https://developers.google.com/identity/protocols/oauth2/web-server#httprest_1">OAuth for Web Server Applications</a></p>
+</li>
+<li>
+<p><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects?visit_id=638731573502905114-2035959981&amp;rd=1">A good way to setup a Google Console App</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First of all, a Google Cloud Project should be created in order to tie it to applications,
+and other integrations with all the services that Google Cloud offers. A <strong>KakeiBro</strong>
+project has been created and that will be the nexus into Google OAuth.</p>
+</div>
+<div class="paragraph">
+<p>Due to us having to integrate with Google Cloud, we have to keep some sort of data
+that can help us keep track of the user that&#8217;s on Google Cloud, and that be tied into our
+own data. Hence, we will just make requests to Google, the user will authorize the usage
+of his account and on his behalf we will be then get some metadata from Google and
+use that to then concretize the user registration.</p>
+</div>
+<div class="paragraph">
+<p><em>Meaning we will have to make do with what Google has and we create on the background
+all the data from the user</em>. It&#8217;s basically a facade in which we make use of Google
+for the Auth, if everything is okay from their side, we simply get back tokens, enable
+a bit of logic to then use tokens and refresh tokens accordingly.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It would probably be a good idea to leverage Redis and its TTL setting on a record to
+invalidate the token once everything expires. Also, we can leverage Redis and some key
+in there to retrieve the token if it is still valid (send it to the client and then
+have the client not cache it in local storage, but the database always returning that
+and then the client saving it into memory if it doesn&#8217;t find it).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the project is created, you have to configure the <code>Google Auth Platform</code>. Which is
+one of the services at the <em>Google Cloud Console</em>. It&#8217;s here that you will have to setup
+the service so that we can get a client secret, and a client ID in order to start consuming
+the application. Luckily the setup process is pretty self-explanatory so just follow the steps.</p>
+</div>
+<div class="paragraph">
+<p>Once that&#8217;s done, you need to get a Client that will be under the project. However for this
+you have to configure the <code>Consent Screen</code>. This requires a logo, alongside links
+for an Application home page, a privacy policy link, and a ToS link. Make sure to
+add all the domains that are used for these links to be also added as part of the
+<code>Authorized Domains</code> section.</p>
+</div>
+<div class="paragraph">
+<p>After this is done, you might have to wait a bit until the consent page state is updated,
+but once it is you can go into the <code>Clients</code> tab and then create a client that should be
+for <strong>web</strong>, and it will ask for information in regards to the app, alongside the callback
+URI and the javascript sources that will be authorized. Once the client is created,
+you can go and download all the secrets in a <code>.json</code> format. This is extremely sensitive
+information, so add that to a <code>.gitignore</code> and never commit them, there&#8217;s a secret,
+and other information specifically catered to authenticate the client when trying to
+access the Google Auth API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage-of-apis-for-authentication"><a class="anchor" href="#usage-of-apis-for-authentication"></a>Usage of APIs for authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The base documentation used for this was:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://developers.google.com/identity/protocols/oauth2/web-server#offline">OAuth2 with Web Server</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>POST <a href="https://accounts.google.com/o/oauth2/v2/auth" class="bare">https://accounts.google.com/o/oauth2/v2/auth</a></code> Is the first endpoint that should be
+called when initializing the flow. In here there are different query params that
+can be sent.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required</strong> Client ID for the application this comes from the <code>Clients</code> page
+at Google Console.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redirect_uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required</strong> Determines where the API server redirects the browser after the auth
+flow is completed. The value must match exactly one of the authorized redirect URIs
+on the OAuth 2.0 client. If this doesn&#8217;t match you will get a <code>redirect_uri_mismatch</code>.
+<code>http</code> or <code>https</code> scheme, case, and trailing slash ('/') must all match.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required</strong> A space-delimited list of scopes that identify the resources that your
+application could access on the user&#8217;s behalf. These values inform the google consent
+screen that Google displays to the user. In order for us to hit and get user&#8217;s information,
+we should be sending <code>openid email profile</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">response_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required</strong> Determines whether the Google OAuth 2.0 endpoint returns an authorization
+code. Set the parameter value to <code>code</code> for web server applications.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Recommended</strong> Indicates whether your application can refresh access tokens when
+the user is not present at the browser. Valid parameters are <code>online</code> (default)
+and <code>offline</code>. (This means whether if we get a refresh token or not)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prompt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Recommended</strong> In order for the user to have the application authorized again,
+this also allows for subsequent attempts on the flow to <strong>always return a refresh
+token</strong>, for that to happen it should be set to <code>consent</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The web hook will receive the parameters such as (<code><a href="http://localhost:5080/api/google-auth-callback" class="bare">http://localhost:5080/api/google-auth-callback</a></code>):</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The authorization code that will be granted on behalf of the user in order to get
+access tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A space separated list of the scopes that will be granted through this code&#8217;s
+<em>redeem</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">authuser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default <code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prompt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default <code>none</code>, but depending on the initial Auth endpoint it can change to
+<code>consent</code></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>POST <a href="https://oauth2.googleapis.com/token" class="bare">https://oauth2.googleapis.com/token</a></code> Is the second endpoint, that will have the
+auth code sent to. It should be fed query params as such:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The auth code that will be used in the endpoint to get the tokens</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The client ID obtained from the Cloud Console at <code>Clients</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client_secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The client secret obtained from the Cloud Console at <code>Clients</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redirect_uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">One of the redirect URIs listed for the project for the given <code>client_id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grant_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As defined in the <em>OAuth 2.0 specification</em>, this field&#8217;s value must be set to
+<code>authorization_code</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This endpoint will then return as JSON something that looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">  "access_token": "1/fFAGRNJru1FTz70BzhT3Zg",</span></span>
+<span class="line"><span style="color: #F8F8F2">  "expires_in": 3920,</span></span>
+<span class="line"><span style="color: #F8F8F2">  "token_type": "Bearer",</span></span>
+<span class="line"><span style="color: #F8F8F2">  "scope": "https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/calendar.readonly",</span></span>
+<span class="line"><span style="color: #F8F8F2">  "refresh_token": "1//xEoDL4iW3cxlI7yDbSRFYNG01kVKM2C-259HOF2aQbI"</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>It is with this information that we can then send through a <code>Bearer</code> header to
+any of the google apis in order to get information on behalf of the user.</p>
+</div>
+</li>
+<li>
+<p><code>GET <a href="https://www.googleapis.com/oauth2/v2/userinfo" class="bare">https://www.googleapis.com/oauth2/v2/userinfo</a></code> Is the third endpoint, part
+of Google APIs, this focuses on getting the user&#8217;s profile information from Google,
+it has basic data that is more than enough for us to make a record on our side. <strong>A
+note here:</strong> There&#8217;s v2 and v3 versions for the endpoint, depending on what version you
+use for the authentication flow then you should follow the same version for any subsequent
+endpoint requests. Otherwise you will be denied if you try to request a v3 endpoint
+with credentials generated from a v2 endpoint. The returned properties will be:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code> An ID on the Google side for the specific user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code> The email address for the specific user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verified_email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code> In case the email has gone through a verification process on the Google Side.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code> The string resulting from combining bot the <code>given_name</code> and the <code>family_name</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">given_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code> The first/given name of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">familiy_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code> The last/family name of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">picture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code> A URL that takes to the profile picture of the user.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you try and use a an expired token, you will not get an error code, however no
+actual information will be returned.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><code>POST <a href="https://oauth2.googleapis.com/revoke" class="bare">https://oauth2.googleapis.com/revoke</a></code> Is the fourth endpoint from the Google APIs,
+this receives a request param under <code>token=&lt;TOKEN&gt;</code>. You don&#8217;t need to send tokens nor
+headers for this one. You can send both an access token and a refresh token, if you
+send an access token it will also revoke its refresh in the background.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you try to revoke an expired token, you will be met with an exception.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><code>POST <a href="https://oauth2.googleapis.com/token" class="bare">https://oauth2.googleapis.com/token</a></code> will be re-used for refreshing, however the
+change in behavior will be mandated by the request parameters that are sent to establish
+the type of flow:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Client ID that we already mentioned that is tied to Google Console.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client_secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Client Secret that&#8217;s also coming from Google Console.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grant_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This should be set to <code>refresh_token</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refresh_token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The actual refresh token that will be used to validate that this refresh attempt is
+authentic.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You are free to request another access token when a previous one has expired or
+even before that, there are no rules waiting for the previous token to expire. A
+response from the API should also look something akin to this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">  "access_token": "1/fFAGRNJru1FTz70BzhT3Zg",</span></span>
+<span class="line"><span style="color: #F8F8F2">  "expires_in": 3920,</span></span>
+<span class="line"><span style="color: #F8F8F2">  "scope": "https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/calendar.readonly",</span></span>
+<span class="line"><span style="color: #F8F8F2">  "token_type": "Bearer"</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In order to get the <code>refresh_token</code>, under the normal flow (following the documentation),
+only the first authorization from the user will return it. Any subsequent ones will
+not (even if you send a <code>access_type=offline</code> parameter). Unless you go and revoke
+access to the application explicitly. However there&#8217;s a way to always generate it,
+and that&#8217;s with the extra parameter <code>prompt=consent</code>. This will always ask the user
+on the Google screen to authorize the app, and on the response side of things will
+indeed return a refresh token once we try to exchange tokens.</p>
+</div>
+<div class="paragraph">
+<p>Source: <a href="https://stackoverflow.com/questions/10827920/not-receiving-google-oauth-refresh-token">Stack Overflow</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Another thing worthy of note is the fact that all the <code>expires_in</code> values are measured
+in <strong>seconds</strong>, and it should also be in consequence understood that the moment
+we get back the token with the <code>expiry_date</code> attached, from that moment in time <strong>+
+<em>n seconds</em></strong>, said token will no longer be valid.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-rundown"><a class="anchor" href="#project-rundown"></a>Project Rundown</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The project is pretty simple, there are 3 endpoints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>/api/generate-url (GET)</p>
+</li>
+<li>
+<p>/api/google-auth-callback (GET)</p>
+</li>
+<li>
+<p>/api/get-tokens (GET)</p>
+</li>
+<li>
+<p>/api/get-user-data (GET)</p>
+</li>
+<li>
+<p>/api/revoke-token (GET)</p>
+</li>
+<li>
+<p>/api/refresh-token (GET)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Postman can be used in order to hit them, however, due to the integration with
+<code>.http</code> files, even at the IDE level we can hit the endpoints with no issue whatsoever.
+Just open up any of these files and then click on the <code>Send Request</code> button that pops up.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">/api/generate-url</dt>
+<dd>
+<p>The first endpoint that we should be calling, this constructs the url that can then
+be opened in a browser to then work with Google&#8217;s Auth Website. In the end it
+will automatically call the <code>/api/google-callback</code> the moment authorization is
+successful. In can receive two query params that will then be passed down to the
+google endpoint: <code>accessType</code> and <code>prompt</code>.</p>
+</dd>
+<dt class="hdlist1">/api/google-auth-callback</dt>
+<dd>
+<p>This is an open endpoint that should be hit by the browser Google Auth website
+once the flow is completed. It should receive request params with the authentication code
+(if the flow succeeded). Its behavior is printing the raw query string and then each query
+parameter separated as key-value pairs for readability.</p>
+</dd>
+<dt class="hdlist1">/api/get-tokens</dt>
+<dd>
+<p>After we get the authentication code from Google&#8217;s side, this endpoint should receive
+it in order to talk to Google&#8217;s API and then get back both a user token and its refresh
+token. It receives one query parameter: <code>code</code>, this will be passed down to the Google
+endpoint.</p>
+</dd>
+<dt class="hdlist1">/api/get-user-data</dt>
+<dd>
+<p>With the <code>Bearer</code> token, we are free to start consuming endpoints from Google, obviously
+within what was allowed inside of the <code>scope</code> provided at the beginning of the authentication
+flow. This will expect an <code>Authorization: Bearer &lt;TOKEN&gt;</code> header, said header will
+be passed down to the respective Google endpoint in order to retrieve the user&#8217;s
+basic information.</p>
+</dd>
+<dt class="hdlist1">/api/revoke-token</dt>
+<dd>
+<p>Will only receive <strong>one request parameter</strong> under the form of <code>token=&lt;TOKEN&gt;</code>, it
+can be used both with an access token and a refresh token, consumes an endpoint from
+google and passes down the token it picked up from its own request.</p>
+</dd>
+<dt class="hdlist1">/api/refresh-token</dt>
+<dd>
+<p>Will only receive a <code>refreshToken=&lt;TOKEN&gt;</code> parameter that will be latered passed down
+to the Google API endpoint in order to request for another access token.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It&#8217;s worth noting that after an authorization code has been used for the token exchange
+it will be invalidated immediately, meaning that the whole flow has to be started over. Also,
+once a user has accepted the application for the first time, it will no longer ask for
+consent in the sense of asking for Confirm buttons, just the selection of the account
+will suffice.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="folder-structure"><a class="anchor" href="#folder-structure"></a>Folder Structure</h3>
+<div class="paragraph">
+<p>We are skipping over architecture patterns since this is a prototype (at least for now),
+we are focusing on quickly trying out the ideas we have in mind, in short, this is
+a deliverable from a <em>Spike</em> that concerns OAuth&#8217;s capabilities in a web app integrated
+with .NET.</p>
+</div>
+<div class="paragraph">
+<p>The structure for the solution closely resembles its physical folder structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- GoogleOAuthPrototype</span></span>
+<span class="line"><span style="color: #F8F8F2">|-- src</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |-- GoogleOAuthPrototype.Application</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |-- Constants</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |-- Files</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |   |-- client_secrets.json</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |-- POCO</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |   |-- Services</span></span>
+<span class="line"><span style="color: #F8F8F2">|-- test</span></span>
+<span class="line"><span style="color: #F8F8F2">|   |-- GoogleOAuthPrototype.Application.UnitTests</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>client_secrets.json</code> file is there for illustrative purposes since it will
+never be comitted to version control. But it should be here as a base line of the
+source of truth when it comes to connecting to the virtual application that is living
+at Google Cloud. The code has been adapted so that this file is neccesary to be there
+(you have to get the file manually through secure means), put it in the path, and
+that way the prototype will be able to boot up, consume the google credentials and
+work as intended. This is neccesary to avoid leaking sensitive information.</p>
+</div>
+<div class="paragraph">
+<p>Besides that, folders are separated by technical concerns (this is not recommended for
+big projects), but since the prototype is so small, then it&#8217;s fine for simplicity&#8217;s
+sake alongside a clear pathway into component visualization when it comes to enumerating
+all that&#8217;s needed in order to integrate with Google Auth.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cross-cutting-concerns"><a class="anchor" href="#cross-cutting-concerns"></a>Cross-Cutting Concerns</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="configurations-and-security"><a class="anchor" href="#configurations-and-security"></a>Configurations and Security</h3>
+<div class="paragraph">
+<p>When it comes to one really important <em>CCC</em> it is the fact that we need credentials
+from Google in order to hit their endpoints and then on behalf of a user start consuming
+their APIs.</p>
+</div>
+<div class="paragraph">
+<p>It is due to this, that we have to establish an implementation that accounts for a secure
+way to hydrate the app with the data that only lives on a workstation, and is never
+uploaded to version control.</p>
+</div>
+<div class="paragraph">
+<p>It was decided that in order to work with this, we have to download the
+<code>client_secrets.json</code> file, put it inside the <code>Application/Files</code> folder. If the
+file is for the right application registered in <strong>Google Console</strong>, then all flows
+should work correctly.</p>
+</div>
+<div class="paragraph">
+<p>When putting an app into production we should definitely leverage the <code>IConfiguration</code>
+interface and its APIs alongside the usage of environmental variables in order to safely
+hydrate with the right set of credentials at build/deploy times, and not hard-coding it into
+the project.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Prototypes</a></span>
+  <span class="next"><a href="mfa.html">Multi Factor Authentication</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

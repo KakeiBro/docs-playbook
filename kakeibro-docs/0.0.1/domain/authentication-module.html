@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Authentication Module :: KakeiBro</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="users-module.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Domain</a></li>
+    <li><a href="authentication-module.html">Authentication Module</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Authentication Module</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/authentication-bc.svg" alt="authentication bc">
+</div>
+</div>
+<div class="paragraph text-center">
+<p><em>Figure 1.</em> Module&#8217;s DDD Diagram</p>
+</div>
+<div class="paragraph">
+<p>It has been decided that we will integrate with Google&#8217;s OAuth service, this is
+a safe protocol that simply passes through Google&#8217;s Auth Services in order to validate
+a user, if it&#8217;s successfully validated we will then just save the Google
+Metadata in the system. (This takes away the need to create a user through the system
+and simply leverage a Google account). This is a <strong>fundamental design choice</strong>, we
+are coupled with Google OAuth due to this.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="two-factor-authentication"><a class="anchor" href="#two-factor-authentication"></a>Two-Factor Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to add an extra layer of security to the application, 2FA can be enabled
+for a user (the user himself has the capacity to do that for himself). This will also
+integrate with an external 2FA application. The ones that have been tested and are
+recommended are: <strong><em>Google Auth, Microsoft Auth.</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Once the user "switches on" 2FA, a small flow in order to register with an Auth App
+is triggered, and every-time the user logs into the system he will be asked for the
+2FA code. (TBD: We could also enable a small check to ask the user if he wants to
+remember the device so that 2FA is not asked on this device).</p>
+</div>
+<div class="paragraph">
+<p>Whilst for "ease-of-use" an option can be checked to remember the device, we have to
+be mindful that this is a <strong><em>financial management system</em></strong>. It holds critical
+information in regards to a person. So we have to add an extra confirmation check
+for the user explaining the meaning of remembering the device. <strong>This is the pilar
+of how the system should be understood</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="google-oauth"><a class="anchor" href="#google-oauth"></a>Google OAuth</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to ease login and registering operations, the system leverages Google OAuth 2.
+Meaning that the authentication and authorization side of things in order to get user
+meta-data will be leveraged through Google APIs.</p>
+</div>
+<div class="paragraph">
+<p>This integration consists of building URLs specifically for a <code>web</code> application, that
+the user then interacts with, and after the flow is successful we can retrieve information
+in order to talk to Google APIs on the user&#8217;s behalf and get basic data around them,
+both in order to create a user, but also to log him into the system without the need to
+ask for password or user.</p>
+</div>
+<div class="sect2">
+<h3 id="user-flows"><a class="anchor" href="#user-flows"></a>User flows</h3>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="_images/first-time-user-uc-diagram.svg" alt="first-time-user-uc-diagram">
+</div>
+</div>
+<div class="paragraph text-center">
+<p><em>Figure 2.</em> First Time User</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="_images/recurring-user-uc-diagram.svg" alt="recurring-user-uc-diagram">
+</div>
+</div>
+<div class="paragraph text-center">
+<p><em>Figure 3.</em> Internal User</p>
+</div>
+<div class="paragraph">
+<p>As a summary, the way we will offer an entrypoint to the user will be as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We will leverage Google Auth <em>basically for the most part</em>. We won&#8217;t store user
+passwords whatsoever, and will act as a <strong>proxy</strong> with <strong>Google Auth</strong>. If a user is
+a <em>guest</em>, we will trigger a flow that talks between Google, the API, Web Client so
+that by the end gets Google&#8217;s info on the user and creates <strong>under the hood</strong>
+an <a href="ubiquitous-language.html#internal-user" class="xref page">Internal User</a> that will be saved on
+KakeiBro&#8217;s side.</p>
+</li>
+<li>
+<p>The moment we have an internal-user, the way to interface with it, will be through
+its e-mail. If we find that e-mail we will keep an internal check of the user token
+that was saved there, if it&#8217;s within the <strong><em>grace period</em></strong>, we will pass it onto
+the client allowing for the user to log-in. Otherwise the <em>authentication with Google</em>
+will have to take place again, but instead of creating an <strong>internal user</strong> we will
+simply update the <strong>token that it has assigned</strong> to it.</p>
+</li>
+<li>
+<p>In case the <strong><em>grace period</em></strong> has been fulfilled, we will ask the user to re-authenticate,
+however this will just request for another OAuth token and we will update that on the already
+existing <em>internal user</em> table, we will also invalidate the previous token on the Google
+OAuth side.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We are putting as the <a href="ubiquitous-language.html#grace-period" class="xref page">Grace Period</a> an
+interval of <strong>Two Weeks</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong><em>The value</em></strong></p>
+</div>
+<div class="paragraph">
+<p>We are leveraging automation in the way that we don&#8217;t want for the user to have to fill-in all
+their details and for us to manage all of that, we are assuming they have a gmail email, and
+we are forcing them to use it so that we can interface with Google and get that user&#8217;s info directly
+and setup everything under the hood. <em>Giving a much more smooth user experience</em>. Besides if we have
+to interface with Google in whatever capacity, may it be just for sending e-mails, we are 100% sure
+that we will have the user&#8217;s email in order to send emails to him.</p>
+</div>
+<div class="paragraph">
+<p><em>Extra Detail:</em> Another <em>trend</em> when it comes to a smooth UX with Google OAuth is to launch
+its flow on a small new window that mimics what a <em>dialog</em> would look like. Once the whole
+flow is done, the main app web page refreshes and it then launches into the home.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security-concerns"><a class="anchor" href="#security-concerns"></a>Security concerns</h3>
+<div class="paragraph">
+<p>Due to us having to store the Google Auth token, we have to keep it under tight wraps.
+And so we will encrypt it, and pass it onto the client only after a handshake is
+established and the <em>grace period</em> since the token was created hasn&#8217;t been achieved.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>And so the <strong>e-mail</strong> will be bumped in level of importance from just one part of the
+authentication equation to the sole <em>key</em>. This won&#8217;t work on an open-ditributed type
+of system, but since this is aimed at <em>personal</em> finances. We are assuming it will be
+consumed only by a select group of people. Trying to use the system for a <strong>SAAS</strong> is
+<strong>highly discouraged.</strong> Unless a password and extra security mechanisms are implemented,
+<em>if someone gets a hold of the e-mail he can easily log into the user&#8217;s environment and access
+everything, this being financial information, which is sensitive</em>. Even though we have
+<strong>optionally</strong> 2FA, a way to mitigate risk would be to <strong>make 2FA mandatory</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also worth noting that the frontend <strong>will never save the token</strong>. These are <strong>stateful tokens</strong> in
+a way, since the backend will be always giving the frontend the token it has saved (encrypted) on its side,
+we will also have the encrypted form of the token in the web client&#8217;s memory.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Domain</a></span>
+  <span class="next"><a href="users-module.html">Users Module</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

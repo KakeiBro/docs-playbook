@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vitest :: KakeiBro</title>
+    <link rel="prev" href="ci-cd-pipelines.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Frontend</a></li>
+    <li><a href="vitest.html">Vitest</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Vitest</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://blog.logrocket.com/vitest-adoption-guide/">Reference</a></p>
+</div>
+<div class="paragraph">
+<p>A good idea is to work with testing in mind, (best case scenario would rely on
+developing with TDD, specifically red-green testing). In a perfect world this is the
+way to test, it takes more time, <em>but it&#8217;s better in the long term</em>. However,
+<strong>this is not a perfect world</strong>. But knowing when to apply the principles and how
+is key when trying to get a solution to work, when trying to improve it (refactor),
+or when developing new things faster and in a more concise way, (you can even test out
+a bug or something pretty easily with tests).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As we know, we setup the frontend with <a href="index.html#setup" class="xref page">vitest</a>, having made this
+choice is even more fundamented since the <a href="https://react.dev/blog/2025/02/14/sunsetting-create-react-app">old ways</a>
+seems to be letting the modern solutions get into the limelight.</p>
+</div>
+<div class="paragraph">
+<p>In order to install vitest and configure it we followed:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Added libraries: <code>pnpm add -D @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @vitest/ui msw jsdom vitest</code></p>
+</li>
+<li>
+<p>We created a <code>setupTests.ts</code> file at the root of the <code>src/</code> folder.</p>
+</li>
+<li>
+<p>We created a <code>mocks</code> folder at <code>src/mocks</code>, and inside we have two files: <code>handlers.ts</code>,
+<code>server.ts</code></p>
+</li>
+<li>
+<p>We added a <code>vitest.config.ts</code> file next to <code>vite.config.ts</code>. <a href="https://vitest.dev/config/#configuring-vitest">Reference</a>,
+we also had to add this file inside of <code>tsconfig.node.json</code> so that eslint doesn&#8217;t
+mark the file with errors. This will take priority and will override <code>vite.config.ts</code>
+when running <code>vitest</code></p>
+</li>
+<li>
+<p>Heading into <code>tsconfig.app.json</code> we have to add some types so that we get extra linting
+and help when writing tests: <code>"types": ["vitest/globals", "jest", "@testing-library/jest-dom"]</code></p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="setting-up-code-coverage"><a class="anchor" href="#setting-up-code-coverage"></a>Setting up code coverage</h3>
+<div class="paragraph">
+<p>With everything laid out at <a href="#setup">Setup</a> we can already start writing tests and with
+the help of the <code>test</code> script run <em>vitest</em> and get the reports and everything as expected.</p>
+</div>
+<div class="paragraph">
+<p>However, another factor that we might want to consider when integrating with testing,
+is the fact that <strong>coverage</strong> can be (under the right hands) a good metric to get
+a feel of the <em>safety net</em> we have around our code.</p>
+</div>
+<div class="paragraph">
+<p>We can simply run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">pnpm add -D @vitest/coverage-v8</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>Since this package is needed in order for the <code>vitest run --coverage</code> command to work
+under the <code>coverage</code> script at <code>package.json</code>.</p>
+</div>
+<div class="paragraph">
+<p>This will create a <code>coverage</code> folder on top of generating results at the console level.
+The <code>converage</code> folder holds an <code>index.html</code> file that you can open in a browser to
+see the results for all files and you will see what lines of code are covered and which ones
+aren&#8217;t.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-the-flow"><a class="anchor" href="#about-the-flow"></a>About the flow</h3>
+<div class="paragraph">
+<p>The idea is to have a clear convention and work flow established. The project will
+aim at following a folder structure such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- component-folder</span></span>
+<span class="line"><span style="color: #F8F8F2">-- tests/</span></span>
+<span class="line"><span style="color: #F8F8F2">--- component.test.tsx</span></span>
+<span class="line"><span style="color: #F8F8F2">--- component2.test.tsx</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>And a test would normally follow this idea:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { render, screen } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'@testing-library/react'</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> App </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'./App'</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6E22E">test</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'initializing app has correct scaffold title'</span><span style="color: #F8F8F2">, </span><span style="color: #F92672">async</span><span style="color: #F8F8F2"> () </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #A6E22E">render</span><span style="color: #F8F8F2">(&lt;</span><span style="color: #66D9EF; font-style: italic">App</span><span style="color: #F8F8F2"> /&gt;); </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> heading </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> screen.</span><span style="color: #A6E22E">getByRole</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'heading'</span><span style="color: #F8F8F2">, { </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    name:</span><span style="color: #E6DB74"> /Vite </span><span style="color: #AE81FF">\+</span><span style="color: #E6DB74"> React/</span><span style="color: #F92672">i</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">  });</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #A6E22E">expect</span><span style="color: #F8F8F2">(heading).</span><span style="color: #A6E22E">toBeInTheDocument</span><span style="color: #F8F8F2">(); </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">});</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We should always setup everything and then render the component.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We would then start querying different elements on the DOM depending on the
+requirements, may it be async, sync, and always following accesibility as our way to
+access them.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>And lastly we would assert for the expected behavior on each of the components.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The phylosophy will be based heavily around the opinions of the very opinionated
+<a href="https://testing-library.com/docs/queries/about">testing-library</a> documentation. We should
+aim <em>functional testing</em>. We don&#8217;t have to isolate everything but build behavior
+by integrating the minimum component to be rendered in order to test the specific
+use case. We can obviously test many aspects of the component also, not just one
+specific name, color or title. But the most important part: <strong>Use Accesibility</strong>,
+try to test it with APIs/Entry points that a user would have, specially assistive
+technologies, it&#8217;s by trying to test through this framework that we can really account
+for the quality of the frontend code we are building and if we have covered all the
+neccesary use cases.</p>
+</div>
+<div class="paragraph">
+<p>We are aiming at mocking <code>http</code> calls entirely, hence we installed <code>msw</code> (Mock Service
+Worker). We also try to work with <code>user-event</code> since it&#8217;s a much more real approach
+to an actual user interaction, and we also make use of <code>js-dom</code> for the matchers that are
+way more concise and declarative.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tests-in-hooks-and-pipelines"><a class="anchor" href="#tests-in-hooks-and-pipelines"></a>Tests in hooks and pipelines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the beginning of the setup, the project didn&#8217;t have tests, the step <strong>that should
+be at a git hook level and/or CI/CD pipeline</strong> is a must. At least under our principles.</p>
+</div>
+<div class="paragraph">
+<p>And so after installing <code>vitest</code> and extending it to have <em>coverage</em> we finally got
+the testing step enabled. Some notes on this though:</p>
+</div>
+<div class="paragraph">
+<p>We have 3 scripts that leverage <code>vitest</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">"pTest": "vitest run --silent",</span></span>
+<span class="line"><span style="color: #F8F8F2">"test": "vitest --watch",</span></span>
+<span class="line"><span style="color: #F8F8F2">"coverage": "vitest run --coverage",</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p><code>pTest</code> should be run at hook/CI-CD levels always, otherwise <code>vitest</code> will run in watch
+mode and end up stuck since it&#8217;s expecting for a user input.<br>
+<code>test</code> can be run on local development environments, it will expect for user inputs
+and vitest has a great interface to only run certain tests, and also detect if some code
+changed and for tests for that code to run again.
+<code>coverage</code> this runs in <em>silent</em> mode (figure of speech), always, it will output
+the results to the console and to a <code>coverage</code> folder that we can then artifact or
+something else.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="ci-cd-pipelines.html">CI/CD Pipelines</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

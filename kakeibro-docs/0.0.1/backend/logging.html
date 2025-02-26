@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Logging :: KakeiBro</title>
+    <link rel="prev" href="ci-cd-pipelines.html">
+    <link rel="next" href="../frontend/index.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Backend</a></li>
+    <li><a href="logging.html">Logging</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Logging</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of <strong>cross-cutting concerns</strong>, but that feed off of
+<a href="../onboarding/index.html#monitoring-and-logging" class="xref page">DevOps principles</a> is, <strong>logging</strong>.
+Therea are tons of options, each with their own pros and cons when it comes to logging,
+there&#8217;s even a <em>stock logger</em> for .NET.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/serilog/serilog">Serilog</a> (7.4K+ stars)</p>
+</li>
+<li>
+<p><a href="https://github.com/NLog/NLog">NLog</a> (6.4K+ stars)</p>
+</li>
+<li>
+<p><a href="https://github.com/apache/logging-log4net">log4net</a> (800+ stars)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We will always prefer <em>FOSS</em>, mainly due to this being maintained out of passion and
+with the help of a community than paid options. And not just that, the most popular
+library is usually the most maintained, the most feature rich and with the most documentation
+out there.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="logging-best-practices"><a class="anchor" href="#logging-best-practices"></a>Logging Best Practices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Logging is a critical part of application development, but it needs to be done thoughtfully
+to balance <strong>usefulness</strong>, <strong>security</strong> and <strong>performance</strong>. We have many options
+as to <strong>where logs should go, what levels to use, and best practices</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The best practices we should keep in mind are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#logging-levels">Log Levels and When to Use Them</a></p>
+</li>
+<li>
+<p><a href="#where-should-logs-go">Where Should Logs Go?</a></p>
+</li>
+<li>
+<p><a href="#what-to-log-and-what-not-to-log">What to Log and What Not to Log</a></p>
+</li>
+<li>
+<p><a href="#performance-considerations">Performance Considerations</a></p>
+</li>
+<li>
+<p><a href="#log-rotation-settings">Log Rotation Settings</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serilog"><a class="anchor" href="#serilog"></a>Serilog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Serilog is a really robust logging library that has tons of <em>sinks</em>. Which are in
+essence, places you can output logs to. This goes from the very basic <code>Console</code>
+sink, all the way to centralizing services such as <em>Loggly</em>, <em>ELK</em> and others.</p>
+</div>
+<div class="paragraph">
+<p>The way to get Serilog and integrate seamlessly, is through the <code>Serilog.AspNetCore</code>
+package, <em>so we&#8217;ll install that</em>. Also, beware that this is a great candidate for
+<a href="net-modulith.html#global-usings" class="xref page">Global Usings</a>.</p>
+</div>
+<div class="paragraph">
+<p>A really declarative way to add Serilog to the DI container by feeding configurations
+through <code>appsettings.json</code> is :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #88846F">// Logging</span></span>
+<span class="line"><span style="color: #F8F8F2">builder.Host.</span><span style="color: #A6E22E">UseSerilog</span><span style="color: #F8F8F2">((context, configuration) </span><span style="color: #F92672">=&gt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">    configuration.ReadFrom.</span><span style="color: #A6E22E">Configuration</span><span style="color: #F8F8F2">(context.Configuration); </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">});</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We have an overload of <code>UseSerilog</code> applied to the <code>ConfigureHostBuilder</code> object
+we can retrieve from the <code>builder</code> instance. This will take that same <em>host</em> as a first
+parameter and the actual <em>serilog configuration</em> configuration instance.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can literally just load all configurations that map to names the library expects
+<strong>by convention</strong> by feeding the <code>context.Configuration</code> object to its <code>ReadFrom.Configuration()</code>
+method.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This is extremely concise, but needs to be understood in order to make sense, this is
+how the configuration file should look like:</p>
+</div>
+<div id="serilog-config" class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="json" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"Serilog"</span><span style="color: #F8F8F2">: { </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"Using"</span><span style="color: #F8F8F2">: [ </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Sinks.Console"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Sinks.File"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Enrichers.Environment"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Enrichers.Thread"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        ],</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"MinimumLevel"</span><span style="color: #F8F8F2">: { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #66D9EF; font-style: italic">"Default"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Information"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #66D9EF; font-style: italic">"Override"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Microsoft"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Warning"</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"System"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Warning"</span></span>
+<span class="line"><span style="color: #F8F8F2">            }</span></span>
+<span class="line"><span style="color: #F8F8F2">        },</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"WriteTo"</span><span style="color: #F8F8F2">: [ </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">            {</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Name"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Console"</span></span>
+<span class="line"><span style="color: #F8F8F2">            },</span></span>
+<span class="line"><span style="color: #F8F8F2">            {</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Name"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"File"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Args"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">                    </span><span style="color: #66D9EF; font-style: italic">"path"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"/logs/log.txt"</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">                    </span><span style="color: #66D9EF; font-style: italic">"rollingInterval"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Day"</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="9"></i><b>(9)</b></span>
+<span class="line"><span style="color: #F8F8F2">                    </span><span style="color: #66D9EF; font-style: italic">"rollOnFileSizeLimit"</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">true</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">                    </span><span style="color: #66D9EF; font-style: italic">"formatter"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact"</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="8"></i><b>(8)</b></span>
+<span class="line"><span style="color: #F8F8F2">                }</span></span>
+<span class="line"><span style="color: #F8F8F2">            }</span></span>
+<span class="line"><span style="color: #F8F8F2">        ],</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"Enrich"</span><span style="color: #F8F8F2">: [ </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"FromLogContext"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"WithMachineName"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"WithThreadId"</span></span>
+<span class="line"><span style="color: #F8F8F2">        ]</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"AllowedHosts"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"*"</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We will reference an object with the name "Serilog". This is the entry point,
+everything under this will modify the behavior of Serilog&#8217;s logger.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Under <code>Using</code> we can configure tons of sinks, for our purposes we will focus on
+a Console sink and a File sink, meaning we will output logs to a <strong>Console</strong> and
+to a <strong>File</strong>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>This is a setting that is pretty standard for all logging utilities. The application
+itself might output tons of logs, and with different levels (Warning, Error, Information),
+due to their <a href="#logging-levels">hierarchical nature</a>, we can set a reference level and
+logs will only be ouputted up until that level. And we can expand this further, (see
+point &lt;6&gt;)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>After configuring the namespaces for the Sinks we use, we can configure their
+behavior under <code>WriteTo</code>, <em>console</em> is pretty simple unless we want to configure it
+with some specific requirement in mind.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>We can then configure the <code>File</code> sink, where the log file is written to, plus
+its <a href="#log-rotation-settings">Log Rotation Settings</a>, alongside a <a href="#formatters">formatter</a>. If we are
+at a docker container, we might need to override it so that it can write to some path
+at the container level and that be mounted to the host machine, but if we simply
+want to output to the root of the source code (the root folder of the project), you
+can start at a relative path (&lt;first-level&gt;/&#8230;&#8203;).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Depending on what Enrichers we have declared under usings (&lt;2&gt;) we can add
+extra data to each log trace, for further details you can look at the
+<a href="#enrichments">Enrichments</a> section.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Due to <a href="#security-concerns">Security Concerns</a>, we might want to override <code>Microsoft</code> and <code>System</code>
+logs to only show <em>warnings</em> and below. <strong>Specially</strong> for production environments,
+otherwise we might be logging the current mode for the app (dev, prod) plus the IP
+at which it&#8217;s running and so on.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>We want a log structure that&#8217;s easily queryable, part of what <a href="#logging-theory">structured logging</a>
+brings to the table is to use <em>key-value pairs</em> in order to make logs both more readable,
+but also more queryable with other tools that might analyze logs. It&#8217;s through one
+formatter such as <code>CompactJsonFormatter</code> that we can get traces in a json (key-value)
+structure.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>Part of our <a href="#log-rotation-settings">Log Rotation Settings</a> will be to rotate the log file daily, and
+to switch to another file in case the file limit is reached, by default Serilog
+has this size as <strong>1 GB</strong>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This is how a log would look in a file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">{"@t":"2025-02-21T13:24:51.7254752Z","@mt":"Failed to determine the https port for redirect.","@l":"Warning","EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNAIFCFL388J:00000001","RequestPath":"/weatherforecast/","ConnectionId":"0HNAIFCFL388J"}</span></span>
+<span class="line"><span style="color: #F8F8F2">{"@t":"2025-02-21T13:26:59.2669140Z","@mt":"Now listening on: {address}","address":"http://localhost:5214","EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime"}</span></span>
+<span class="line"><span style="color: #F8F8F2">{"@t":"2025-02-21T13:26:59.2987332Z","@mt":"Application started. Press Ctrl+C to shut down.","SourceContext":"Microsoft.Hosting.Lifetime"}</span></span>
+<span class="line"><span style="color: #F8F8F2">{"@t":"2025-02-21T13:26:59.2998827Z","@mt":"Hosting environment: {EnvName}","EnvName":"Development","SourceContext":"Microsoft.Hosting.Lifetime"}</span></span>
+<span class="line"><span style="color: #F8F8F2">{"@t":"2025-02-21T13:26:59.3004469Z","@mt":"Content root path: {ContentRoot}","ContentRoot":"E:\\Documentos\\Diego\\Dev\\Projects\\KakeiBro\\kakeibro-api\\Kakeibro.API\\src\\KakeiBro.API","SourceContext":"Microsoft.Hosting.Lifetime"}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>And this is how you would visualize them in Console:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">[09:26:59 INF] Now listening on: http://localhost:5214</span></span>
+<span class="line"><span style="color: #F8F8F2">[09:26:59 INF] Application started. Press Ctrl+C to shut down.</span></span>
+<span class="line"><span style="color: #F8F8F2">[09:26:59 INF] Hosting environment: Development</span></span>
+<span class="line"><span style="color: #F8F8F2">[09:26:59 INF] Content root path: E:\Documentos\Diego\Dev\Projects\KakeiBro\kakeibro-api\Kakeibro.API\src\KakeiBro.API</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="sect2">
+<h3 id="file-keys"><a class="anchor" href="#file-keys"></a>File keys</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">@t</dt>
+<dd>
+<p>Timestamp of the log event in ISO 8601 format.</p>
+</dd>
+<dt class="hdlist1">@mt</dt>
+<dd>
+<p>Message template used in the log statement.</p>
+</dd>
+<dt class="hdlist1">@l</dt>
+<dd>
+<p>Log level of the event (e.g., Information, Warning, Error).</p>
+</dd>
+<dt class="hdlist1">EventId</dt>
+<dd>
+<p>An object containing:</p>
+<div class="paragraph">
+<p><strong>Id:</strong> Numeric identifier for the event.
+<strong>Name:</strong> Name or description of the event.</p>
+</div>
+</dd>
+<dt class="hdlist1">SourceContext</dt>
+<dd>
+<p>The source or context of the log event, often indicating the
+class or component that generated the log.</p>
+</dd>
+<dt class="hdlist1">RequestId</dt>
+<dd>
+<p>Unique identifier for the HTTP request associated with the log event.</p>
+</dd>
+<dt class="hdlist1">RequestPath</dt>
+<dd>
+<p>The path of the HTTP request.</p>
+</dd>
+<dt class="hdlist1">ConnectionId</dt>
+<dd>
+<p>Unique identifier for the connection associated with the log event.</p>
+</dd>
+<dt class="hdlist1">address</dt>
+<dd>
+<p>The address the application is listening on.</p>
+</dd>
+<dt class="hdlist1">EnvName</dt>
+<dd>
+<p>The hosting environment name (e.g., Development, Production).</p>
+</dd>
+<dt class="hdlist1">ContentRoot</dt>
+<dd>
+<p>The root path of the application&#8217;s content.</p>
+</dd>
+<dt class="hdlist1">MachineName</dt>
+<dd>
+<p>The name of the machine where the application is running.</p>
+</dd>
+<dt class="hdlist1">ThreadId</dt>
+<dd>
+<p>The ID of the thread that generated the log event.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Each field has a reason to be there, and depending on what code is executed, different
+logs will be generated with <strong>more or less of all of these fields.</strong> For example,
+if we were to make a Request to a REST endpoint, we would be getting things such as
+<code>RequestId</code>, <code>RequestPath</code>, <code>ConnectionId</code>. But for the Info logs of the app startup,
+we would not. And if we turn on <code>Information</code> logs as the minimal level, we will see how
+many of the own framework namespaces have built-in logs that are really informative
+(when done correctly). (<code>Microsoft.AspNetCore.Routing.EndpointMiddleware</code>,
+<code>Microsoft.AspNetCore.Hosting.Diagnostics</code>, <code>Microsoft.Hosting.Lifetime</code>). This will
+automatically input logs in regards to when an endpoint is called, what it found, and
+when it&#8217;s over. They are great to see the flow of information, and with the extra information
+such as a threadId, connectionId, you can even start debugging possible <strong>thread pool
+exhaustion</strong> or <strong>port exhaustion</strong> issues that might pop up.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="logging-theory"><a class="anchor" href="#logging-theory"></a>Logging Theory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are different ways to log information on an application, <em>unstructured logging,
+structured logging, event logging, distributed/telemetry logging, application
+performance logging (APM),</em>. They all have their use cases, and their pros and cons,
+however <strong>Serilog</strong> focuses on <strong>structured logging</strong> making logs more powerful for
+<strong>searching, filtering and analyzing</strong> in modern applications.</p>
+</div>
+<div class="paragraph">
+<p>In an app, logs, should be at <strong>all appropriate levels</strong> (From <code>Verbose</code> to <code>Fatal</code>)
+wherever they provide value. This means:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Logging detailed debugging information (<code>Verbose</code>, <code>Debug</code>) for troubleshooting.</p>
+</li>
+<li>
+<p>Logging high-level application flow <code>Info</code> for understanding what the application is doing.</p>
+</li>
+<li>
+<p>Logging warnings, errors, and fatal events for issues that need attention.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Some conceptual code would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">public</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">void</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ProcessOrder</span><span style="color: #F8F8F2">(</span><span style="color: #A6E22E; text-decoration: underline">Order</span><span style="color: #F8F8F2"> order)</span></span>
+<span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">    Log.</span><span style="color: #A6E22E">Verbose</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Starting to process order {@Order}"</span><span style="color: #F8F8F2">, order); </span><span style="color: #88846F">// Detailed tracing</span></span>
+<span class="line"><span style="color: #F8F8F2">    Log.</span><span style="color: #A6E22E">Debug</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Order total: {Total}"</span><span style="color: #F8F8F2">, order.Total); </span><span style="color: #88846F">// Debugging info</span></span>
+<span class="line"><span style="color: #F8F8F2">    Log.</span><span style="color: #A6E22E">Info</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Processing order {OrderId} for user {UserId}"</span><span style="color: #F8F8F2">, order.Id, order.UserId); </span><span style="color: #88846F">// Milestone</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">try</span></span>
+<span class="line"><span style="color: #F8F8F2">    {</span></span>
+<span class="line"><span style="color: #88846F">        // Business logic</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">catch</span><span style="color: #F8F8F2"> (</span><span style="color: #A6E22E; text-decoration: underline">Exception</span><span style="color: #F8F8F2"> ex)</span></span>
+<span class="line"><span style="color: #F8F8F2">    {</span></span>
+<span class="line"><span style="color: #F8F8F2">        Log.</span><span style="color: #A6E22E">Error</span><span style="color: #F8F8F2">(ex, </span><span style="color: #E6DB74">"Failed to process order {OrderId}"</span><span style="color: #F8F8F2">, order.Id); </span><span style="color: #88846F">// Error</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    Log.</span><span style="color: #A6E22E">Info</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Finished processing order {OrderId}"</span><span style="color: #F8F8F2">, order.Id); </span><span style="color: #88846F">// Milestone</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>By including all logs at all levels, we can ensure that the application is <strong>instrumented</strong>
+to provide as much information as needed, depending on the situation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A common best practice fails in the idea that at run-time we can switch the configuration
+for the logger so that it stops capturing some level of logs, or starts capturing
+another level. Based on the idea that we should always be logging as much as we can,
+with a sense of balance of course, but by doing this we enable our application to
+have this added functionality.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>So, based on all this information, we can say that <code>Logging</code> and <code>Filtering</code> <strong>should
+be treated as separate concerns.</strong> By separating by environment what types of logs
+we have enabled, we add security, performance, consistency to our code and we better our development
+efforts. We don&#8217;t have to hot-rod our apps per environment, because configurations
+take care of filtering out things we don&#8217;t want (and this is literally not logging the
+event at all, so we have less computation).</p>
+</div>
+<div class="sect2">
+<h3 id="logging-levels"><a class="anchor" href="#logging-levels"></a>Logging Levels</h3>
+<div class="paragraph">
+<p>Serilog follows <strong>six standard logging levels</strong> and these are based on the
+<a href="https://en.wikipedia.org/wiki/Syslog">Syslog standard</a>. Each level represents a
+different severity, helping us filtering logs efficiently:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Severity</th>
+<th class="tableblock halign-left valign-top">Level</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🔴 Critical error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The application crashes or cannot recover.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🟠 Serious issue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An operation failed, but the app continues running.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🟡 Potential issue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Something unexpected happened but did not cause failure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🔵 General events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal app behavior (e.g., "User logged in").</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debug</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🟣 Detailed debugging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Developer-focused logs, useful during development.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verbose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⚪ All details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Most detailed logs, including everything.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Whilst Logging is a <strong>critical part of application development</strong>, it needs to be done
+thoughtfully to balance <em>usefulness, security and performance</em>.</p>
+</div>
+<div class="sect3">
+<h4 id="security-concerns"><a class="anchor" href="#security-concerns"></a>Security Concerns</h4>
+<div class="paragraph">
+<p>Following the idea of the different <em>verbosity</em> levels of logs, we can choose up until
+what level we want to be outputted, the app might be emitting everything all up to
+<em>Verbose</em> however, if we set the level to be <em>Warning</em> it will only record from there
+upwards in the pyramid.</p>
+</div>
+<div class="paragraph">
+<p>A <em>best practice</em> at least for production environments is to configure logging to only
+include <strong>"Warning" levels and above</strong>. Specially for certain namespaces such as
+<code>Microsoft</code> or <code>System</code>, since they output things that might end up as security and
+privacy concerns.</p>
+</div>
+<div class="paragraph">
+<p>For example, if we run the application with everything at <code>Information</code> we might see
+a trace such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">[16:04:47 INF] Now listening on: http://localhost:5214</span></span>
+<span class="line"><span style="color: #F8F8F2">[16:04:47 INF] Hosting environment: Development</span></span>
+<span class="line"><span style="color: #F8F8F2">[16:04:47 INF] Content root path: E:\Documentos\Diego\Dev\Projects\KakeiBro\kakeibro-api\Kakeibro.API\src\KakeiBro.API</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>The logs might reveal:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The application is running in <strong>Development</strong> mode</p>
+</li>
+<li>
+<p>The <strong>content root path</strong></p>
+</li>
+<li>
+<p>The <strong>local endpoint</strong> where the application is listening</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The idea is that we should <strong>reduce attack surface</strong>, since logs can inadvertently
+expose information that attackers could use to exploit vulnerabilities. For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kowing the application is in <strong>Development</strong> mode might indicate that it is less
+secure or has debugging enabled.</p>
+</li>
+<li>
+<p>File paths or environments details could help attackers understand the system layout.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Besides that, many <strong>regulations (e.g., GDPR, HIPAA)</strong> require that senstive information
+not be logged or exposed. By limiting logs to <code>Warning</code> and above, you reduce the risk
+of accidentally logging sensitive data. _There will also be use cases in which we might
+want to reduce the noise of having the verbosity of <code>Information</code> and <code>Debug</code> specially
+for frameworks such as ASP.NET Core and Entity Framework Core.</p>
+</div>
+<div class="paragraph">
+<p>Besides that here are other considerations that you should be mindful of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Restrict access to logs:</strong> Ensure only authorized personnel can access log files
+or systems</p>
+</li>
+<li>
+<p><strong>Encrypt logs:</strong> Encrypt logs at rest and in transit, especially if they contain
+sensitive information</p>
+</li>
+<li>
+<p><strong>Rotate and archive logs:</strong> Use log rotation to manage disk space and archive
+old logs for compliance.</p>
+</li>
+<li>
+<p><strong>Audit Logs:</strong> Log access to sensitive resources or administrative actions.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Now we aren&#8217;t saying we have to do all of this, but each use case, each product, each
+organization will dictate what things should be apply when it comes to the <em>Logging</em>
+cross-cutting concern.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="when-to-use-them"><a class="anchor" href="#when-to-use-them"></a>When to use Them</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <strong>Verbose</strong> for extremely detailed tracing. (e.g., Logging every step of a
+complex algorithm).</p>
+</li>
+<li>
+<p>Use <strong>Debug</strong> for detailed debugging information (e.g., variable values, method
+calls).</p>
+</li>
+<li>
+<p>Use <strong>Info</strong> for high-level application flow (e.g., "User logged in", "Application
+started").</p>
+</li>
+<li>
+<p>Use <strong>Warning</strong> for recoverable issues or unexpected behavior. ("Falied to connect to
+the database, retrying", "Invalid input detected").</p>
+</li>
+<li>
+<p>Use <strong>Error</strong> for serious issues that need attention ("Failed to save user data", "External API
+call failed")</p>
+</li>
+<li>
+<p>Use <strong>Fatal</strong> only for critical failures that crash the application ("Out of memory",
+"Critical configuration missing")</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="where-should-logs-go"><a class="anchor" href="#where-should-logs-go"></a>Where Should Logs Go?</h3>
+<div class="paragraph">
+<p>Logs can be sent to one or more <strong>destinations (sinks)</strong> depending on the environment
+and use case.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Destination</th>
+<th class="tableblock halign-left valign-top">Use Case</th>
+<th class="tableblock halign-left valign-top">Pros</th>
+<th class="tableblock halign-left valign-top">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Console</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local development, debugging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Easy to set up, human-readable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not suitable for production.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Production environments, long-term storage.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Persistent, can be rotated and archived.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires disk space management.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Database</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Structured logging, queryable logs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Easy to query and analyze.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can impact database performance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Logging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distributed systems, centralized logging (e.g., Azure, AWS GCP).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scalable, centralized, and searchable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can be expensive at scale.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ELK Stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Centralized logging and analysis (Elasticsearch, Logstash, Kibana).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Powerful search and visualization capabilities.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires setup and maintenance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Structured logging with real-time search and analysis.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Easy to use, great for .NET applications.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires a Seq server.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <strong>Console</strong> for local development and debugging</p>
+</li>
+<li>
+<p>Use <strong>File</strong> or <strong>Cloud Logging</strong> for production environments</p>
+</li>
+<li>
+<p>Use <strong>structured logging</strong> (e.g., JSON format) for better analysis and querying</p>
+</li>
+<li>
+<p>Centralize logs in distributed systems using tools like <strong>ELK, Seq</strong>, or cloud
+logging services (such as Loggly).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you want to know more about <em>Seq</em> you can head down to its <a href="https://datalust.co/seq">Web Page</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-to-log-and-what-not-to-log"><a class="anchor" href="#what-to-log-and-what-not-to-log"></a>What to Log and What Not to Log</h3>
+<div class="paragraph">
+<p>A bit redundant, but just so we hone the point even further:</p>
+</div>
+<div class="paragraph">
+<p><strong>What to Log:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Application milestones (e.g., "Application started", "User logged in")</p>
+</li>
+<li>
+<p>Errors and warnings (e.g., "Failed to connect to the database")</p>
+</li>
+<li>
+<p>Key business events (e.g., "Order placed", "Payment processed")</p>
+</li>
+<li>
+<p>Performance metrics (.e.g, "Request completed in 200ms")</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>What Not to Log:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sensitive information:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Passwords, API keys, tokens</p>
+</li>
+<li>
+<p>Personally Identifiable Information (PII) like SSN, Credit Card numbers</p>
+</li>
+<li>
+<p>Health or financial data (unless properly anonymized)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Excessive details:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid logging entire request/response payloads unless neccesary</p>
+</li>
+<li>
+<p>Avoid logging at <strong>Verbose</strong> or <strong>Debug</strong> levels in production</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use <strong>structured logging</strong> to log key-value pairs instead of plain text, mask or redact
+sensitive information (e.g., replace credit card numbers with asterisks or the like),
+and log enough context to diagnose issues (request IDs, user IDs).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="performance-considerations"><a class="anchor" href="#performance-considerations"></a>Performance Considerations</h3>
+<div class="paragraph">
+<p>We should try to use <strong>asynchronous logging</strong> to avoid blocking the main application
+thread, we should also avoid logging <em>too</em> frequently, and in high-volume systems,
+log only a sample of events to reduce load.</p>
+</div>
+<div class="sect3">
+<h4 id="serilog-and-async-logging"><a class="anchor" href="#serilog-and-async-logging"></a>Serilog and Async Logging</h4>
+<div class="paragraph">
+<p>If you care about <strong>performance</strong> and <strong>scalability</strong>, you might want to switch to
+async syncs. These types of logs will be written <strong>in the background</strong>, and if a
+burst of log events happens these types of sinks can buffer log events and write
+them in batches, improving throughput. Slow I/O operations (writing to a file or
+database) won&#8217;t block the application thread.</p>
+</div>
+<div class="paragraph">
+<p><strong>Serilog does not have async threads by default</strong>. You need to install the <code>Serilog.SinksAsync</code>
+package. This wraps existing sinks and makes them asynchronous by buffering log events and
+writing them in the background.</p>
+</div>
+<div class="paragraph">
+<p>And the configuration should be updated such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="json" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"Serilog"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"Using"</span><span style="color: #F8F8F2">: [</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Sinks.Console"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Sinks.File"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"Serilog.Sinks.Async"</span><span style="color: #F8F8F2"> </span><span style="color: #88846F">// Add the Async sink</span></span>
+<span class="line"><span style="color: #F8F8F2">        ],</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"MinimumLevel"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #66D9EF; font-style: italic">"Default"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Information"</span></span>
+<span class="line"><span style="color: #F8F8F2">        },</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"WriteTo"</span><span style="color: #F8F8F2">: [</span></span>
+<span class="line"><span style="color: #F8F8F2">            {</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Name"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Async"</span><span style="color: #F8F8F2">, </span><span style="color: #88846F">// Wrap the Console sink in Async</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Args"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">                    </span><span style="color: #66D9EF; font-style: italic">"configure"</span><span style="color: #F8F8F2">: [</span></span>
+<span class="line"><span style="color: #F8F8F2">                        {</span></span>
+<span class="line"><span style="color: #F8F8F2">                            </span><span style="color: #66D9EF; font-style: italic">"Name"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Console"</span></span>
+<span class="line"><span style="color: #F8F8F2">                        }</span></span>
+<span class="line"><span style="color: #F8F8F2">                    ]</span></span>
+<span class="line"><span style="color: #F8F8F2">                }</span></span>
+<span class="line"><span style="color: #F8F8F2">            },</span></span>
+<span class="line"><span style="color: #F8F8F2">            {</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Name"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Async"</span><span style="color: #F8F8F2">, </span><span style="color: #88846F">// Wrap the File sink in Async</span></span>
+<span class="line"><span style="color: #F8F8F2">                </span><span style="color: #66D9EF; font-style: italic">"Args"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">                    </span><span style="color: #66D9EF; font-style: italic">"configure"</span><span style="color: #F8F8F2">: [</span></span>
+<span class="line"><span style="color: #F8F8F2">                        {</span></span>
+<span class="line"><span style="color: #F8F8F2">                            </span><span style="color: #66D9EF; font-style: italic">"Name"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"File"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">                            </span><span style="color: #66D9EF; font-style: italic">"Args"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">                                </span><span style="color: #66D9EF; font-style: italic">"path"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"logs/log.txt"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">                                </span><span style="color: #66D9EF; font-style: italic">"rollingInterval"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Day"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">                                </span><span style="color: #66D9EF; font-style: italic">"rollOnFileSizeLimit"</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">true</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">                                </span><span style="color: #66D9EF; font-style: italic">"formatter"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact"</span></span>
+<span class="line"><span style="color: #F8F8F2">                            }</span></span>
+<span class="line"><span style="color: #F8F8F2">                        }</span></span>
+<span class="line"><span style="color: #F8F8F2">                    ]</span></span>
+<span class="line"><span style="color: #F8F8F2">                }</span></span>
+<span class="line"><span style="color: #F8F8F2">            }</span></span>
+<span class="line"><span style="color: #F8F8F2">        ],</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">"Enrich"</span><span style="color: #F8F8F2">: [</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"FromLogContext"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"WithMachineName"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #CFCFC2">"WithThreadId"</span></span>
+<span class="line"><span style="color: #F8F8F2">        ]</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, we literally wrap all our syncs under a "Async" object. And we import
+the namespace that holds the async sinks.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Async</code> sink uses a <strong>bounded buffer</strong> to store log events before writing them. If
+the buffer fills up (e.g., due to a very high log volume), some log events may be
+dropped. But we can configure the buffer size to avoid such issues, <code>"bufferSize</code>: 50000.<br>
+We also have the added benefit of a <strong>graceful shutdown</strong>, meaning that when the
+application shuts down, the buffer ensures that are logs are written before exitting.<br>
+And lastly, while this improves performance by <strong>decoupling I/O operations</strong>, it introduces
+overhead due to buffering and background threading, but this overhead is negligible compared
+to benefits.</p>
+</div>
+<div class="paragraph">
+<p><strong>When should we consider using async logging?</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>High-volume logging:</strong> When your application generates a large number of log events</p>
+</li>
+<li>
+<p><strong>Slow sinks:</strong> When using sinks that perform slow I/O operations (e.g., file, database,
+or network-based sinks)</p>
+</li>
+<li>
+<p><strong>Performance-critical applications:</strong> When you need to minimize the impact of logging
+on application performance</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using async sinks, we will have the log operation getting sent to a <em>background thread</em>
+to write the log. But this <strong>does not mean that the threadId will refer to that background
+thread</strong>. The origin thread will be the one captured on the trace. <strong>ALWAYS</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="log-rotation-settings"><a class="anchor" href="#log-rotation-settings"></a>Log Rotation Settings</h3>
+<div class="paragraph">
+<p>Part of configuring a logging tool correctly is to establish good <strong>rotation settings</strong>.
+Specifically to avoid <strong>performance and storage issues</strong>. And it&#8217;s in this endeavor
+that we can lay out two specific settings:</p>
+</div>
+<div class="paragraph">
+<p><strong>Rolling Interval</strong></p>
+</div>
+<div class="paragraph">
+<p>This controls when a new log file is created, we can configure it so that a new log file
+is made daily, hourly, etc.</p>
+</div>
+<div class="paragraph">
+<p><strong>Roll on File Size Limit</strong></p>
+</div>
+<div class="paragraph">
+<p>Serilog has the default size limit at <strong>1 GB</strong>. The moment a file reaches this size
+it will automatically create a new log file to then start saving logs to.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="formatters"><a class="anchor" href="#formatters"></a>Formatters</h3>
+<div class="paragraph">
+<p>There are tons of formatters that we might want to use, but one that adheres specifically
+to <em>structured logging</em> is the <code>Serilog.Formatting.Compact.CompactJsonFormatter</code> class.</p>
+</div>
+<div class="paragraph">
+<p>When we looking at the <a href="#serilog-config">Serilog Config</a> we have under <code>formatter</code>,
+a string: <code>"formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact"</code>.
+This does two things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Serilog.Formatting.Compact.CompactJsonFormatter: First comes the fully qualified name
+of the actual class in charge of the formatting</p>
+</li>
+<li>
+<p>Serilog.Formatting.Compact: Then comes the assembly (namespace) at which
+our class is located.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Serilog needs to <strong>dynamically load this formatter at runtime</strong>, when specifying the
+formatter with all of this information then the library can find the correct formatter
+within the <code>appsettings.json</code> file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>CompactJsonFormatter</em></strong></p>
+</div>
+<div class="paragraph">
+<p>This formatter takes care of optimizing JSON log size by removing unnecessary whitespace,
+it also makes the logs machine-readable (structured logging) and it also has <em>faster
+parsing</em> compared to plain text logs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enrichments"><a class="anchor" href="#enrichments"></a>Enrichments</h3>
+<div class="paragraph">
+<p>Just so that we can add interchangable and customizable properties to a log trace, we
+can configure <em>enrichers</em>. Which are in essence specific classes and configurations we can
+stack as layers to the logger so that it outputs more information as we see fit.</p>
+</div>
+<div class="paragraph">
+<p>Since we have configured <a href="#serilog-config">three of them</a>, we will explain them here:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">FromLogContext</dt>
+<dd>
+<p>This itself doesn&#8217;t add extra properties, but enables an interface for
+us to add any custom property we might want, this can be easily done by adding code
+such as <code>LogContext.PushProperty("UserId", "12345")</code>, meaning that each trace will now
+have added to it a property such as: <code>"UserId": "12345"</code>.</p>
+</dd>
+<dt class="hdlist1">WithMachineName</dt>
+<dd>
+<p>This adds the machine name where the application is running, meaning
+each trace will now have a <code>"MachineName": "MyComputer"</code> property. It&#8217;s worth noting
+that we need to have installed its NuGet package 'Serilog.Enrichers.Environment'.</p>
+</dd>
+<dt class="hdlist1">WithThreadId</dt>
+<dd>
+<p>This adds the ID of the thread that generated the log event, meaning that
+we would get a property such as <code>"ThreadId": 12</code>, this also requires for its NuGet to
+be installed <code>Serilog.Enrichers.Thread</code>.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Besides that there are other Enrichers, here&#8217;s a list of others and their use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Serilog.Enrichers.Context: This provides additional enrichers for working with contextual
+data such as: <code>WithCorrelationId</code>, <code>WithClientIp</code>, <code>WithClientAgent</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For further details we can read up on the <a href="https://github.com/serilog/serilog/wiki/Enrichment">docs</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="ci-cd-pipelines.html">CI/CD Pipelines</a></span>
+  <span class="next"><a href="../frontend/index.html">Frontend</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

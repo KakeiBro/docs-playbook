@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CI/CD Pipelines :: KakeiBro</title>
+    <link rel="prev" href="net-modulith.html">
+    <link rel="next" href="logging.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Backend</a></li>
+    <li><a href="ci-cd-pipelines.html">CI/CD Pipelines</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">CI/CD Pipelines</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pipelines built with Github Actions, going all the way to the <strong>Deployment</strong> stage.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By convention pipelines are setup in <code>.yml</code> files that are comitted to the repository.
+They should be all under <code>.github/workflows/</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="philosophy"><a class="anchor" href="#philosophy"></a>Philosophy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The same philosophy we follow for the <a href="../frontend/ci-cd-pipelines.html#philosophy.adoc" class="xref page">Frontend&#8217;s pipelines</a>
+is also followed on the <em>backend</em>.</p>
+</div>
+<div class="paragraph">
+<p>Whilst we already have put a set of automation steps focused on each workstation through
+<a href="git-hooks.html" class="xref page">Git Hooks</a>, there are definitely many ways to circumvent those,
+and we shouldn&#8217;t have to rely entirely on each developer&#8217;s willingness to adhere
+to protocol but a centralized and (in theory) incorruptible source of thruth.
+Hence there are other mechanisms to keep tabs on code quality and correctness
+(according to a in-house set of rules).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pull Requests</p>
+</li>
+<li>
+<p>CI/CD Pipelines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the backend we will focus on running all checking and building logic, with additional
+steps such as <em>Building a Docker Image</em>, <em>Uploading it to Google Cloud Artifact Registry</em>
+and <em>Deploying that image in a Google Cloud Run instance</em>. Specifically for how things
+integrate with the Google Side of things, everything that&#8217;s neccesary will be laid
+out at the <a href="#google-cloud-run">Google Cloud Run</a> and <a href="#docker-image">Docker image</a> sections.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>And in that endeavor of making the pipelines to be as fast as possible, we will leverage
+caching, unlike the <a href="../frontend/ci-cd-pipelines.html#pr-pipeline" class="xref page">Frontend pipelines</a>,
+we are going to cache both Docker layers, alongside NuGet packages with the usage of
+a <code>actions.cache</code> pre-built action script. This approach is a bit more manual, yet
+it leverages the same idea of packages that were already downloaded and we shouldn&#8217;t
+have the need to download them again.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Due to the nature of the application, there are some security concerns tied with
+best practices that we should discuss in order to explain the decisions behind
+the pipelines design:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We should put behind variables and secrets references to versions or credentials,
+or things that in nature are dynamic and or sensitive.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Github has a feature to store sensitive data securely, you can configure
+<a href="https://github.com/github/docs/blob/main/content/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions.md">secrets</a>
+that way. That&#8217;s simply a key-value structure attached to a repo, an environment or a
+whole organization. In our case we will use a <strong>repository secrets store</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="secrets"><a class="anchor" href="#secrets"></a>Secrets</h3>
+<div class="paragraph">
+<p>All values stored behind secrets contain sensitive information and should <strong>not</strong> be
+exposed in the workflow file. Github goes out of its way to completely obfuscate these
+values on logs and any other place that could leak their actual values.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GCP_SA_KEY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains the JSON key for your Google Cloud service account, which grants access to deploy services. Must always be kept secret.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PROJECT_ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">While not as sensitive, it is generally a good practice to store it in secrets if you want to avoid accidental exposure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ARTIFACT_REGISTRY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If it&#8217;s specific to your cloud provider and shouldn&#8217;t be exposed in logs, store it in secrets. (This is the region plus the specific domain)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REPOSITORY_NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you use private repositories in Artifact Registry, this should be secret.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IMAGE_NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you use naming conventions that expose internal project details, store it in secrets.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>NOTE:</em> Once you add a secret to the vault, you will not be able to see its value ever
+again. So be mindful of that.</p>
+</div>
+<div class="sect3">
+<h4 id="gcp"><a class="anchor" href="#gcp"></a>GCP</h4>
+<div class="paragraph">
+<p>In order for the Github Action to be able to log into GCloud, push images and then deploy
+Cloud Run instances, we need to set a <em>Service Account Key</em>:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.google.com/iam/docs/keys-create-delete#console">Reference</a></p>
+</div>
+<div class="paragraph">
+<p>The easiest way to get this is by using the GCloud Console web app and downloading the
+service key as a <code>.json</code> file. This should never be uploaded anywhere, but the github
+secrets vault. We should paste the whole json file as the value of the key.</p>
+</div>
+<div class="paragraph">
+<p><em>Note:</em> Be sure to be under the correct google account and the correct project when generating
+this service key.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="variables"><a class="anchor" href="#variables"></a>Variables</h3>
+<div class="paragraph">
+<p>Following the same idea im programming to avoid magic numbers or strings, we should try
+to use variables, these in nature should be safe to explore in a workflow.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOTNET_VERSION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Just specifies which .NET version to use; no security concerns.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SERVICE_NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Cloud Run service name is not sensitive.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REGION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The region is not sensitive unless you&#8217;re trying to obscure deployment details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CACHE_VERSION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used for cache invalidation and not security-sensitive.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="line-endings-with-dotnet-format"><a class="anchor" href="#line-endings-with-dotnet-format"></a>Line endings with dotnet format</h3>
+<div class="paragraph">
+<p>When working cross-platform, a common concept we have to be aware of is that Windows
+has a different line ending than Unix-based OS'. Carriage Return + Line Feed <code>\r\n</code>
+vs Line Feed`\n`. It&#8217;s based on this concept that when running a pipeline with
+<code>dotnet format</code> a Linux distribution, will immediately highlight the
+difference and fail. In order to get around this, we have to make 2 changes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We can leverage <code>git</code> in order to enforce that it handles line endings, so that
+the moment we commit to a repository, regardless of the OS, the <code>\n</code> (Line Feed)
+character is used.</p>
+<div class="paragraph">
+<p>For this we simply have to create a <code>.gitattributes</code> file at the root of the repo and
+add it with the following content:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2"># Set the default behavior for all files</span></span>
+<span class="line"><span style="color: #F8F8F2">* text=auto</span></span>
+<span class="line"><span style="color: #F8F8F2"></span></span>
+<span class="line"><span style="color: #F8F8F2"># Force specific line endings for certain file types</span></span>
+<span class="line"><span style="color: #F8F8F2">*.cs text eol=lf</span></span></code></pre></body></html>
+</div>
+</div>
+</li>
+<li>
+<p>If we have already incorrect-format files, we have to manually leverage the IDE so
+that we save the file and switch the CRLF format to LF.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>But lastly, we need to make sure our <code>.editorconfig</code> settings are correct, for more info
+you can head down to the <a href="index.html#line-endings" class="xref page">Code Quality</a> section.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pr-pipeline"><a class="anchor" href="#pr-pipeline"></a>PR Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This consists of <strong>one job</strong>, "Build and Test".</p>
+</div>
+<div class="sect2">
+<h3 id="build-and-test"><a class="anchor" href="#build-and-test"></a>Build and Test</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Checkout code with pre-built script, and point to the second level solution folder.</p>
+</li>
+<li>
+<p>Setup <code>actions/setup-dotnet@v4</code> to use .NET 9</p>
+</li>
+<li>
+<p>Cache NuGet (and possible node) packages from .NET.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>actions/cache@v4</code> is a built-in action using to cache files across workflow
+runs. (General approach not tech-stack specific).</p>
+</li>
+<li>
+<p>It specifices <em>what to cache</em>, .NET stores downloaded dependencies at <code>~/.nuget/packages</code>.</p>
+</li>
+<li>
+<p>We then build a unique key to identify if we have a current project state that has the
+same packages. The different components to this key are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>runner.os</strong> &#8658; The OS running the workflow (ubuntu-latest, windows-latest, etc)</p>
+</li>
+<li>
+<p><strong>nuget</strong> &#8658; A fixed identifier to describe the cache type.</p>
+</li>
+<li>
+<p><strong>env.CACHE_VERSION</strong> &#8658; A variable that can be incremented manually to force cache
+invalidation</p>
+</li>
+<li>
+<p>A hash of <code>.csproj</code> and <code>packages.lock.json</code> files. If any of these files are changed,
+the cache <strong>becomes invalid</strong> and dependencies are downloaded again.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We also have a fallback mechanism if the exact key isn&#8217;t found that&#8217;s built only
+with a partial prefix: <code>runner.os</code>-nuget-<code>env.CACHE_VERSION</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>E.g: If the key <code>ubuntu-latest-nuget-v1-abc123</code> isn&#8217;t found, GitHub will try a less
+specific key like <code>ubuntu-latest-nuget-v1-</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>IMPORTANT:</strong> This is probably one of the most important steps when it comes to
+speeding up builds, we avoid re-downloading dependencies, reduce network usage, and
+workflow consistency is enforced since we ensure we use the same dependencies across
+runs. For a bit more of a breakdown of how this step is idempotent and useful you can
+check out the <a href="#github-action-caching">GitHub Action Caching</a> section.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restore dependencies</p>
+</li>
+<li>
+<p>Check code format</p>
+</li>
+<li>
+<p>Build the project</p>
+</li>
+<li>
+<p>Run tests but on <strong>Release mode</strong>, this build is optimized so tests may run differently
+to a <code>Debug</code> build. Also, we are skipping building since that was already done in
+a previous step (faster times), and also in the end we want a bit more detail on tests if
+something wrongs pops up, hence we are stating for verbosity to be <code>normal</code>, since by
+default it&#8217;s only at <code>minimal</code>.</p>
+</li>
+<li>
+<p>Check outdated packages</p>
+</li>
+<li>
+<p>Run vulnerabilities check</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="master-pipeline"><a class="anchor" href="#master-pipeline"></a>Master Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This consists of <strong>three jobs</strong>, "Build and Test", "Build and push docker image"
+and "Deploy image to Cloud Run".</p>
+</div>
+<div class="sect2">
+<h3 id="build-and-test-2"><a class="anchor" href="#build-and-test-2"></a>Build and Test</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Checkout code with pre-built script, and point to the second level solution folder.</p>
+</li>
+<li>
+<p>Setup <code>actions/setup-dotnet@v4</code> to use .NET 9</p>
+</li>
+<li>
+<p>Cache NuGet (and possible node) packages from .NET.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>actions/cache@v4</code> is a built-in action using to cache files across workflow
+runs. (General approach not tech-stack specific).</p>
+</li>
+<li>
+<p>It specifices <em>what to cache</em>, .NET stores downloaded dependencies at <code>~/.nuget/packages</code>.</p>
+</li>
+<li>
+<p>We then build a unique key to identify if we have a current project state that has the
+same packages. The different components to this key are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>runner.os</strong> &#8658; The OS running the workflow (ubuntu-latest, windows-latest, etc)</p>
+</li>
+<li>
+<p><strong>nuget</strong> &#8658; A fixed identifier to describe the cache type.</p>
+</li>
+<li>
+<p><strong>env.CACHE_VERSION</strong> &#8658; A variable that can be incremented manually to force cache
+invalidation</p>
+</li>
+<li>
+<p>A hash of <code>.csproj</code> and <code>packages.lock.json</code> files. If any of these files are changed,
+the cache <strong>becomes invalid</strong> and dependencies are downloaded again.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We also have a fallback mechanism if the exact key isn&#8217;t found that&#8217;s built only
+with a partial prefix: <code>runner.os</code>-nuget-<code>env.CACHE_VERSION</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>E.g: If the key <code>ubuntu-latest-nuget-v1-abc123</code> isn&#8217;t found, GitHub will try a less
+specific key like <code>ubuntu-latest-nuget-v1-</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>IMPORTANT:</strong> This is probably one of the most important steps when it comes to
+speeding up builds, we avoid re-downloading dependencies, reduce network usage, and
+workflow consistency is enforced since we ensure we use the same dependencies across
+runs. For a bit more of a breakdown of how this step is idempotent and useful you can
+check out the <a href="#github-action-caching">GitHub Action Caching</a> section.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restore dependencies</p>
+</li>
+<li>
+<p>Check code format</p>
+</li>
+<li>
+<p>Build the project</p>
+</li>
+<li>
+<p>Run tests but on <strong>Release mode</strong>, this build is optimized so tests may run differently
+to a <code>Debug</code> build. Also, we are skipping building since that was already done in
+a previous step (faster times), and also in the end we want a bit more detail on tests if
+something wrongs pops up, hence we are stating for verbosity to be <code>normal</code>, since by
+default it&#8217;s only at <code>minimal</code>.</p>
+</li>
+<li>
+<p>Check outdated packages</p>
+</li>
+<li>
+<p>Run vulnerabilities check</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="build-and-push-docker-image"><a class="anchor" href="#build-and-push-docker-image"></a>Build and push docker image</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Checkout code with built-in action</p>
+</li>
+<li>
+<p>Setup another specific built in action to build a docker image:
+<code>docker/setup-buildx-action@v3</code></p>
+</li>
+<li>
+<p>Following the same pattern for caching as in <a href="#build-and-test">Build and Test</a>, we set a specific
+cache key built from <code>runner.os</code>-buildx-<code>env.CACHE_VERSION</code>-<code>github-sha</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>One difference is that the action we will use for building and then pushing will
+save its docker layers at <code>/tmp/.buildx-cache</code>, hence we reference that specific path.</p>
+</li>
+<li>
+<p>This optimization is micro in nature, since it will only re-use layers that are specific
+for a commit, hence <code>github.sha</code> is there to make the caches unique to a specific HEAD
+commit.</p>
+</li>
+<li>
+<p>And the fallback with omit that HASH, in any case, we will try our best to restore
+cached layers from previous runs and when running the docker build and all it will pick
+up on the things it can reuse or the things it can&#8217;t. When the code changes (as new commits
+are pushed), the layers should be re-built in theory, hence we add the commit variable.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We then make usage of another built-in repice: <code>docker/login-action@v3</code>. This takes
+parameters such as the <strong>artifact registry</strong> (that&#8217;s the root, e.g: <code>your-region-docker.pkg-dev</code>),
+a <strong>username</strong> that if hard-set at <em>_json_key</em> it will expect to have the whole json
+string fed to it in the following filed under <strong>password</strong>.</p>
+</li>
+<li>
+<p>We leverage another built-in recipe: <code>docker/build-push-action@v4</code>. This in essence
+builds a Dockerfile and it then pushes that to a configured registry.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>context</code> is given through a parameter, since we have to be at the <strong>solution folder</strong>
+level we adjust it to <strong>./Kakeibro.API</strong></p>
+</li>
+<li>
+<p>The action can be configured to not do a push by the end, but we want to so we
+set it to <strong>true</strong>.</p>
+</li>
+<li>
+<p>A <strong>good practice</strong> is to always <span id="push-two-tags">push two tags</span>, one referring to the new <em>latest</em>
+and then another under the specific <em>commit_id</em>. But there&#8217;s something to take into
+consideration here. <strong>We are not pushing two images</strong>. We are pushing one image, but
+that can be accessed by two different tags, a <em>latest</em> one and a <em>commit-id</em> one.
+In subsequent runs the <em>latest</em> tag will point to the newer image that should also have
+its new <em>commit-id</em> tag. Hence we are always pushing the <em>latest</em> tag to the latest and
+just using references to make integration seamless. But this, overtime, can generate
+junk for stale images we won&#8217;t use at all, for more info on this you can check out
+the <a href="#cleaning-image-registries">Cleaning Image Registries</a> section.</p>
+</li>
+<li>
+<p>Under <code>cache-from</code> and <code>cache-to</code> we can configure the action to try to restore
+a previous cache (and notice how it&#8217;s pointing to <code>/tmp/.buildx-cache</code>), and also save
+all layers and artifacts to the same location (so that our caching action can then
+save it for subsequent runs), and lastly with the <code>mode</code> parameter it will always try
+to store the maximum number of layers. This way Docker will only rebuild the layers
+that have changed, using the cached layers for everything else.</p>
+</li>
+<li>
+<p>Lastly, since our project is not <em>compliance</em> sensitive,
+<a href="#build-push-action-provenance">provenance</a> is not something we care about, and to avoid
+generating more artifacts that we have no use for (and that generate noise), we are turning
+it <strong>off</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy-image-to-cloud-run"><a class="anchor" href="#deploy-image-to-cloud-run"></a>Deploy image to Cloud Run</h3>
+<div class="paragraph">
+<p>Steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Checkout code with built-in script</p>
+</li>
+<li>
+<p>We use another built-in action <code>google-github-actions/auth@v2</code>, that automatically
+receives a <code>credentials_json</code> and will authenticate with GCloud.</p>
+</li>
+<li>
+<p>We make sure we have the GCloud SDK setup so that we can start consuming the respective
+APIs to spin up an image from the Registry that has the latest pushed image from
+the <a href="#build-and-push-docker-image">Build and push docker image</a> job. Luckily <code>google-github-actions/setup-gcloud@v2</code>
+takes care of abstracting all of that.</p>
+</li>
+<li>
+<p>We run a deploy to our configured <code>kakeibro-api</code> service with the same recommendations
+under <a href="#google-cloud-run">Google Cloud Run</a>, but now in a CLI command version. We will be always pushing
+the <strong>latest</strong> tag, and on an already existing instance it will simply replace the image that
+its hosting with the newly built one. <strong>Every detail counts</strong>, the replacement will only
+take place if we are pointing to the same name and same configurations, if something
+like the <em>region</em> is different, it will create two services with the same name, but on
+different regions.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="docker-image"><a class="anchor" href="#docker-image"></a>Docker image</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since <code>.NET 8</code> a big emphasis was put into working with Docker out the box and with
+<em>best practices</em> in mind. Hence, there&#8217;s already a <code>Dockerfile</code> file already present in
+the repo from scaffolding directly, and it makes use of an <code>app</code> or <code>APP_UID</code> user
+to run the app and not <code>root</code>, and standard HTTP and HTTPS ports (8080, 8081 respectively).</p>
+</div>
+<div class="paragraph">
+<p>The command to build the <code>API</code> project&#8217;s Docker image is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">docker build -t kakeibro-api -f .\src\KakeiBro.API\Dockerfile .</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>By convention all scaffolded <code>Dockerfile</code> files are expecting to be <strong>run at the solution
+folder level</strong>, hence we have to be standing at <code>Kakibro.API</code> and from there run the command.</p>
+</div>
+<div class="paragraph">
+<p>And in order to run a container manually you can do something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">docker run --rm -p 5214:8080 kakeibro-api</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Comment:</em> When working with Visual Studio, you might also see a <code>Microsoft.VisualStudio.Azure.Containers.Tools.Targets</code>
+package installed, this is leveraged in order to generate <code>Dockerfile</code> files that are
+context aware, meaning that it will have all instructions referencing to the current state
+of the application, in case we use Visual Studio this could be useful, but for other
+IDE&#8217;s this would be redundant.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>After the <code>app</code> user convention it was later published a new convention, hence we
+don&#8217;t have to use <code>USER app</code> but <code>USER $APP_UID</code>. <a href="https://github.com/dotnet/dotnet-docker/issues/4506">Reference</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also worth noting that with <a href="net-modulith.html#centralized-nuget-packages" class="xref page">Centralized Package Management</a>.
+`Dockerfile`s have to have some additions to the default structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2"># This stage is used to build the service project</span></span>
+<span class="line"><span style="color: #F8F8F2">FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build</span></span>
+<span class="line"><span style="color: #F8F8F2">ARG BUILD_CONFIGURATION=Release</span></span>
+<span class="line"><span style="color: #F8F8F2">WORKDIR /src</span></span>
+<span class="line"><span style="color: #F8F8F2">COPY ["Directory.Packages.props", "."]</span></span>
+<span class="line"><span style="color: #F8F8F2">COPY ["Directory.Build.props", "."]</span></span>
+<span class="line"><span style="color: #F8F8F2">COPY ["src/KakeiBro.API/KakeiBro.API.csproj", "src/KakeiBro.API/"]</span></span>
+<span class="line"><span style="color: #F8F8F2">RUN dotnet restore "./src/KakeiBro.API/KakeiBro.API.csproj"</span></span>
+<span class="line"><span style="color: #F8F8F2">COPY . .</span></span>
+<span class="line"><span style="color: #F8F8F2">WORKDIR "/src/src/KakeiBro.API"</span></span>
+<span class="line"><span style="color: #F8F8F2">RUN dotnet build "./KakeiBro.API.csproj" -c $BUILD_CONFIGURATION -o /app/build</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>It is at the <code>restore</code> stage specifically, that if we don&#8217;t have the <code>Directory.*</code>
+files copied at the same level, we won&#8217;t be able to resolve the NuGet dependencies
+and other settings that should be tied to the specific project we are containerizing.
+Hence we have to <strong>copy those files</strong> and <strong>then start the build process.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="google-cloud-run"><a class="anchor" href="#google-cloud-run"></a>Google Cloud Run</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>HINT:</strong> <a href="https://www.youtube.com/watch?v=cw34KMPSt4k">Reference</a>.</p>
+</div>
+<div class="paragraph">
+<p>Leveraging the same <a href="../prototypes/o-auth.html" class="xref page">GCloud Console Project</a>, we will
+make use of the <em>Artifact Registry</em> and the <em>Cloud Run</em> services in order to have
+docker images hosted plus spinning them up on demand (cold starts will be assumed).</p>
+</div>
+<div class="paragraph">
+<p>After creating an <em>Artifact Registry</em> repository, (in our case it is called <em>kakeibro-api</em>),
+we can then copy its URL (e.g: us-east1-docker.pkg.dev/kakeibro/kakeibro-api/&lt;image-name&gt;),
+and with that you can tag an existing image you have on your local machine <code>docker tag kakeibro-api &lt;URL&gt;</code>.
+And after that you can push the image by doing a <code>docker push &lt;URL&gt;</code>. All images that
+are under that repository will be pushed.</p>
+</div>
+<div class="paragraph">
+<p>It is after an image is present in a registry that we can switch to <em>Cloud Run</em> and then
+configure a service to spin up an instance of the service under that image.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Don&#8217;t forget to make the service to be unauthenticated (unless you want to leverage
+Google Auth as an intermediate layer), but either way, if you turn this off any public
+IP will be able to talk to the instance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We are setting it up with <code>1 GB</code> ram, and for it to not have a minimum number of
+instances, and that is due to the fact we will incurr in billing costs if we do allocate
+it.</p>
+</div>
+<div class="paragraph">
+<p>Once we have tied the service to our docker image and start the service, after GCloud
+has allocated the resources and everything behind the scenes, we should be able to hit
+the endpoint in the cloud and we should be getting back something. We can also configure
+custom domains, and in our case we will leverage the <code>dsbalderrama.top</code> domain that has
+been purchased, to map a web url to it, but specific to our <em>KakeiBro</em> domain.</p>
+</div>
+<div class="paragraph">
+<p>This involves going into the <strong>domain provider&#8217;s website</strong>, and adding <strong>CNAME</strong> records that
+GCloud Console provides to us in a <strong>step-by-step window</strong>. It will take some time for
+<strong>provisioning</strong> though, so just wait until GCloud has <strong>synchronized itself</strong> with the DNS
+replication.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When trying to construct the URL to push the image, at the beginning you will have an
+empty repository folder, you need to then add a last segment for the name of the file that will
+be the image. E.g: &lt;region-server&gt;/kakeibro/&lt;kakeibro-api&gt;. The last <em>kakeibro-api</em>
+is the name of the actual image file. If you don&#8217;t add the last segment you will get an
+error.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now pushing will not work unless you are logged into GCloud, you need the <a href="../onboarding/index.html" class="xref page">gcloud CLI</a>
+installed for that. With it, you should log into your account that has the project that
+will host the <strong>docker image</strong> alongside the <strong>cloud run instance</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>gcloud auth login</code></p>
+</li>
+<li>
+<p><code>gcloud config set project PROJECT_ID</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once you have been logged in, and you are at the specific GCloud project (the ID can
+be retrieved from the list of project&#8217;s at the home page of GCloud Console). You should
+be able to push the docker image normally.</p>
+</div>
+<div class="paragraph">
+<p>Lastly, the <strong>endpoint URL for the service</strong> is <strong><a href="https://kakeibro-api.dsbalderrama.top" class="bare">https://kakeibro-api.dsbalderrama.top</a></strong></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A particularity to the pre-built action on <a href="#build-and-push-docker-image">Build and push docker image</a>, is that in
+Google Artifact Registry it might generate more artifacts without tags, (<a href="https://github.com/docker/build-push-action/issues/771">Reference</a>),
+and so, an active decision that was taken was to use the latest version: <code>docker/build-push-action@v6</code>,
+plus setting <code>provenance: false</code>, for more info on provenance you can head into its
+own <a href="#build-push-action-provenance">Build Push Action Provenance</a> section</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="build-push-action-provenance"><a class="anchor" href="#build-push-action-provenance"></a>Build Push Action Provenance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provenance metadata includes details about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The build environment (e.g, Git commit SHA, timestamp, build parameters)</p>
+</li>
+<li>
+<p>The source used for building the image (e.g., repository URL)</p>
+</li>
+<li>
+<p>The toolchain used (e.g., Docker BuildKit version)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This metadata helps with <strong>supply chain security</strong> by making builds traceable and
+verifiable, which is useful for <strong>SBOM</strong> (Software Bill of Materials) and <strong>SLSA</strong> (Supply-chain
+Levels for Software Artifacts) compliance.</p>
+</div>
+<div class="paragraph">
+<p>Turning it <strong>off</strong> does the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It <strong>disables</strong> the inclusion of build provenance metadata in the final image.</p>
+</li>
+<li>
+<p>This results in a <strong>smaller</strong> image size.</p>
+</li>
+<li>
+<p>It may also improve <strong>build performance</strong> slightly.</p>
+</li>
+<li>
+<p>However it <strong>removes traceability</strong>, making it harder to verify the image source
+in security audits.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>When to use it?</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You <strong>don&#8217;t need supply chain security features</strong></p>
+</li>
+<li>
+<p>You <strong>want a smaller, simpler image</strong>.</p>
+</li>
+<li>
+<p>You&#8217;re working in a <strong>private, trusted environment</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>When should you let provenance?</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You need to <strong>track the origin of builds</strong> (e.g., for compliance reasons)</p>
+</li>
+<li>
+<p>You&#8217;re in a <strong>security-sensitive</strong> environment (e.g., public images, regulated industries)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="github-action-caching"><a class="anchor" href="#github-action-caching"></a>GitHub Action Caching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a quick breakdown of how the <code>actions/cache@v4</code> works:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Condition</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cache exists and matches the key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies are restored from cache.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cache exists but doesn&#8217;t fully match</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GitHub restores from the closest matching restore-keys prefix.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cache doesn&#8217;t exist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies are downloaded, then saved to cache for future runs.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In short, we try to get from an <em>external nebulous site</em> our cached dependencies and they
+get restored (copied) into the current action run (at least they try their best to).</p>
+</div>
+<div class="paragraph">
+<p>When heading down to <em>Actions &gt; Caches</em> we will see a list of the caches that were created
+through GitHub Actions. So this isn&#8217;t as <em>automated</em> as you might think, these caches will
+start piling up as the project starts to grow, so a good way to housekeep is to have scripts,
+or some other job in charge of getting rid of stale caches that have no usage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cleaning-image-registries"><a class="anchor" href="#cleaning-image-registries"></a>Cleaning Image Registries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>good practice</strong> is to periodically clean up stale image tags, especially in a
+CI/CD pipeline that generates a lot of tags over time (like commit-specific ones).
+Unmanaged or redundant image tags can lead to unnecesary storage costs and clutter
+your registry.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Retention Policy</p>
+<div class="paragraph">
+<p>The <code>latest</code> tag should always be updated, and we should only have <strong>one</strong>. Commit hash
+tags are useful for referencing specific versions, but since they can accumulate over time,
+we can remove old commit tags, and lastly, we can add versioning to our tags, however,
+we should also remove them when no longer used.</p>
+</div>
+</li>
+<li>
+<p>Automating Cleanup</p>
+<div class="paragraph">
+<p>We can leverage registry features, such as Google Artifact Registry, Docker Hub, etc,
+if they provide features to manage and delete unused or old tags automatically. The
+policies can range from old tags after a specific period or when the number
+of tags exceeds a certain threshold. The <em>second options</em> would be a custom script,
+<strong>this is what we will do</strong>, we can run checks on Image age, number of tags, or tags
+associated with unmerged or stale branches.</p>
+</div>
+</li>
+<li>
+<p>Best Practices for Cleanup</p>
+<div class="paragraph">
+<p>We should <strong>keep the latest and stable versions</strong>, so that you have the latest and also
+some image you can roll-back to. <strong>Automate cleanup based on usage</strong>, only keep images
+that are actively used in deployments or are tagged as critical releases.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="cron-github-action"><a class="anchor" href="#cron-github-action"></a>CRON GitHub Action</h3>
+<div class="paragraph">
+<p>First of all, we will assume we have a scripts folder at <code>.github</code> so that we put in
+scripts that actions might want to run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">.github/</span></span>
+<span class="line"><span style="color: #F8F8F2">  workflows/</span></span>
+<span class="line"><span style="color: #F8F8F2">    cleanup-image-registry.yml</span></span>
+<span class="line"><span style="color: #F8F8F2">  scripts/</span></span>
+<span class="line"><span style="color: #F8F8F2">    image-cleanup.sh</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the action itself:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">CRON Job to Housekeep Google Artifact Registry</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #AE81FF">on</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">workflow_dispatch</span><span style="color: #F8F8F2">: </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">schedule</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    - </span><span style="color: #F92672">cron</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">'0 0 * * *'</span><span style="color: #F8F8F2">  </span><span style="color: #88846F"># Runs daily at midnight UTC </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">jobs</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">connect-setup-and-run-script</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Connect and Setup Google Cloud</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">runs-on</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">ubuntu-latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">steps</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #88846F"># Checkout the repository</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Checkout code</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">actions/checkout@v3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #88846F"># Set up Google Cloud authentication</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Authenticate to Google Cloud</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">google-github-actions/auth@v2</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">with</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">credentials_json</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ secrets.GCP_SA_KEY }}</span><span style="color: #F8F8F2"> </span><span style="color: #88846F"># JSON key for GCP service account</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #88846F"># Set up Google Cloud SDK</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Set up Google Cloud SDK</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">uses</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">google-github-actions/setup-gcloud@v2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #88846F"># Run the script from the .github/scripts folder</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Run custom script</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">env</span><span style="color: #F8F8F2">: </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">SERVICE_NAME</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">'kakeibro-api'</span><span style="color: #F8F8F2"> </span><span style="color: #88846F"># Cloud Run service name</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">REGION</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">'us-central1'</span><span style="color: #F8F8F2"> </span><span style="color: #88846F"># Cloud Run region (e.g., us-central1)</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">PROJECT_ID</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ secrets.PROJECT_ID }}</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">REPOSITORY_NAME</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ secrets.REPOSITORY_NAME }}</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">IMAGE_NAME</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">${{ secrets.IMAGE_NAME }}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          chmod +x .github/scripts/image-cleanup.sh </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">          .github/scripts/image-cleanup.sh </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>If <code>workflow_dispatch</code> is stated under the trigger conditions of the action, it will
+allow for us to head to the <em>Actios</em> tab at the repo level and click a button to trigger
+it manually.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>GitHub Actions can be configured to run on a CRON manner, great for periodic jobs
+that should run even when we are not there. In our case we will always clean up the
+gcloud artifact registry at midnight, and we will only keep the last 3 tags alive.
+Remember that <a href="#push-two-tags">we have 2 tags that are the same image</a>,
+meaning that <code>latest</code> will take one space, and the following two will be the latest image&#8217;s
+commit tag and the previous commit&#8217;s tag. So we are keeping in essence a latest and
+one previous version backup.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Just we keep security in mind and good practices in here as well, we can declare
+env variables at a specific step of a job, and so that Github obfuscates values that
+might come from the <em>secrets</em> vault, we have to assign them like this.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>And the specific script is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="bash" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #88846F">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F"># Variables</span></span>
+<span class="line"><span style="color: #F8F8F2">SERVICE_NAME</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$SERVICE_NAME </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">REGION</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REGION</span></span>
+<span class="line"><span style="color: #F8F8F2">PROJECT_ID</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$PROJECT_ID</span></span>
+<span class="line"><span style="color: #F8F8F2">REPOSITORY_NAME</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span></span>
+<span class="line"><span style="color: #F8F8F2">IMAGE_NAME</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$IMAGE_NAME</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F"># Authenticate to Google Cloud (already done in the workflow, but included for completeness)</span></span>
+<span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Authenticating to Google Cloud..."</span></span>
+<span class="line"><span style="color: #A6E22E">gcloud</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">auth</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">activate-service-account</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">--key-file=</span><span style="color: #F8F8F2">$GOOGLE_APPLICATION_CREDENTIALS</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F"># Get the list of tags for the specified package, sorted by creation time in descending order</span></span>
+<span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Fetching tags for package..."</span></span>
+<span class="line"><span style="color: #F8F8F2">TAGS</span><span style="color: #F92672">=</span><span style="color: #E6DB74">$(</span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts tags list </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #AE81FF">--project=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #AE81FF">--location=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--repository</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--package</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$IMAGE_NAME</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--format</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"value(name)" </span><span style="color: #F92672">|</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">tac</span><span style="color: #E6DB74">)</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F"># Convert the list of tags into an array</span></span>
+<span class="line"><span style="color: #F8F8F2">TAGS_ARRAY</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">($TAGS)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F"># Check if there are more than 3 tags</span></span>
+<span class="line"><span style="color: #F92672">if</span><span style="color: #F8F8F2"> [ ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY[@]} </span><span style="color: #F92672">-gt</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2"> ]; </span><span style="color: #F92672">then</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Found ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY</span><span style="color: #E6DB74">[@]} tags. Keeping the 3 most recent ones and deleting the rest..."</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F"># Loop through the tags, skipping the first 3 (most recent)</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">for</span><span style="color: #F8F8F2"> ((i</span><span style="color: #F92672">=</span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2">; i</span><span style="color: #F92672">&lt;</span><span style="color: #F8F8F2">${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY[@]}; i</span><span style="color: #F92672">++</span><span style="color: #F8F8F2">)); </span><span style="color: #F92672">do</span></span>
+<span class="line"><span style="color: #F8F8F2">    TAG</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">${TAGS_ARRAY[$i]}</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Deleting tag: </span><span style="color: #F8F8F2">$TAG</span><span style="color: #E6DB74">"</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">gcloud</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">artifacts</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">tags</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">delete</span><span style="color: #F8F8F2"> $TAG </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--project=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--location=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--repository=</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--package=</span><span style="color: #F8F8F2">$IMAGE_NAME</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--quiet</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">done</span></span>
+<span class="line"><span style="color: #F92672">else</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Only ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY</span><span style="color: #E6DB74">[@]} tags found. No cleanup needed."</span></span>
+<span class="line"><span style="color: #F92672">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Cleanup complete!"</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Just so that the script gets access to the upstream env variables we need to make
+this assignment (for all variables).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Luckily, we get access to the env variable with our google credentials, this
+should be populated already due to the previous steps that ran before this script.
+(In case this needs to be leveraged elsewhere, be sure to be logged into GCloud before
+trying to run this script)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Unlike the <code>$ARTIFACT_REGISTRY</code> value that references both the region plus the
+actual domain, this is simply the region section of that.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The same repository name that we have under <em>secrets</em>, this is the root that
+we created at the <em>Artifact Registry</em> level.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>And lastly a <strong><em>Package</em></strong> is the name of the image that&#8217;s under the repository.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>We could use a <code>--sort_by=~create_time</code>, however GCloud always returns in Ascending
+(older first), and so we leverage the CLI to inverse the output we get with <code>tac</code>
+(that&#8217;s the inverse of <code>cat</code>). That way we will have all the output in descending order
+(newer first), and we start from the 3rd newest onwards. (Again, <strong>two tags</strong> refer to
+the <strong>latest build</strong>, and the last one refers to the <strong>previous commit</strong>).
+<div class="paragraph">
+<p><em>Note:</em> One small thing to take into account is that layers might be present at the
+registy level, and other things specific to the inner-workings, so you might see
+listed way more artifacts than the titular 3 we decided to keep. But <strong>don&#8217;t try to
+delete them manually</strong>, there are alerts for some of them also in place, but if we delete
+things without really knowing what they are, we might break other services. However,
+it&#8217;s worth noting that <a href="#build-push-action-provenance">provenance</a>
+is part of what generates untagged extra artifacts.</p>
+</div></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Since pipelines (at least most of the time should) <strong>run on a Linux build machine</strong>,
+we will have to leverage bash scripts and linux specific commands when automating
+our process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="net-modulith.html">.NET Modulith</a></span>
+  <span class="next"><a href="logging.html">Logging</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

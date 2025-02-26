@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Formik :: KakeiBro</title>
+    <link rel="prev" href="forms.html">
+    <link rel="next" href="react-hook-form.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Prototypes</a></li>
+    <li><a href="forms.html">Form Libraries for React</a></li>
+    <li><a href="formik.html">Formik</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Formik</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Based on the documentation at <a href="https://formik.org/docs/overview">Formik</a>.</p>
+</div>
+<div class="paragraph">
+<p>There are different ways to use Formik, (it also has an extension to Yup). You can use
+a full component-based approach (it has its own components you can use), or you can be
+way more programatic and focus entirely on the core functionality attached to your own
+components (with a hook). We will see all these different "ways" to do it, however
+the documentation is opinionated and in the end steers you towards a specific approach
+that has been integrated with Yup plus leverages the component approach.</p>
+</div>
+<div class="paragraph">
+<p>The first iteration of a really basic Formik implementation would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useFormik } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">FormikDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// Pass the useFormik() hook initial form values and a submit function that will</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// be called when the form is submitted</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formik </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">    initialValues: { </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">      email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> { </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleSubmit</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">&gt;Email Address&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.email</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { FormikDemo }</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>It is through the <code>initialValues</code> property of the parameter for the <code>useFormik</code>
+hook that we can declare the shape of the whole object the form will capture.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>And it is through the <code>onSubmit</code> property we can feed a function that will run
+the moment a submit on the form is triggered.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>As you can see we can then start consuming the result from the hook in the
+respective places.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We can drill down all the way to the property names.
+<div class="paragraph">
+<p>It is worth noting that even without some form of validation explicitly stated here,
+Formik detects the type of the input and in this case, if we write a malformed email
+it will show an error there specific to that rule.</p>
+</div></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As a second step we will add two more fields to the form (think of it as a new requirement
+that just came in):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useFormik } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">FormikDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// Pass the useFormik() hook initial form values and a submit function that will</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// be called when the form is submitted</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formik </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">    initialValues: {</span></span>
+<span class="line"><span style="color: #F8F8F2">      firstName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      lastName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleSubmit</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">&gt;First Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.firstName</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2">&gt;Last Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.lastName</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">&gt;Email Address&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.email</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { FormikDemo }</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>If you look carefully, you&#8217;ll notice some patterns and symmetry <em>forming</em>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We reuse the same exact change handler function <code>handleChange</code> for each HTML input.</p>
+</li>
+<li>
+<p>We pass an <code>id</code> and <code>name</code> HTML attribute that <em>matches</em> the property we defined in
+<code>initialValues</code></p>
+</li>
+<li>
+<p>We access the field&#8217;s value using the same name (<code>email</code>&#8594;`formik.values.email`)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For people familiar with forms in plain React, Formik&#8217;s <code>handleChange</code> works the
+same way as you would with code like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> [values, setValues] </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> React.</span><span style="color: #A6E22E">useState</span><span style="color: #F8F8F2">({})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">handleChange</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #FD971F; font-style: italic">event</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #A6E22E">setValues</span><span style="color: #F8F8F2">(</span><span style="color: #FD971F; font-style: italic">prevValues</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> ({</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">...</span><span style="color: #F8F8F2">prevValues,</span></span>
+<span class="line"><span style="color: #F8F8F2">    [event.target.name]: event.target.value</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="validation"><a class="anchor" href="#validation"></a>Validation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTML&#8217;s input native properties such as <code>required</code>, <code>maxlength</code>, <code>minlength</code>
+and <code>pattern</code> for regex are a way to validate. However HTML has its limitations,
+e.g. it only works on browser, React Native is not viable, it&#8217;s also impossible to
+show custom error messages. And it&#8217;s very janky.</p>
+</div>
+<div class="paragraph">
+<p>Formik keeps track not only of the form&#8217;s <code>values</code> but also its validation and
+error messages. To add validation with JS, we can specify a custom validation function
+and pass it as <code>validate</code> inside of the hook. If an error exists, the custom validation
+function should produce an <code>error</code> object with a matching shape to our <code>values</code>
+/ <code>initialValues</code>. <em>Symmetry</em>.</p>
+</div>
+<div class="paragraph">
+<p><code>formik.errors</code> are populated via the custom validation function. By default, Formik
+will validate after each keystroke (change event), each input&#8217;s <em>blur event</em>, as well
+as prior to submission. The <code>onSubmit</code> function we passed to <code>useFormik()</code> will be
+executed only if there are no errors (i.e. if our <code>validate</code> function returns <code>{}</code>).</p>
+</div>
+<div class="paragraph">
+<p>Meaning that if we type and the resulting string has an error, it will immediately show,
+before submitting it won&#8217;t allow for us to do it unless all values are valid, and
+the moment we focus an input is also taken into account to render errors.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useFormik } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">FormProps</span><span style="color: #F8F8F2"> { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">  firstName</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">  lastName</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">  email</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// A custom validation function. This must return an object</span></span>
+<span class="line"><span style="color: #88846F">// which keys are symmetrical to our values/initialValues</span></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">validate</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">FormProps</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> { </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> errors</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Partial</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">FormProps</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> {} </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.firstName) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.firstName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (values.firstName.length </span><span style="color: #F92672">&gt;</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">15</span><span style="color: #F8F8F2">) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.firstName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Must be 15 characters or less'</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.lastName) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.lastName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (values.lastName.length </span><span style="color: #F92672">&gt;</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">20</span><span style="color: #F8F8F2">) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.lastName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Must be 20 characters or less'</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.email) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.email </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #E6DB74">/</span><span style="color: #F92672">^</span><span style="color: #AE81FF">[A-Z0-9._%+-]</span><span style="color: #F92672">+</span><span style="color: #E6DB74">@</span><span style="color: #AE81FF">[A-Z0-9.-]</span><span style="color: #F92672">+</span><span style="color: #AE81FF">\.[A-Z]</span><span style="color: #F92672">{2,4}$</span><span style="color: #E6DB74">/</span><span style="color: #F92672">i</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E">test</span><span style="color: #F8F8F2">(values.email)) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.email </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Invalid email address'</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> errors </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">FormikDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">/// Pass the useFormik() hook initial form values, a validate function that will be called when</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// form values change or fields are blurred, and a submit function that will</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// be called when the form is submitted</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formik </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">    initialValues: {</span></span>
+<span class="line"><span style="color: #F8F8F2">      firstName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      lastName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">    validate, </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleSubmit</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">&gt;First Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.firstName</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.firstName </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.firstName</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2">&gt;Last Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.lastName</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.lastName </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.lastName</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">&gt;Email Address&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.email</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.email </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.email</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { FormikDemo }</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>In order to follow best practices the <code>values</code> object was typed.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The errors object will also hold the same properties as the main interface, with
+the possibility to not have the same properties, hence the utility <code>Partial</code> class was
+used.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>This is the declaration of the interface for the shape of the form object.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>By the end, we will return an <code>errors</code> object, and if it has no properties (meaning
+no errors) then Formik will allow for the form to submit.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>We are using the same name for the validation function as the property the hook
+expects, hence we can write it in its simplified form.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>And lastly, you can see how we leverage conditional rendering in order to show the
+error message respective to the input only if the error object has an error registered
+for the respective property name.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="visited-fields"><a class="anchor" href="#visited-fields"></a>Visited fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One fault we can see right now is the fact that the validation function runs on each
+keystroke against the <em>entire</em> form&#8217;s values, our <code>error</code> object contains <em>all</em>
+validation errors at any given moment. And we are currently checking if an error
+exists and then immediately showing it to the user. It&#8217;s not a good UX if the user sees
+an error the moment the form loads, usually we&#8217;d want to wait for the user to interact
+with the control to then show errors.</p>
+</div>
+<div class="paragraph">
+<p>Formik has a way to access a <code>touched</code> value, it will be mapped to the respective control
+name and then be open for us to consume it. It will also be updated based on the <code>onBlur</code>
+property the control can tie in with Formik&#8217;s <code>handleBlur</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useFormik } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">FormProps</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  firstName</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  lastName</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  email</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// A custom validation function. This must return an object</span></span>
+<span class="line"><span style="color: #88846F">// which keys are symmetrical to our values/initialValues</span></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">validate</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">FormProps</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> errors</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Partial</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">FormProps</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.firstName) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.firstName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (values.firstName.length </span><span style="color: #F92672">&gt;</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">15</span><span style="color: #F8F8F2">) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.firstName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Must be 15 characters or less'</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.lastName) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.lastName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (values.lastName.length </span><span style="color: #F92672">&gt;</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">20</span><span style="color: #F8F8F2">) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.lastName </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Must be 20 characters or less'</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.email) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.email </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #E6DB74">/</span><span style="color: #F92672">^</span><span style="color: #AE81FF">[A-Z0-9._%+-]</span><span style="color: #F92672">+</span><span style="color: #E6DB74">@</span><span style="color: #AE81FF">[A-Z0-9.-]</span><span style="color: #F92672">+</span><span style="color: #AE81FF">\.[A-Z]</span><span style="color: #F92672">{2,4}$</span><span style="color: #E6DB74">/</span><span style="color: #F92672">i</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E">test</span><span style="color: #F8F8F2">(values.email)) {</span></span>
+<span class="line"><span style="color: #F8F8F2">    errors.email </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Invalid email address'</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> errors</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">FormikDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">/// Pass the useFormik() hook initial form values, a validate function that will be called when</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// form values change or fields are blurred, and a submit function that will</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// be called when the form is submitted</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formik </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">    initialValues: {</span></span>
+<span class="line"><span style="color: #F8F8F2">      firstName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      lastName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">    validate,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleSubmit</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">&gt;First Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onBlur</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleBlur</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.firstName</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.touched.firstName </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> formik.errors.firstName </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> ( </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.firstName</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2">&gt;Last Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onBlur</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleBlur</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.lastName</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.touched.lastName </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> formik.errors.lastName </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.lastName</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">&gt;Email Address&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleChange</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">onBlur</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleBlur</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.values.email</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.touched.email </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> formik.errors.email </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.email</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { FormikDemo }</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We simply have to add to the control&#8217;s <code>onBlur</code> property Formik&#8217;s <code>handleBlur</code>
+function. This will take care of figuring out which control this belongs to, and update
+a <code>touched</code> value for it respectively.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>And when trying to display the error message, we can now leverage Formik&#8217;s
+<code>touched</code> object that will have the same properties as the ones that are in
+<code>initialValues</code> / <code>values</code>. If the specific control was interacted with then <code>touched</code>
+for that specific field would yield <code>true</code>.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="schema-validation-with-yup"><a class="anchor" href="#schema-validation-with-yup"></a>Schema Validation with Yup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validation can be left up to you. You can write your own validators or use a 3rd-party
+helper library. Lots of people using Formik prefer using <strong>Yup</strong> for object schema
+validation. Yup has an API similar to <code>Joi</code> and <code>React PropTypes</code>, but it&#8217;s also small
+enough for the browser and fast enough for runtime usage.</p>
+</div>
+<div class="paragraph">
+<p>Integration with Yup is seamless, you just need to install the library and then make
+use of the <code>validationSchema</code> property which will automatically transform Yup&#8217;s validation
+error messages into a pretty object whose keys match <code>values</code>/<code>initialValues</code>/<code>touched</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>pnpm i yup</code></p>
+</div>
+<div class="paragraph">
+<p>To see how Yup can work, we can get rid of the <code>validate</code> function and re-write validation
+with Yup and <code>validationSchema</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formik </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">    initialValues: {</span></span>
+<span class="line"><span style="color: #F8F8F2">      firstName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      lastName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">    validationSchema: Yup.</span><span style="color: #A6E22E">object</span><span style="color: #F8F8F2">({ </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">      firstName: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">() </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">        .</span><span style="color: #A6E22E">max</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">15</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'Must be 15 characters or less'</span><span style="color: #F8F8F2">) </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">), </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      lastName: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">        .</span><span style="color: #A6E22E">max</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">20</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'Must be 20 characters or less'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">        .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      email: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">        .</span><span style="color: #A6E22E">email</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Invalid email address'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">        .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">    }),</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We must leverage a Yup object. You can import everything from the library by doing
+a <code>import * as Yup from 'yup'</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>And inside, the object will declare the properties that should be respective to
+the shape of the form we will map its validations to.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>As you can see it follows a fluent pattern, it declares the type of value it will hold
+and for different criteria you can declare what error message will be shown.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Even for required, you can customize the error message there.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Yup is 100% optional. But it&#8217;s recommended. Formik&#8217;s core design principles are in place
+to help you keep organized. Schemas are extremely expressive, intuitive and reusable.
+With or without Yup it&#8217;s highly advisable to share commonly used validation methods
+across the application. This will ensure that common fields are validated consistently
+and result in a better user experience.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reducing-boilerplate"><a class="anchor" href="#reducing-boilerplate"></a>Reducing Boilerplate</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="getfieldprops"><a class="anchor" href="#getfieldprops"></a>getFieldProps</h3>
+<div class="paragraph">
+<p>The code so far is pretty explicit (imperative) of what it does. Defining every single
+property <code>onChange</code> &#8594; <code>handleChange</code>, <code>onBlur</code> &#8594; <code>handleBlur</code>. However <code>useFormik()</code>
+returns a helper method called <code>formik.getFieldProps()</code> to make wiring of inputs faster.
+Given a field-level info it will return <code>onChange</code>, <code>onBlur</code>, <code>value</code> and <code>checked</code>
+for a given field. You can then spread that on any <code>input</code>, <code>select</code> or <code>textarea</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">formik.</span><span style="color: #A6E22E">getFieldProps</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">/&gt;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Pretty straightforward, the pattern simply requires for you to state the <code>id</code>
+and the <code>type</code> properties, right after that you can simply spread the fieldname result
+for the helper function. The form will work the exact same whilst being more declarative.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="leveraging-react-context"><a class="anchor" href="#leveraging-react-context"></a>Leveraging React Context</h3>
+<div class="paragraph">
+<p>Code is more concise, yet it still is pretty explicit. Formik comes in <code>React-Context</code>-
+powered API/components to make things even less verbose. They use React Context implicitly
+to connect with the Parent <code>&lt;Formik /&gt;</code> state/methods. A manual approach would work
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> React </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'react'</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useFormik } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// Create empty context</span></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> FormikContext </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> React.</span><span style="color: #A6E22E">createContext</span><span style="color: #F8F8F2">({});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// Place all of what's returned by useFormik into context</span></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Formik</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> ({ </span><span style="color: #FD971F; font-style: italic">children</span><span style="color: #F8F8F2">, </span><span style="color: #F92672">...</span><span style="color: #FD971F; font-style: italic">props</span><span style="color: #F8F8F2"> }) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formikStateAndHelpers </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">(props);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">FormikContext.Provider</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formikStateAndHelpers</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">{typeof</span><span style="color: #F8F8F2"> children </span><span style="color: #F92672">===</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'function'</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">children</span><span style="color: #F8F8F2">(formikStateAndHelpers)</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> children</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;/</span><span style="color: #66D9EF; font-style: italic">FormikContext.Provider</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        );</span></span>
+<span class="line"><span style="color: #F8F8F2">};</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>But, we don&#8217;t need that, since there&#8217;s a <code>Formik</code> component that comes with all of
+that baked into it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { Formik } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">*</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">as</span><span style="color: #F8F8F2"> Yup </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'yup'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">FormikDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #66D9EF; font-style: italic">Formik</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">initialValues</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">{ </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">        firstName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        lastName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">      }</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">validationSchema</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">Yup.</span><span style="color: #A6E22E">object</span><span style="color: #F8F8F2">({ </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">        firstName: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">max</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">15</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'Must be 15 characters or less'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        lastName: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">max</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">20</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'Must be 20 characters or less'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        email: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">().</span><span style="color: #A6E22E">email</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Invalid email address'</span><span style="color: #F8F8F2">).</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">      })</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">(</span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2">, { </span><span style="color: #FD971F; font-style: italic">setSubmitting</span><span style="color: #F8F8F2"> }) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">setTimeout</span><span style="color: #F8F8F2">(() </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">setSubmitting</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">false</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">        }, </span><span style="color: #AE81FF">400</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">      }</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #FD971F; font-style: italic">formik</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> ( </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleSubmit</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">&gt;First Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">formik.</span><span style="color: #A6E22E">getFieldProps</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">          /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.touched.firstName </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> formik.errors.firstName </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">            &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.firstName</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2">&gt;Last Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">formik.</span><span style="color: #A6E22E">getFieldProps</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">          /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.touched.lastName </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> formik.errors.lastName </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">            &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.lastName</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">&gt;Email Address&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">id</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">formik.</span><span style="color: #A6E22E">getFieldProps</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.touched.email </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> formik.errors.email </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">            &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">formik.errors.email</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      )</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #66D9EF; font-style: italic">Formik</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { FormikDemo }</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>As you can see the component gets in its properties the same properties that
+the hook did before, such as the initial values that gives the shape of the object.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>validationSchema</code> is also something you feed as a property.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A <code>onSubmit</code> property also receives a function, the function will receive as
+a first parameter the values, and as a second parameter an object that holds properties
+with utility functions, such as <code>setSubmitting()</code> that will update the internal
+state of the form (in terms of if it&#8217;s under submission or not)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And the children "elements" of the <code>Formik</code> component will be another function,
+in this specific instance it&#8217;s a <code>render prop</code>. A technique to send a render function to
+a component so that it doesn&#8217;t implement the rendering on his own and instead the consumer
+sends said rendering logic. (Pretty cool)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The form works the same as before, however in a more concise manner.</p>
+</div>
+<div class="paragraph">
+<p>Now, we can make it even more concise by leveraging a <code>&lt;Field&gt;</code> component that Formik
+also has.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">{</span><span style="color: #FD971F; font-style: italic">formik</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">formik.handleSubmit</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2">&gt;First Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">ErrorMessage</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2">&gt;Last Name&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">ErrorMessage</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2">&gt;Email Address&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">ErrorMessage</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">)}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>&lt;Field&gt;</code> component by default will render an <code>&lt;input&gt;</code> component given that,
+a <code>name</code> prop, will implicitly grab the respective <code>onChange</code>, <code>onBlur</code>, <code>value</code> props
+and pass them to the element as well as any props you pass to it.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>And we also can leverage an <code>&lt;ErrorMessage&gt;</code> component that will abstract all the
+logic of touched, plus wiring it to the respective value and error of the form property.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>These components hold inside of them different properties that allow for you to shape
+behaviors as you might need, amongst styling, and the type of input.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #88846F">// &lt;input className="form-input" placeHolder="Jane"  /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"firstName"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"form-input"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"Jane"</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// &lt;textarea className="form-textarea"/&gt;&lt;/textarea&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"message"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">as</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"textarea"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"form-textarea"</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// &lt;select className="my-select"/&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"colors"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">as</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"select"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"my-select"</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"red"</span><span style="color: #F8F8F2">&gt;Red&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"green"</span><span style="color: #F8F8F2">&gt;Green&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"blue"</span><span style="color: #F8F8F2">&gt;Blue&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #66D9EF; font-style: italic">Field</span><span style="color: #F8F8F2">&gt;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, you can cover all basic forms of inputs such as <code>textarea</code>,
+<code>select</code>, and even accept styling for the component.</p>
+</div>
+<div class="paragraph">
+<p>This is all good, we got rid of <em>prop-drilling</em>, but we are still repeating ourselves
+with a <code>label</code>, <code>Field</code> and <code>ErrorMessage</code> for each of our inputs. We can do better
+with an abstraction. With Formik, you can <strong>and should</strong> build reusable input primitive
+components that you can share around your app. The <code>Field</code> render-prop component
+has a hook equivalent called <code>useField</code>.</p>
+</div>
+<div class="paragraph">
+<p>This would be a recommended approach of leveraging Formik with Typescript and its
+capabilities:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { Form, Formik, useField } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'formik'</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { ReactNode } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'react'</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">*</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">as</span><span style="color: #F8F8F2"> Yup </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'yup'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">InputProps</span><span style="color: #F8F8F2"> { </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  label</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  name</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  id</span><span style="color: #F92672">?:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  type</span><span style="color: #F92672">?:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  placeholder</span><span style="color: #F92672">?:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ChildrenInputProps</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">extends</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; font-style: italic; text-decoration: underline">InputProps</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  children</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ReactNode</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">CheckboxProps</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">extends</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; font-style: italic; text-decoration: underline">Omit</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">ChildrenInputProps</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'label'</span><span style="color: #F8F8F2">&gt; { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">  label</span><span style="color: #F92672">?:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">MyTextInput</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> ({ </span><span style="color: #FD971F; font-style: italic">label</span><span style="color: #F8F8F2">, </span><span style="color: #F92672">...</span><span style="color: #FD971F; font-style: italic">props</span><span style="color: #F8F8F2"> }</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">InputProps</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// useField() returns [formik.getFieldProps(), formik.getFieldMeta()]</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// which we can spread on &lt;input&gt;. We can use field meta to show an error</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// message if the field is invalid and it has been touched (i.e. visited)</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> [field, meta] </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useField</span><span style="color: #F8F8F2">(props) </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">props.id </span><span style="color: #F92672">||</span><span style="color: #F8F8F2"> props.name</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">label</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text-input'</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">field</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">props</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">meta.touched </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> meta.error </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'error'</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">meta.error</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">MyCheckbox</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> ({ </span><span style="color: #FD971F; font-style: italic">children</span><span style="color: #F8F8F2">, </span><span style="color: #F92672">...</span><span style="color: #FD971F; font-style: italic">props</span><span style="color: #F8F8F2"> }</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">CheckboxProps</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// React treats radios and checkbox inputs differently from other input types:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// select and textarea.</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// Formik does this too! When you specify `type` to useField(), it will</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// return the correct bag of props for you -- a `checked` prop will be included</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F">// in `field` alongside `name`, `value`, `onChange`, and `onBlur`</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> [field, meta] </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useField</span><span style="color: #F8F8F2">({ </span><span style="color: #F92672">...</span><span style="color: #F8F8F2">props, type: </span><span style="color: #E6DB74">'checkbox'</span><span style="color: #F8F8F2"> })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'checkbox-input'</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'checkbox'</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">field</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">props</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">children</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">meta.touched </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> meta.error </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'error'</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">meta.error</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">MySelect</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> ({ </span><span style="color: #FD971F; font-style: italic">label</span><span style="color: #F8F8F2">, </span><span style="color: #F92672">...</span><span style="color: #FD971F; font-style: italic">props</span><span style="color: #F8F8F2"> }</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ChildrenInputProps</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> [field, meta] </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useField</span><span style="color: #F8F8F2">(props)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">htmlFor</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">props.id </span><span style="color: #F92672">||</span><span style="color: #F8F8F2"> props.name</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">label</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">select</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">field</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">props</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">meta.touched </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> meta.error </span><span style="color: #F92672">?</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">className</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'error'</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">meta.error</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      ) </span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">null</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">FormikDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #66D9EF; font-style: italic">Formik</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">initialValues</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">        firstName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        lastName: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        email: </span><span style="color: #E6DB74">''</span></span>
+<span class="line"><span style="color: #F8F8F2">      }</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">validationSchema</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">Yup.</span><span style="color: #A6E22E">object</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">        firstName: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">max</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">15</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'Must be 15 characters or less'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        lastName: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">max</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">20</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">'Must be 20 characters or less'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">          .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        email: Yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">().</span><span style="color: #A6E22E">email</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Invalid email address'</span><span style="color: #F8F8F2">).</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">      })</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">(</span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2">, { </span><span style="color: #FD971F; font-style: italic">setSubmitting</span><span style="color: #F8F8F2"> }) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">setTimeout</span><span style="color: #F8F8F2">(() </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(values, </span><span style="color: #AE81FF">null</span><span style="color: #F8F8F2">, </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">setSubmitting</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">false</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">        }, </span><span style="color: #AE81FF">400</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">      }</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #66D9EF; font-style: italic">Form</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">MyTextInput</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">label</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'First Name'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'firstName'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'Jane'</span></span>
+<span class="line"><span style="color: #F8F8F2">        /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">MyTextInput</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">label</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'Last Name'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'lastName'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'text'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'Doe'</span></span>
+<span class="line"><span style="color: #F8F8F2">        /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">MyTextInput</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">label</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'Email Address'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'email'</span></span>
+<span class="line"><span style="color: #F8F8F2">          </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'jane@formik.com'</span></span>
+<span class="line"><span style="color: #F8F8F2">        /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">MySelect</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">label</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'Job Type'</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'jobType'</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">&gt;Select a job type&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'designer'</span><span style="color: #F8F8F2">&gt;Designer&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'development'</span><span style="color: #F8F8F2">&gt;Developer&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'product'</span><span style="color: #F8F8F2">&gt;Product Manager&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'other'</span><span style="color: #F8F8F2">&gt;Other&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;/</span><span style="color: #66D9EF; font-style: italic">MySelect</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #66D9EF; font-style: italic">MyCheckbox</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'acceptedTerms'</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          I accept the terms and conditions</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;/</span><span style="color: #66D9EF; font-style: italic">MyCheckbox</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;/</span><span style="color: #66D9EF; font-style: italic">Form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #66D9EF; font-style: italic">Formik</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { FormikDemo }</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>First of all, we are making use of Typescript, so we will enforce types whenever
+we need to so that both intellisense and linters make our dev effort easier.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>If we have to type <code>children</code> properties, meaning other component inside of the
+same component we can type it with <code>ReactNode</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Never forget about Typescript&#8217;s utility types, this one will inherit everything from
+<code>ChildrenInputProps</code> but it will gouge out <code>label</code>, and right after we are adding it
+as an optional field back.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>useField</code> is a hook that will return all the neccesary properties but in an
+abstracted form in order to hook Formik to <code>input</code> properties. You can see how its
+second item of the resulting array is an object used to leverage the status of the field
+in terms of <code>touched</code>, and <code>error</code>. The hook will result in errors if you are not careful
+enough, so be sure to type the props correctly.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>As you can see, children properties are ones that can be received at the component
+props, and then passed down to other component so that they can be rendered.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Another utility component is <code>Form</code>, just as the other components we saw this will
+leverage everything internally, a much more declarative approach that under hood leverages
+many features in order to make the form work accordingly.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Just a last extra piece of info in here, if you want to be more optimal in a way,
+and not try to validate on each keystroke, you can easily configure this on formik&#8217;s
+arguments:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> formik </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useFormik</span><span style="color: #F8F8F2">({</span></span>
+<span class="line"><span style="color: #F8F8F2">  initialValues: { name: </span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2"> },</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #A6E22E">validate</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> errors </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> {};</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">values.name) {</span></span>
+<span class="line"><span style="color: #F8F8F2">      errors.name </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> errors;</span></span>
+<span class="line"><span style="color: #F8F8F2">  },</span></span>
+<span class="line"><span style="color: #F8F8F2">  validateOnChange: </span><span style="color: #AE81FF">false</span><span style="color: #F8F8F2">, </span><span style="color: #88846F">// Disable validation on change</span></span>
+<span class="line"><span style="color: #F8F8F2">  validateOnBlur: </span><span style="color: #AE81FF">false</span><span style="color: #F8F8F2">,   </span><span style="color: #88846F">// Disable validation on blur</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2">: </span><span style="color: #FD971F; font-style: italic">values</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Submitted values:'</span><span style="color: #F8F8F2">, values);</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"><span style="color: #F8F8F2">});</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If we don&#8217;t want for the frontend to carry validation logic and be as dumb as possible,
+we could levarage a network call to the backend in order for all logic to be centralized
+there. Now, this is where depending on the depth of the validation we would have
+to make databae calls and all. But caching can ease the load on the server for simple
+validations, then again if validations only live at memory level, we should be good.
+But even then we could add mechanisms to avoid overflowing the service with validation
+calls.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="forms.html">Form Libraries for React</a></span>
+  <span class="next"><a href="react-hook-form.html">React Hook Form</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

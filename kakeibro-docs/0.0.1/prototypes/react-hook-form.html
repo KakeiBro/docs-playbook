@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React Hook Form :: KakeiBro</title>
+    <link rel="prev" href="formik.html">
+    <link rel="next" href="../backend/index.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="formik.html">Formik</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">KakeiBro Docs</a></li>
+    <li><a href="index.html">Prototypes</a></li>
+    <li><a href="forms.html">Form Libraries for React</a></li>
+    <li><a href="react-hook-form.html">React Hook Form</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">React Hook Form</h1>
+<div class="sect1">
+<h2 id="general-usage"><a class="anchor" href="#general-usage"></a>General Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Based on the documentation at <a href="https://react-hook-form.com/get-started">React Hook Form</a>.</p>
+</div>
+<div class="paragraph">
+<p>React Hook Form&#8217;s design and philosophy focus on user and developer experience.
+The library aims to provide users with a smoother interaction experience by fine-tuning
+the performance and improving accesibility. Some of the performance enhancements
+include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Form state subscription model through the proxy</p>
+</li>
+<li>
+<p>Avoiding unnecessary computation</p>
+</li>
+<li>
+<p>Isolating component re-rendering when required</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It aims at improving the user experience while users interact with the application .
+As for the developers, there&#8217;s built-in validation closely aliged with HTML standards
+allowing further extension with powerful validation methods and integration with
+schema validation natively. It also has type-checked forms with the help of typescript
+to help and guide the developer to build a robust form solution.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s look at a bit of code first and then start breaking it down alongside the
+usage of the different utilities the library provides:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { SubmitHandler, useForm } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'react-hook-form'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2"> { </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  example</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  exampleRequired</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ReactHookFormDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    register, </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">    handleSubmit, </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">    watch,</span></span>
+<span class="line"><span style="color: #F8F8F2">    formState: { errors }</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2">&gt;() </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> onSubmit</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">SubmitHandler</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> console.log</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(</span><span style="color: #A6E22E">watch</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'example'</span><span style="color: #F8F8F2">)) </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #88846F">/* "handleSubmit" will validate your inputs before invoking "onSubmit" */</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">h1</span><span style="color: #F8F8F2">&gt;React Hook Form&lt;/</span><span style="color: #F92672">h1</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* register your input into the hook by invoking the "register" function */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">defaultValue</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'test'</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'example'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* include validation with required or other standard HTML validation rules */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'exampleRequired'</span><span style="color: #F8F8F2">, { required: </span><span style="color: #AE81FF">true</span><span style="color: #F8F8F2"> })</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* errors will return when field validation fails  */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.exampleRequired </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">span</span><span style="color: #F8F8F2">&gt;This field is required&lt;/</span><span style="color: #F92672">span</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { ReactHookFormDemo }</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The docs example makes usage of <code>type</code>, both <code>interface</code> and <code>type</code> function
+for specific use cases, but in most common ones they are interchangable. Now,
+that doesn&#8217;t mean you should&#8217;t have a clear defined coding style.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>This hook will take care of exposing to us the different functions and properties
+that React Hook Form uses.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>register</code> is the function in charge of registering individual controls into the
+hook&#8217;s state. It will inject into the control all the things neccesary to hook it up
+to the form&#8217;s validations, errors, state changes and so on.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>As an intermediary function we have <code>handleSubmit</code> that takes care of running validations
+against the state before trying to execute <code>onSubmit</code> which is the function to react
+to the form&#8217;s submission.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>One clear example of how React Hook Form leverages typescript to the fullest, is
+that in functions such as <code>watch</code> it will detect the actual valid values based on the
+shape that we provided the form.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>And as you can see the way to inject validations can easily be done through an
+a second argument object provided to the <code>register</code> function.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When it comes to validations its API is quite simple and extendable nevertheless:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { SubmitHandler, useForm } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'react-hook-form'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  example</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  exampleRequired</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ReactHookFormDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    register,</span></span>
+<span class="line"><span style="color: #F8F8F2">    handleSubmit,</span></span>
+<span class="line"><span style="color: #F8F8F2">    watch,</span></span>
+<span class="line"><span style="color: #F8F8F2">    formState: { errors }</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2">&gt;({</span></span>
+<span class="line"><span style="color: #F8F8F2">    defaultValues: { </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">      example: </span><span style="color: #E6DB74">'defaultExample'</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      exampleRequired: </span><span style="color: #E6DB74">'exampleRequired'</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> onSubmit</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">SubmitHandler</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> console.log</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(errors) </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'watch'</span><span style="color: #F8F8F2">, </span><span style="color: #A6E22E">watch</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'example'</span><span style="color: #F8F8F2">)) </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #88846F">/* "handleSubmit" will validate your inputs before invoking "onSubmit" */</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">h1</span><span style="color: #F8F8F2">&gt;React Hook Form&lt;/</span><span style="color: #F92672">h1</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* register your input into the hook by invoking the "register" function */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">defaultValue</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'test'</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'example'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* include validation with required or other standard HTML validation rules */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'exampleRequired'</span><span style="color: #F8F8F2">, { </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">          required: </span><span style="color: #E6DB74">'This is required'</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">          minLength: { value: </span><span style="color: #AE81FF">4</span><span style="color: #F8F8F2">, message: </span><span style="color: #E6DB74">'Min length is 4'</span><span style="color: #F8F8F2"> } </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        })</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* errors will return when field validation fails  */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.exampleRequired </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">span</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.exampleRequired.message</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">span</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { ReactHookFormDemo }</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We can also watch all the errors through the <code>errors</code> property the hook returns,
+and this is a simple object with all errors associated with the registered fields of
+the form.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can just put a validation value in a key-value pair fashion &lt;string, boolean&gt;,
+however if we want to customize the error message we can provide instead of a <code>boolean</code>
+a string.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>For validations that require extra inputs we can provide an object that will hold
+the neccesary parameters plus the error message.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We will have the error object if it has errors with the name of the field and then
+inside of it a <code>message</code> property alongside other meta-fashion data.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>We can easily provide <code>initialValues</code> to the hook so that the form&#8217;s state is
+initialized respectively.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>And due to the hard typescript integration of the library, if we try to register
+a field with a name that&#8217;s not part of our type/interface we will get a linter error.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>And one last bit of info, this <code>watch</code> function is great if we want to react to
+changes produced on a specific form field, if we don&#8217;t provide a name we will subscribe
+to the entire form&#8217;s state change. However if we have specific cases, we can carve them
+out and apply logic that way. This will trigger only a re-render on specific fields and
+won&#8217;t have to run the whole form rendering.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>And, we can rest assured that the way the form re-renders is optimal, it doesn&#8217;t render
+the whole thing, it follows React principles in order to render itself correctly.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="validation"><a class="anchor" href="#validation"></a>Validation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>React Hook Form makes form validation easy by aligning with the existing
+<a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation">HTML standard
+for form validation</a></p>
+</div>
+<div class="paragraph">
+<p>The list of supported validation rules are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>required</p>
+</li>
+<li>
+<p>min</p>
+</li>
+<li>
+<p>max</p>
+</li>
+<li>
+<p>minLength</p>
+</li>
+<li>
+<p>maxLength</p>
+</li>
+<li>
+<p>pattern</p>
+</li>
+<li>
+<p>validate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>validate</code> is pretty interesting since you can feed your custom validation logic to it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> React </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react"</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useForm } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react-hook-form"</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">App</span><span style="color: #F8F8F2">() {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    register,</span></span>
+<span class="line"><span style="color: #F8F8F2">    handleSubmit,</span></span>
+<span class="line"><span style="color: #F8F8F2">    formState: { errors },</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FD971F; font-style: italic">data</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(data);</span></span>
+<span class="line"><span style="color: #F8F8F2">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* Password Field */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"password"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"Password"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"password"</span><span style="color: #F8F8F2">, {</span></span>
+<span class="line"><span style="color: #F8F8F2">          required: </span><span style="color: #E6DB74">"Password is required"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">          validate: { </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">minLength</span><span style="color: #F8F8F2">: (</span><span style="color: #FD971F; font-style: italic">value</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">              value.length </span><span style="color: #F92672">&gt;=</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">8</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">||</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Password must be at least 8 characters"</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">containsNumber</span><span style="color: #F8F8F2">: (</span><span style="color: #FD971F; font-style: italic">value</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">              </span><span style="color: #E6DB74">/</span><span style="color: #AE81FF">\d</span><span style="color: #E6DB74">/</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E">test</span><span style="color: #F8F8F2">(value) </span><span style="color: #F92672">||</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Password must contain a number"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">          },</span></span>
+<span class="line"><span style="color: #F8F8F2">        })</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.password </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">p</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.password.message</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">p</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"submit"</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  );</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">default</span><span style="color: #F8F8F2"> App;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Passing down to a <code>validate</code> property we can feed an object.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>This object can then have different validation error names, this should always follow
+the key-value pair pattern, in a &lt;string, Function&gt; manner.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A pretty concise way of returning the error, in case the check passes we return a
+boolean (true), if not, due to <code>or</code> we will return the error message.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Besides feeding custom validations, if we need to account for more complex cases such
+as two fields being validated between one and other, we can make use of the <code>submit</code>
+function we ourselves feed into <code>handleSubmit</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> React </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react"</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useForm } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react-hook-form"</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">App</span><span style="color: #F8F8F2">() {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    register,</span></span>
+<span class="line"><span style="color: #F8F8F2">    handleSubmit,</span></span>
+<span class="line"><span style="color: #F8F8F2">    watch,</span></span>
+<span class="line"><span style="color: #F8F8F2">    setError, </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    clearErrors, </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    formState: { errors },</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FD971F; font-style: italic">data</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (data.password </span><span style="color: #F92672">!==</span><span style="color: #F8F8F2"> data.confirmPassword) {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #A6E22E">setError</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"confirmPassword"</span><span style="color: #F8F8F2">, { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        type: </span><span style="color: #E6DB74">"manual"</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">        message: </span><span style="color: #E6DB74">"Passwords do not match"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      });</span></span>
+<span class="line"><span style="color: #F8F8F2">    } </span><span style="color: #F92672">else</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">      console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(data);</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* Password Field */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"password"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"Password"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"password"</span><span style="color: #F8F8F2">, {</span></span>
+<span class="line"><span style="color: #F8F8F2">          required: </span><span style="color: #E6DB74">"Password is required"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        })</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.password </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">p</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.password.message</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">p</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* Confirm Password Field */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"password"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">placeholder</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"Confirm Password"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"confirmPassword"</span><span style="color: #F8F8F2">, {</span></span>
+<span class="line"><span style="color: #F8F8F2">          required: </span><span style="color: #E6DB74">"Confirm Password is required"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">        })</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.confirmPassword </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">p</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.confirmPassword.message</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">p</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">button</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"submit"</span><span style="color: #F8F8F2">&gt;Submit&lt;/</span><span style="color: #F92672">button</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  );</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">default</span><span style="color: #F8F8F2"> App;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We can leverage <code>setErrors</code> from the hook itself to raise an error manually.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can then leverage <code>clearErrors</code> in case we have to manually get rid of an error,
+this is only necessary in case we register a custom error for the form, not associated
+with any registered input. Otherwise it will never go away.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We can register for a specific field a custom error <code>manual</code> in this case, and
+associated with it we can then put the <code>message</code>. Notice how we are doing the validation
+at the <code>onSubmit</code> function, it&#8217;s there that if we find an issue we leverage <code>setErrors</code>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>However, using <strong>schema validations</strong> with stuff like <code>Yup</code> or <code>Zod</code> is a much cleaner
+and scalable approach:</p>
+</div>
+<div class="paragraph">
+<p>First, you have to install the resolver for the respective schema validator (in our case
+we will leverage yup): <code>pnpm i @hookform/resolvers yup</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { yupResolver } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'@hookform/resolvers/yup'</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { SubmitHandler, useForm } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'react-hook-form'</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">*</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">as</span><span style="color: #F8F8F2"> yup </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'yup'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  example</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  exampleRequired</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">number</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> schema </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> yup.</span><span style="color: #A6E22E">object</span><span style="color: #F8F8F2">({ </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  example: yup.</span><span style="color: #A6E22E">string</span><span style="color: #F8F8F2">().</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">),</span></span>
+<span class="line"><span style="color: #F8F8F2">  exampleRequired: yup</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">number</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">typeError</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Must be a number'</span><span style="color: #F8F8F2">) </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">positive</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">integer</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'Required'</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ReactHookFormDemo</span><span style="color: #F8F8F2"> () {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    register,</span></span>
+<span class="line"><span style="color: #F8F8F2">    handleSubmit,</span></span>
+<span class="line"><span style="color: #F8F8F2">    watch,</span></span>
+<span class="line"><span style="color: #F8F8F2">    formState: { errors }</span></span>
+<span class="line"><span style="color: #F8F8F2">  } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2">&gt;({</span></span>
+<span class="line"><span style="color: #F8F8F2">    defaultValues: {</span></span>
+<span class="line"><span style="color: #F8F8F2">      example: </span><span style="color: #E6DB74">'defaultExample'</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      exampleRequired: </span><span style="color: #AE81FF">123</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">    resolver: </span><span style="color: #A6E22E">yupResolver</span><span style="color: #F8F8F2">(schema) </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> onSubmit</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">SubmitHandler</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">Inputs</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> console.log</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(errors)</span></span>
+<span class="line"><span style="color: #F8F8F2">  console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'watch'</span><span style="color: #F8F8F2">, </span><span style="color: #A6E22E">watch</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'example'</span><span style="color: #F8F8F2">))</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #88846F">/* "handleSubmit" will validate your inputs before invoking "onSubmit" */</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">h1</span><span style="color: #F8F8F2">&gt;React Hook Form&lt;/</span><span style="color: #F92672">h1</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* register your input into the hook by invoking the "register" function */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">defaultValue</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'test'</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'example'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* include validation with required or other standard HTML validation rules */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'exampleRequired'</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #88846F">/* errors will return when field validation fails  */</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.exampleRequired </span><span style="color: #F92672">&amp;&amp;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">span</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">errors.exampleRequired.message</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">span</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">'submit'</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { ReactHookFormDemo }</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We can create the schema through yup&#8217;s functions and have it stored in a variable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can then feed into the <code>resolver</code> property of the hook our schema.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>One small comment when it comes to yup&#8217;s API, when enforcing a type you might get
+a really verbose error, you can use <code>typeError</code> right after the type validator in
+order to customize the message (you can&#8217;t just feed a parameter unfortunately).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And we can then get rid of the validation object inside of <code>register</code> since we have
+offloaded that concern to the schema validator.
+<div class="paragraph">
+<p>Another really interesting feature of React Hook Form is the fact that if a field has
+an error, it will immediately focus that field which has an error.</p>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="integrating-with-custom-and-library-components"><a class="anchor" href="#integrating-with-custom-and-library-components"></a>Integrating with custom and library components</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="existing-custom-form"><a class="anchor" href="#existing-custom-form"></a>Existing Custom Form</h3>
+<div class="paragraph">
+<p>If you have an existing form we can integrate seamlessly with the correct functions
+and signatures:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { Path, useForm, UseFormRegister, SubmitHandler } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react-hook-form"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">IFormValues</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #E6DB74">"First Name"</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  Age</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">number</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">type</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">InputProps</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  label</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Path</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">IFormValues</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">  register</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">UseFormRegister</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">IFormValues</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">  required</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">boolean</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// The following component is an example of your existing Input Component</span></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Input</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> ({ </span><span style="color: #FD971F; font-style: italic">label</span><span style="color: #F8F8F2">, </span><span style="color: #FD971F; font-style: italic">register</span><span style="color: #F8F8F2">, </span><span style="color: #FD971F; font-style: italic">required</span><span style="color: #F8F8F2"> }</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">InputProps</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">label</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(label, { required })</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// you can use React.forwardRef to pass the ref too</span></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> Select </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> React.forwardRef</span><span style="color: #F92672">&lt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">  HTMLSelectElement, </span><i class="conum" data-value="11"></i><b>(11)</b></span>
+<span class="line"><span style="color: #F8F8F2">  { label: string } </span><span style="color: #F92672">&amp;</span><span style="color: #F8F8F2"> ReturnType</span><span style="color: #F92672">&lt;</span><span style="color: #F8F8F2">UseFormRegister</span><span style="color: #F92672">&lt;</span><span style="color: #F8F8F2">IFormValues</span><span style="color: #F92672">&gt;&gt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F92672">&gt;</span><span style="color: #F8F8F2">(({ </span><span style="color: #FD971F; font-style: italic">onChange</span><span style="color: #F8F8F2">, </span><span style="color: #FD971F; font-style: italic">onBlur</span><span style="color: #F8F8F2">, </span><span style="color: #FD971F; font-style: italic">name</span><span style="color: #F8F8F2">, </span><span style="color: #FD971F; font-style: italic">label</span><span style="color: #F8F8F2"> }, </span><span style="color: #FD971F; font-style: italic">ref</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span><span style="color: #F92672">{</span><span style="color: #F8F8F2">label</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&lt;/</span><span style="color: #F92672">label</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">select</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">name</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">name</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ref</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">ref</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onChange</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">onChange</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onBlur</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">onBlur</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt; </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"20"</span><span style="color: #F8F8F2">&gt;20&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">option</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">value</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"30"</span><span style="color: #F8F8F2">&gt;30&lt;/</span><span style="color: #F92672">option</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">select</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">App</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> () </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> { register, handleSubmit } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">IFormValues</span><span style="color: #F8F8F2">&gt;() </span><i class="conum" data-value="8"></i><b>(8)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">SubmitHandler</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">IFormValues</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FD971F; font-style: italic">data</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">alert</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(data))</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #66D9EF; font-style: italic">Input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">label</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"First Name"</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">register</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">register</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">required</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="9"></i><b>(9)</b></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #66D9EF; font-style: italic">Select</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">label</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"Age"</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #A6E22E">register</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Age"</span><span style="color: #F8F8F2">)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt; </span><i class="conum" data-value="10"></i><b>(10)</b></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"submit"</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You can technically declare property names with spaces if you enclose the name
+with quotes (but this is not really recommended).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>Path</code> is a utility type that ensures that the value under this property should
+correspond to one of the <em>keys</em> from <code>IFormValues</code>. This prevents typos and ensures
+type safety when referencing form fields.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>register</code> is the function provided by <code>useForm()</code> to register inputs with React
+Hook form, <code>UseFormRegister</code> ensures that the <code>register</code> function is correctly typed
+for the fields in <code>IFormValues</code>. And so, when trying to call <code>register("First Name")</code>
+in this inner component, Typescript will prevent invalid field names.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>As you can see we are basically passing the <code>register</code> function in order to then
+call it in the inner component&#8217;s rendering next to the <code>input</code> component.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>This wrapper allows a component to receive a <code>ref</code> and pass it to a child element. Because we are
+spreading the <code>register()</code> upstream, we would have <code>{ ref, name, onChange, onBlur }</code>
+to be sent to the component. However React, by design, doesn&#8217;t allow for refs to be passed down
+directly, <em>unless we are explicit about it</em>. Hence we have to use <code>forwardRef</code> to state
+our intentions clear, it&#8217;s with forms that we normally would make use of this resource.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td><code>ReturnType</code> is a utility function that allows for us to easily resolve at runtime
+the type for a specific field by simply feeding the signature of a function or other
+type of member to it. In this instance we are simply trying to get a type for the return
+of what would be a <code>register</code> for the <code>IFormValues</code> shape.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>As you can see we are literally assigning each property that comes from up-stream
+to the inner <code>select</code>. This ties into how we are registering the component at &lt;10&gt;</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Never forget to type the <code>useForm</code> that&#8217;s how you unlock intellisense and typescript&#8217;s
+magic.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>See how we simply pass down the <code>register</code> from the hook, and we also declare
+the <code>required</code> prop right after it. (At this level the register is but another property
+that we leverage inside the component).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>Another way to code the wiring to React Hook Form, we can simply spread the register
+function in the custom component itself, it&#8217;s downstream that we have coded everything so
+that it wires up correctly.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="11"></i><b>11</b></td>
+<td>And so we also have to type the type of ref that the child component will receive,
+in our case it should be an <code>HTMLSelect</code>, that&#8217;s what will be saved in the <code>ref</code>
+parameter of the function. That way we can connect our <code>select</code> with the ref that
+the register function will attempt at resolving. It&#8217;s all about being organized,
+explicit, and knowing how everything interacts.
+<div class="paragraph">
+<p>It&#8217;s up to you which approach to use, but again, you should have a clear <strong><em>code guideline</em> </strong>
+set and you should stick to it.</p>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="third-party-forms"><a class="anchor" href="#third-party-forms"></a>Third-party Forms</h3>
+<div class="paragraph">
+<p>You should be able to integrate with UI component libraries just fine, if by any
+chance the component does not expose the <code>ref</code> you can leverage the <code>Controller</code>
+input, he will take care of the registration process.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> Select </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react-select"</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { useForm, Controller, SubmitHandler } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"react-hook-form"</span></span>
+<span class="line"><span style="color: #F92672">import</span><span style="color: #F8F8F2"> { Input } </span><span style="color: #F92672">from</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"@material-ui/core"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">interface</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">IFormInput</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  firstName</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  lastName</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span></span>
+<span class="line"><span style="color: #F8F8F2">  iceCreamType</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> { label</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span><span style="color: #F8F8F2">; value</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">string</span><span style="color: #F8F8F2"> }</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">App</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> () </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> { control, handleSubmit } </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useForm</span><span style="color: #F8F8F2">({ </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    defaultValues: {</span></span>
+<span class="line"><span style="color: #F8F8F2">      firstName: </span><span style="color: #E6DB74">""</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      lastName: </span><span style="color: #E6DB74">""</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">      iceCreamType: {},</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">  })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">SubmitHandler</span><span style="color: #F8F8F2">&lt;</span><span style="color: #A6E22E; text-decoration: underline">IFormInput</span><span style="color: #F8F8F2">&gt; </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FD971F; font-style: italic">data</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    console.</span><span style="color: #A6E22E">log</span><span style="color: #F8F8F2">(data)</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #F92672">form</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">onSubmit</span><span style="color: #F92672">={</span><span style="color: #A6E22E">handleSubmit</span><span style="color: #F8F8F2">(onSubmit)</span><span style="color: #F92672">}</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #66D9EF; font-style: italic">Controller</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"firstName"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">control</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">control</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">render</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">({ </span><span style="color: #FD971F; font-style: italic">field</span><span style="color: #F8F8F2"> }) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #66D9EF; font-style: italic">Input</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">field</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> /&gt;</span><span style="color: #F92672">}</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #66D9EF; font-style: italic">Controller</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">name</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"iceCreamType"</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">control</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">control</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">render</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">({ </span><span style="color: #FD971F; font-style: italic">field</span><span style="color: #F8F8F2"> }) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #66D9EF; font-style: italic">Select</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">{...</span><span style="color: #F8F8F2">field</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #A6E22E">options</span><span style="color: #F92672">={</span><span style="color: #F8F8F2">[</span></span>
+<span class="line"><span style="color: #F8F8F2">              { value: </span><span style="color: #E6DB74">"chocolate"</span><span style="color: #F8F8F2">, label: </span><span style="color: #E6DB74">"Chocolate"</span><span style="color: #F8F8F2"> },</span></span>
+<span class="line"><span style="color: #F8F8F2">              { value: </span><span style="color: #E6DB74">"strawberry"</span><span style="color: #F8F8F2">, label: </span><span style="color: #E6DB74">"Strawberry"</span><span style="color: #F8F8F2"> },</span></span>
+<span class="line"><span style="color: #F8F8F2">              { value: </span><span style="color: #E6DB74">"vanilla"</span><span style="color: #F8F8F2">, label: </span><span style="color: #E6DB74">"Vanilla"</span><span style="color: #F8F8F2"> },</span></span>
+<span class="line"><span style="color: #F8F8F2">            ]</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">          /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        )</span><span style="color: #F92672">}</span></span>
+<span class="line"><span style="color: #F8F8F2">      /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #F92672">input</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">type</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"submit"</span><span style="color: #F8F8F2"> /&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">form</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  )</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The hook will return a <code>control</code> function that we can then leverage to hook into
+library components.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can use the <code>Controller</code> component to sort of act as a wrapper, he will take
+care of registering the respective field on whatever input field our library component
+encapsulates.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We have to feed the <code>control</code> property to the <code>Controller</code> component so that it
+wires up correctly.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And lastly we have to send a render prop under <code>render</code>, this will take care of
+rendering the library component and also hook into its input correctly.
+<div class="paragraph">
+<p>You can use both the <strong>Component API</strong> and the <strong>Hook API</strong> however you see fit,
+again <em>stick to one method</em>. And most of the time it will be based around what is
+possible with the tools you get. If things work a certain way, and you can make your
+code explicit, yet clean enough for it to keep working. Follow that line.</p>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="formik.html">Formik</a></span>
+  <span class="next"><a href="../backend/index.html">Backend</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
