@@ -567,10 +567,285 @@ if we have them there.</p>
 <p>Install dependencies with frozen-lockfile</p>
 </li>
 <li>
-<p>Build the project, this isn&#8217;t for a simple validation check, but so that we get a
-<code>dist</code> folder that can then be published to the web.</p>
+<p>Retrieve service account details from the repository&#8217;s secrets vault and save it
+under a temporary <code>.json</code> file so that the firebase CLI can pick up on it and use it
+for authorization/</p>
+</li>
+<li>
+<p>Run the <code>deploy</code> script. Since the firebase CLI is installed through the <code>package.json</code>
+we should have it present, however due to the nature of this being a build machine we
+need the service account .json credentials in a file and its path referenced through an
+<code>env</code> variable (<code>GOOGLE_APPLICATION_CREDENTIALS</code>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>NOTE:</em> We should have configured the <a href="#firebase-token">token on GitHub</a>. Otherwise
+the flow will fail since Firebase won&#8217;t authorize the machine to do the deploy.</p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="firebase"><a class="anchor" href="#firebase"></a>Firebase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Firebase has a service called <code>Hosting</code>. Following its <a href="https://firebase.google.com/docs/hosting/?hl=en&amp;authuser=0#implementation_path">documentation</a>
+we can integrate firebase into our web app repository.</p>
+</div>
+<div class="paragraph">
+<p>In the Firebase Console it&#8217;s best to create a project. We have created one for the
+whole kakeibro app.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A good practice so that we adhere to DevOps practices, is to have the firebase CLI
+in the form of a node package, meaning it should be declared on our <code>packages.json</code>
+but as a <strong>devDependency</strong>, since this package has nothing to do with the user experience,
+it&#8217;s for deployment purposes. This also integrates better with CI/CD pipelines due to
+the fact that we can cache later that dependency. Instead of wanting to run it with a
+global tool that doesn&#8217;t cache unless we do more work.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Head into the web app folder</p>
+</li>
+<li>
+<p>(With the Firebase CLI intalled) run <code>firebase init</code></p>
+</li>
+<li>
+<p>Type <code>Y</code></p>
+</li>
+<li>
+<p>Select <code>Hosting</code></p>
+</li>
+<li>
+<p><code>Use an existing project</code></p>
+</li>
+<li>
+<p>Select the project that you have in Firebase</p>
+</li>
+<li>
+<p>Since vite outputs a bundle to a <code>./dist</code> folder, we will put that as the <em>public
+directory</em>.</p>
+</li>
+<li>
+<p>Accept <code>Configure as SPA</code></p>
+</li>
+<li>
+<p>Do not setup GitHub Actions (we will do that on our own)</p>
+</li>
+<li>
+<p>Do not overwrite the <code>index.html</code> (we should have ran a build already)</p>
+</li>
+<li>
+<p>Right after this whole setup we should have a <code>.firebaserc</code> and <code>firebase.json</code>
+files in our repo. We should commit those, they are key instruments when running a
+<code>firebase deploy</code></p>
+</li>
+<li>
+<p>Add a script at <code>package.json</code> so that it automates things (you can name it <code>deploy</code>).
+It should build the whole project and then run the firebase CLI tool.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Due to the nature of Firebase and just to test out the script ourselves, it would be
+best to run locally the <code>pnpm deploy</code> command. To see if we are able to deploy our
+app to Firebase. This can definitely be automated with IaC, such as Terraform, however
+for our purposes, it will be a one-time manual configuration so that we make sure we
+deploy the app correctly and then configure a custom domain. Wait for SSL providing and
+everything, and then relying on the action to deploy it after that. (We shouldn&#8217;t have
+to run it manually anymore). More info at <a href="#ci-constraints">parameters for scripts</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After we have wired up the firebase domain through a <code>CNAME</code> record for our custom
+domain, (don&#8217;t forget to add 2 records one for the <code>www</code> subdomain and another one
+without it). We should be able to hit both <code>kakeibro.dsbalderrama.top</code> and
+<code>www.kakeibro.dsbalderrama.top</code> and get our app right there running.</p>
+</div>
+<div class="paragraph">
+<p><strong>NOTE: </strong> Don&#8217;t forget to add the <code>.firebase/</code> folder to <code>.gitignore</code>.</p>
+</div>
+<div id="firebase-token" class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>DISCLAIMER:</strong> The next paragraph&#8217;s approach has been deprecated, and might break in the future. The project
+uses a <a href="#danger-of-deprecation-of-token">service account</a>, however for the purposes of having the docs with more information
+these pieces of information are kept.</p>
+</div>
+<div class="paragraph">
+<p>In order to generate a token so that our action can then run a deploy. We can run
+<code>firebase login:ci</code>. This will open up a web browser with Google OAuth so that we log
+in with the account that has access to the Firebase project, we have to consent
+and everything. After the flow is done, we will get the token printed in the console
+screen. <strong>SAVE THIS AS A GITHUB SECRET AND NEVER TOUCH IT AGAIN</strong>. We leverage it
+on the github action to log into firebase with the token so that we can then run the
+deploy.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ci-constraints" class="paragraph">
+<p>The whole <code>firebase login:ci</code> command generates a token specifically to be run on a
+pipeline and it is by design enforced to be passed only at the <code>firebase deploy --only hosting --token $FIREBASE_TOKEN</code>
+level. We can&#8217;t log into Firebase with this token, and it&#8217;s in this specific endeavor that
+the <code>deploy</code> script has to be modified so that we can pass to the <code>firebase</code> command
+all of the different parameters <code>tsc -b &amp;&amp; vite build &amp;&amp; firebase deploy --only hosting</code>. By adding
+the last parameter we will be setting by default for the command to always run the deployment
+only for <em>hosting</em> and we can then attach to it extra arguments. And so, when we run
+<code>pnpm run deploy --token ${{ secrets.FIREBASE_TOKEN }}</code> we will have all of those parameters after <code>deploy</code>
+attached to the <code>firebase deploy --only hosting &#8230;&#8203;</code> section of the <code>deploy</code> script.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Small note:</em></strong> A good practice, to avoid issues, would be the usage of <code>--only hosting</code>,
+so that the whole project only tries to deploy to the SPA section of the whole Firebase
+project. There might be times at which running that without the flag will attempt
+to deploy to other services and end up breaking something.</p>
+</div>
+<div class="sect2">
+<h3 id="about-www-domain-vs-clean-name"><a class="anchor" href="#about-www-domain-vs-clean-name"></a>About www domain vs clean name</h3>
+<div class="paragraph">
+<p>Firebase will need to have a second domain added to it so that it redirects the
+<code>www</code> subdomain to our <code>non-www</code> subdomain. (Github Pages sets that up automatically).</p>
+</div>
+<div class="paragraph">
+<p>A good recommendation is <strong>at the DNS level</strong> to setup the second CNAME record to point
+to the non-www CNAME.</p>
+</div>
+<div class="paragraph">
+<p>The DNS configuration side <strong>isn&#8217;t enough though</strong>, <strong>the server</strong> needs to take care of
+<strong>redirecting things</strong>, the HTTP redirection if you will. Hence we will have to make these
+two configurations ourselves. One on Firebase (the server), and another on our
+DNS provider.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="danger-of-deprecation-of-token"><a class="anchor" href="#danger-of-deprecation-of-token"></a>Danger of deprecation of <code>--token</code></h3>
+<div class="paragraph">
+<p>When running the previous <code>--token</code> parameter approach we will get a warning stating:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">Authenticating with `--token` is deprecated and will be removed in a future major version of `firebase-tools`. Instead, use a service account key with `GOOGLE_APPLICATION_CREDENTIALS`: https://cloud.google.com/docs/authentication/getting-started</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>This indicates that we should move away from using this CI token and instead use the
+<a href="../backend/ci-cd-pipelines.html#gcp" class="xref page">service account keys</a> approach. We should be
+managing different keys for different services, since using a master <code>.json</code> credentials
+key is a one-point-of-failure. If it gets compromised, <strong>ALL OF YOUR SERVICES ARE COMPROMISED</strong>.
+We have to download it as a <code>.json</code> file, and then upload it as a secret to the repository
+(the text).</p>
+</div>
+<div class="paragraph">
+<p>Firebase projects end up as <strong>different GCloud projects</strong>, the best way to manage their
+credentials is to head to the <em>Project Settings</em> and under the <em>Service Accounts</em>
+tab we can then click on the <em>All service accounts</em> link. It will take us to a GCloud
+instance in where we <em>might</em> see an already configured Service Account for us. We
+can then head down to <strong>Service Accounts</strong> in the GCloud pannel and generate a key for
+that service account that has access to our firebase project in charge of the website.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s with that in mind that the command can get rid of the <code>--token</code> parameter,
+and we can leverage env variables and the secret text like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Setup service account credentials</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">echo '${{ secrets.GCLOUD_SERVICE_ACCOUNT }}' &gt; $HOME/gcloud-service-key.json</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Set GOOGLE_APPLICATION_CREDENTIALS</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud-service-key.json" &gt;&gt; $GITHUB_ENV</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Build and Deploy to Firebase</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">env</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">pnpm run deploy</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">- </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Cleanup service account file</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">rm -f $HOME/gcloud-service-key.json</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The main thing is that the env variable is expecting a <code>.json</code> file path, not the
+actual json string. Hence we have to copy the contents for a brief second to a file.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>It&#8217;s then that we save as an env variable (so that it persists for the next steps),
+the path to the file we saved with the service account json string.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Lastly, as a security measure, we will delete the temporary file with our credentials
+as a form of cleanup.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>References:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://devy.in/post/how-to-setup-gitlab-cicd-pipeline-to-deploy-nextjs-app-to-firebase">Blog</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/75653962/firebase-token-deprecated-in-ci-cd-gitlab">Gitlab example</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can edit the levels of access for a service account by heading to <code>IAM</code> selecting
+the service account you want to modify, and with the pencil icon. You get a menu
+to modify the levels of access of the account.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

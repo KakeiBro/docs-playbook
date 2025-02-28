@@ -363,7 +363,9 @@ Cloud Run instances, we need to set a <em>Service Account Key</em>:</p>
 <div class="paragraph">
 <p>The easiest way to get this is by using the GCloud Console web app and downloading the
 service key as a <code>.json</code> file. This should never be uploaded anywhere, but the github
-secrets vault. We should paste the whole json file as the value of the key.</p>
+secrets vault. We should paste the whole json file as the value of the key. (After the
+generation of one, it will be automatically downloaded, however, you can&#8217;t redownload it
+ever again. So be mindful of this condition).</p>
 </div>
 <div class="paragraph">
 <p><em>Note:</em> Be sure to be under the correct google account and the correct project when generating
