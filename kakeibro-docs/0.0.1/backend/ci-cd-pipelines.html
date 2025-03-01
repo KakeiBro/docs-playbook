@@ -775,6 +775,118 @@ different regions.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="cache-cleanup-pipeline"><a class="anchor" href="#cache-cleanup-pipeline"></a>Cache Cleanup Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Following the same principle as in the <a href="../frontend/ci-cd-pipelines.html#cleanup-pipeline" class="xref page">frontend cache cleanup</a>
+pipeline, we will apply a clean up on the backend, <strong><em>with its specific conditions
+taken into account</em></strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>NOTE:</em></strong> The explanation of the code in here is less verbose as in the aforementioned
+<strong>frontend cache cleanup link</strong>, for further breakdown of what each command does
+<strong>please refer to said page</strong>, this is advisable as the knowledge is built on top
+of said pipeline.</p>
+</div>
+<div class="paragraph">
+<p>Meaning, that we have two types of cache, one for the docker builds (with a <code>buildx</code>
+tag. E.g., Linux-buildx-v&#8230;&#8203;), and another for the NuGet packages. E.g., (Linux-nuget-v&#8230;&#8203;).
+And so our script will have to discriminate between these two types and keep the latest
+caches for each respectively.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Cleanup Action Caches</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #AE81FF">on</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">schedule</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    - </span><span style="color: #F92672">cron</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">"0 0 * * *"</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">workflow_dispatch</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">permissions</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">actions</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">write</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">jobs</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">clean-cache</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">runs-on</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">ubuntu-latest</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">steps</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Get caches list</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">id</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">list-caches</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \</span></span>
+<span class="line"><span style="color: #E6DB74">            -H "Accept: application/vnd.github+json" \</span></span>
+<span class="line"><span style="color: #E6DB74">            "https://api.github.com/repos/${{ github.repository }}/actions/caches")</span></span>
+<span class="line"><span style="color: #E6DB74">          echo "$response" | jq -r '.actions_caches | sort_by(.created_at) | reverse' &gt; caches.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Filter and delete old caches</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          jq -c '[.[] | select(.key | startswith("Linux-buildx"))]' caches.json &gt; buildx_caches.json </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #E6DB74">          jq -c '[.[] | select(.key | startswith("Linux-nuget"))]' caches.json &gt; nuget_caches.json </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E6DB74">          latest_buildx_cache_id=$(jq -r '.[0].id' buildx_caches.json)</span></span>
+<span class="line"><span style="color: #E6DB74">          latest_nuget_cache_id=$(jq -r '.[0].id' nuget_caches.json) </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E6DB74">          jq -c '.[1:] | .[]' buildx_caches.json | while read -r cache; do </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">            cache_id=$(echo $cache | jq -r '.id')</span></span>
+<span class="line"><span style="color: #E6DB74">            curl -X DELETE -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \</span></span>
+<span class="line"><span style="color: #E6DB74">              -H "Accept: application/vnd.github+json" \</span></span>
+<span class="line"><span style="color: #E6DB74">              "https://api.github.com/repos/${{ github.repository }}/actions/caches/$cache_id"</span></span>
+<span class="line"><span style="color: #E6DB74">          done</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E6DB74">          jq -c '.[1:] | .[]' nuget_caches.json | while read -r cache; do </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #E6DB74">            cache_id=$(echo $cache | jq -r '.id')</span></span>
+<span class="line"><span style="color: #E6DB74">            curl -X DELETE -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \</span></span>
+<span class="line"><span style="color: #E6DB74">              -H "Accept: application/vnd.github+json" \</span></span>
+<span class="line"><span style="color: #E6DB74">              "https://api.github.com/repos/${{ github.repository }}/actions/caches/$cache_id"</span></span>
+<span class="line"><span style="color: #E6DB74">          done</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">success()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Cleanup files</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          rm -f buildx_caches.json</span></span>
+<span class="line"><span style="color: #E6DB74">          rm -f nuget_caches.json</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Since we have 2 types of cache now that are important, we can&#8217;t just filter the latest
+and delete the rest, that would effectively make it so that our pipelines always have
+to rebuild the cache. And so we apply clever filtering techniques, based on an already
+existing raw list of cache entries that are ordered in descending order (most to least recent).
+We will then iterate over each element, select its <code>key</code> field and then filter out
+if the value of said key starts with <code>Linux-buildx</code>. This will effectively spit out all
+the docker caches (already ordered). This will be then saved on a temporal <code>buildx.caches.json</code> file.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Just like in &lt;1&gt; we are iterating over the main list with all caches and then just filtering
+the ones that start with <code>Linux-nuget</code>. A key part of the command here is at the
+square brackets that sorrounds the whole result of <code>jq</code> <strong><em>[ ]</em></strong>. We need to wrap
+the whole result in square brackets so that the result is also a JSON Array, if this is
+not set in place we will get a structure that&#8217;s not a JSON array and we won&#8217;t be able
+to iterate over it.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Just as a good practice we are extracting the latest IDs for both cache types</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And so, we now slice the specific <code>buildx</code> json file with its cache entries, we then
+iterate over those and delete all the old caches.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Same as in &lt;4&gt; we will slice the most recent cache in the <code>nuget</code> json file, and
+all the remaining cache entries will then be deleted by using the Github API.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="docker-image"><a class="anchor" href="#docker-image"></a>Docker image</h2>
 <div class="sectionbody">
 <div class="paragraph">

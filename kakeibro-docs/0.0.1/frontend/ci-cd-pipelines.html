@@ -591,6 +591,153 @@ the flow will fail since Firebase won&#8217;t authorize the machine to do the de
 </div>
 </div>
 <div class="sect1">
+<h2 id="cleanup-pipeline"><a class="anchor" href="#cleanup-pipeline"></a>Cleanup Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As mentioned in the <a href="#pr-pipeline">PR pipeline</a> and the
+<a href="#master-pipeline">Master pipeline</a>, we leverage caching in
+order to make builds faster, but that doesn&#8217;t come "for free", we need to be well
+aware that this has to live somewhere, and whether we use <code>pnpm</code> or the action for
+<a href="#github-action-caching">general purpose caching</a>. The moment
+the cache varies, may it be due to new dependencies detected, or other external factors,
+we will have to generate new caches. And they will start adding up, if we have no use
+for old caches we <strong>should clean them up</strong>. And automation of this cleanup is key.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s with this in mind that all repositories have a cache cleanup <strong>CRON Action</strong>,
+the one specific for the web app is this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="yml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Cleanup Action Caches</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #AE81FF">on</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">schedule</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    - </span><span style="color: #F92672">cron</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">"0 0 * * *"</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">workflow_dispatch</span><span style="color: #F8F8F2">: </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">permissions</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">actions</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">write</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">jobs</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">clean-cache</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">runs-on</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">ubuntu-latest</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">steps</span><span style="color: #F8F8F2">:</span></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Get caches list</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">id</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">list-caches</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \ </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">            -H "Accept: application/vnd.github+json" \ </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #E6DB74">            "https://api.github.com/repos/${{ github.repository }}/actions/caches") </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #E6DB74">          echo "$response" | jq -r '.actions_caches | sort_by(.created_at) | reverse' &gt; caches.json </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      - </span><span style="color: #F92672">name</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">Delete old caches</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">run</span><span style="color: #F8F8F2">: </span><span style="color: #F92672">|</span></span>
+<span class="line"><span style="color: #E6DB74">          latest_cache_id=$(jq -r '.[0].id' caches.json) </span><i class="conum" data-value="8"></i><b>(8)</b></span>
+<span class="line"><span style="color: #E6DB74">          jq -c '.[1:] | .[]' caches.json | while read -r cache; do </span><i class="conum" data-value="9"></i><b>(9)</b></span>
+<span class="line"><span style="color: #E6DB74">            cache_id=$(echo $cache | jq -r '.id') </span><i class="conum" data-value="10"></i><b>(10)</b></span>
+<span class="line"><span style="color: #E6DB74">            curl -X DELETE -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \</span></span>
+<span class="line"><span style="color: #E6DB74">              -H "Accept: application/vnd.github+json" \</span></span>
+<span class="line"><span style="color: #E6DB74">              "https://api.github.com/repos/${{ github.repository }}/actions/caches/$cache_id" </span><i class="conum" data-value="11"></i><b>(11)</b></span>
+<span class="line"><span style="color: #E6DB74">          done</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">if</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">success()</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="12"></i><b>(12)</b></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This Action will be configured as a CRON that runs at 00:00 UTC every day.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>In case we need to manually trigger the Action it has the respective flag so that
+the option is enabled</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Every action has its own token injected into its runtime, however it&#8217;s by default
+<code>read-only</code>. And to delete caches we need for that to also inherit <code>write</code> permissions.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>As mentioned in &lt;3&gt;, the Action will have injected a token for it, it will be saved
+under <code>secrets.GITHUB_TOKEN</code>, we will leverage the GitHub API in order to retrieve our cache
+list and clean it up, we have to send an Auth token so that the API grants us access and
+responds correctly</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>application/vnd.github+json</code> is the media-type from which github responds with,
+so we are configuring it to accept the response with that.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Another part of already built-in utilities is the fact that under the <code>github</code>
+namespace, we can retrieve variables such as <code>.repository</code>. The value of said variable
+will be a unique ID, that in the realm of the GitHub API references our current repository
+at which the Action is running.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Whenever we have saved under a variable something, a good practice is to always
+reference it with quotation marks to avoid issues with spaces or special characters,
+it&#8217;s the result of printing the contents of the variable (that has the response from the
+GitHub API) that we pipe into <code>jq</code> a utility to work with JSON strings, another good
+practice with it is to use the <code>-r</code> flag so that it won&#8217;t interpret backslashes as escape
+characters (so that we don&#8217;t manipulate the response). With <code>jq</code> we can pipe different
+instructions that help us navigate a json structure: <code>.actions_caches | sort_by(.created_at) | reverse</code>
+firstly points to the <code>.actions_caches</code> property of the JSON object, (we know it&#8217;s an array),
+and so we tell the tool to try to sort what&#8217;s unde the key by a <code>created_at</code> field (if the structure
+is not an array this would fail), and lastly after the items have been sorted, we will reverse that
+result, since we want for the <strong>most recent</strong> entry at the beginning (the top). In the end
+the final form of what we transformed is saved under a <code>caches.json</code> file.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>We have no technical use for this line but just so that the pipeline breaks
+if it doesn&#8217;t find a valid entry and so that we can see the value on GitHub, we
+will retrieve the latest cache ID under a variable</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>The source is a JSON array, and so in order to iterate over it and do something with
+the data, we have to apply <code>jq -c '.[1:] | .[]' caches.json</code>, which leverages <code>jq</code>
+again in order to read the structure and with <code>-c</code> it will make sure that each JSON
+object will be in one separate line, and with <code>.[1:]</code> we try to slice the array to
+exclude the first element (the latest cache entry), it&#8217;s then the result of that,
+that we iterate over and output it as a separate JSON object with <code>.[]</code>. To that whole
+result that <code>jq</code> yields we then apply <strong>Bash shell constructs</strong>, we are applying a
+a loop because <code>read</code> is a command that reads a single line from the input, applied
+like this we basically are configuring the <code>read</code> to be reading line-by-line and saving
+those contents under a <code>cache</code> variable, the moment there are no more lines to read then
+the loop will end.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>We then use <code>jq</code> <em>again</em> to extract the specific <code>id</code> field of the <strong>sole</strong> JSON
+object that we should have at <code>cache</code>, and we save that <code>id</code> value under a <code>cache_id</code>
+variable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="11"></i><b>11</b></td>
+<td>Just as the previous step we will then hit a GitHub API endpoint in charge of deleting
+a cache entry, we send the Action&#8217;s token plus the ID for the cache that we extracted.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td>Part of GitHub Actions, use this if you want to enforce a condition on a step
+<em>or job</em>, so that if the previous step/job was successful then this step can run,
+otherwise it won&#8217;t. A good way to enforce short-circuits, still brittle and you have
+to add it to each step or job that comes after the declaration of the pivot element.
+(Same idea as our <a href="../ci-cd.html#gh-action-3" class="xref page">conditional execution for deployment</a>)</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="firebase"><a class="anchor" href="#firebase"></a>Firebase</h2>
 <div class="sectionbody">
 <div class="paragraph">
