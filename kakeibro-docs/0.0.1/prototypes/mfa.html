@@ -354,20 +354,60 @@ or the otpauth:// URL.</p>
 </li>
 <li>
 <p>If an attacker obtains the secret key, they could generate codes indefinitely.
-To mitigate this:&#8201;&#8212;&#8201;Consider implementing device-based trust where users must re-authenticate for new
-devices.&#8201;&#8212;&#8201;Use the secret key <strong>only for authentication</strong> and avoid repurposing it for other
+To mitigate this:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Consider implementing device-based trust where users must re-authenticate for new
+devices.</p>
+</li>
+<li>
+<p>Use the secret key <strong>only for authentication</strong> and avoid repurposing it for other
 use cases.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Server-Side Key Verification:</strong> Instead of exposing the base32Key to the frontend,
-you can handle the TOTP directly on the server side.&#8201;&#8212;&#8201;Generate and store the secret key on the server.&#8201;&#8212;&#8201;Create and display only the QR code (without sending the raw base32Key to the user).&#8201;&#8212;&#8201;Validate user-entered TOTP codes directly against the server-stored secret key.</p>
+you can handle the TOTP directly on the server side.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate and store the secret key on the server.</p>
 </li>
 <li>
-<p><strong>Backup Codes for Recovery</strong>&#8201;&#8212;&#8201;Provide users with one-time backup codes during setup to allow them to regain access
-if they lose their 2FA device. These codes should:
---- Be stored hashed in your database, like passwords.
---- Only be shown to the user during setup.
---- Be invalidated upon use.</p>
+<p>Create and display only the QR code (without sending the raw base32Key to the user).</p>
+</li>
+<li>
+<p>Validate user-entered TOTP codes directly against the server-stored secret key.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Backup Codes for Recovery</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide users with one-time backup codes during setup to allow them to regain access
+if they lose their 2FA device. These codes should:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Be stored hashed in your database, like passwords.</p>
+</li>
+<li>
+<p>Only be shown to the user during setup.</p>
+</li>
+<li>
+<p>Be invalidated upon use.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
