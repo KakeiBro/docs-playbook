@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Ubiquitous Language :: KakeiBro</title>
     <link rel="prev" href="intelligence-module.html">
-    <link rel="next" href="../prototypes/index.html">
+    <link rel="next" href="../database/index.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/shiki.css">
@@ -93,6 +93,13 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/index.html">Database</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
 <ul class="nav-list">
@@ -138,6 +145,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../backend/logging.html">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backend/security.html">Security</a>
   </li>
 </ul>
   </li>
@@ -265,13 +275,17 @@ workflows. Adds, edits, deletes data alongside querying it in its various forms.
 <dt class="hdlist1">SysAdmin</dt>
 <dd>
 <p>This is a super-user that gets access to user management, CRUDs of <em>bookkeepers</em>,
-reset credentials.</p>
+reset credentials.
+<span id="auth-handshake">Auth Handshake::</span>
+This is the term defined to the <em>background</em> process that takes place between the
+KakeiBro API and Google&#8217;s Services to find a corresponding e-mail registered on their
+side and exchanging information and confirmation of said user.</p>
 </dd>
 </dl>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="intelligence-module.html">Intelligence Module</a></span>
-  <span class="next"><a href="../prototypes/index.html">Prototypes</a></span>
+  <span class="next"><a href="../database/index.html">Database</a></span>
 </nav>
 </article>
   </div>

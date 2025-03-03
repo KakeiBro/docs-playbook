@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Form Libraries for React :: KakeiBro</title>
-    <link rel="prev" href="apache-graphs-react.html">
-    <link rel="next" href="formik.html">
+    <title>Database :: KakeiBro</title>
+    <link rel="prev" href="../domain/ubiquitous-language.html">
+    <link rel="next" href="../prototypes/index.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/shiki.css">
@@ -92,8 +92,8 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../database/index.html">Database</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Database</a>
   </li>
 </ul>
   </li>
@@ -101,26 +101,26 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Prototypes</a>
+    <a class="nav-link" href="../prototypes/index.html">Prototypes</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="o-auth.html">Google OAuth 2.0</a>
+    <a class="nav-link" href="../prototypes/o-auth.html">Google OAuth 2.0</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="mfa.html">Multi Factor Authentication</a>
+    <a class="nav-link" href="../prototypes/mfa.html">Multi Factor Authentication</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="apache-graphs-react.html">Apache Graphs on React</a>
+    <a class="nav-link" href="../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="forms.html">Form Libraries for React</a>
+    <a class="nav-link" href="../prototypes/forms.html">Form Libraries for React</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="formik.html">Formik</a>
+    <a class="nav-link" href="../prototypes/formik.html">Formik</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="react-hook-form.html">React Hook Form</a>
+    <a class="nav-link" href="../prototypes/react-hook-form.html">React Hook Form</a>
   </li>
 </ul>
   </li>
@@ -213,8 +213,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">KakeiBro Docs</a></li>
-    <li><a href="index.html">Prototypes</a></li>
-    <li><a href="forms.html">Form Libraries for React</a></li>
+    <li><a href="index.html">Database</a></li>
   </ul>
 </nav>
 </div>
@@ -223,130 +222,219 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Form Libraries for React</h1>
+<h1 class="page">Database</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Another really important part of the application will be the leveraging of forms in
-order to capture data, both for persistency, but also normal flows that will require
-searching, filtering and other similar interactions.</p>
-</div>
-<div class="paragraph">
-<p>It is due to this that this prototype is focusing entirely on seeing the capabilities
-of two popular <strong>Form Libraries</strong> for React:</p>
+<p>Based on the needs of an application we can choose to make use of different data models
+for storing the data.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Formik (integrated with Yup)</p>
+<p>Document databases</p>
 </li>
 <li>
-<p>React Hook Form</p>
+<p>Relational databases</p>
+</li>
+<li>
+<p>Graph databases</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>This prototype has installed both of them and shows different examples of their
-capabilities alongside the type of code that is needed to be written to get them working.</p>
+<p>Reference: <a href="https://a.co/d/gbnpdgS">Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems</a></p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s hard to say which approach is better, unless we go into the details of the
+type of application we are going to be building. For our specific purposes, being
+that we are going to deal with <em>personal finances</em>. But not in a highly interconnected
+way in which we have tons of many-to-many relationships and the need to perform tons
+of joins into them for different cross-user querying. We will follow a <em>document database</em>
+approach.</p>
+</div>
+<div class="paragraph">
+<p>Specifically, we will leverage <code>Redis OM</code>. Which is a specific library
+(that is built on top of StackExchange.Redis) that leverages Redis' native JSON
+document data type to store data to then connect that to an application by becoming a
+translation layer at the level of an <strong>Object Mapper</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The document&#8217;s structure will try to leverage <em>locality</em> as much as possible, having
+all the <a href="../domain/ubiquitous-language.html#bookkeeper" class="xref page">bookkeeper&#8217;s</a> information
+under the same document, allowing for us to have access to data related to him and his
+finances without the need for <em>client-side joining</em>. And it&#8217;s also due to the <em>start-upy</em>
+nature of the whole project, in which new ideas might start coming later, and/or we require
+for a fast development experience without too many hurdles that <strong>schema-<em>ful</em></strong> databases
+might impose. (But it&#8217;s worth noting that the integration with EF Core (in .NET specifically),
+allows for this overhead to be greatly simplified, since the concept of automated migrations
+auto-generated from the object&#8217;s we write at the application level is a god-send when
+used correctly).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-rundown"><a class="anchor" href="#project-rundown"></a>Project Rundown</h2>
+<h2 id="conventions"><a class="anchor" href="#conventions"></a>Conventions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This project was created with vite, following the steps:</p>
+<p>And since a clear line needs to be drawn, these are the conventions we will use
+for the different aspects of our database:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>pnpm create vite react-forms</code> (Select React &gt; Typescript + SWC)</p>
+<p>Database names &#8658; <code>snake_case</code> (Documents, fields, constraints) (always in plural)</p>
 </li>
 <li>
-<p><code>pnpm install</code></p>
+<p>Primary IDs &#8658; <code>id</code> or <code>document_id</code></p>
+</li>
+<li>
+<p>Document references &#8658; <code>document_id</code></p>
+</li>
+<li>
+<p>Indexes/constraints &#8658; <code>idx_</code>, <code>fk_</code>, <code>chk_</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>After scaffolding the initial folder structure, we added the dependencies neccesary to
-start consuming the echarts library.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>pnpm i formik</code></p>
-</li>
-<li>
-<p><code>pnpm i react-hook-form</code></p>
-</li>
-</ul>
+<p>And due to the Document based nature of how we will store our data in Redis, the diagram
+we chose to represent it will be of a <em>Class Diagram</em>, however with a <a href="#documents-diagram"><em>tree-like structure</em>.</a>
+It&#8217;s <strong>imperative</strong> to leave clear that we will store inside of a parent object
+in which all the other children will hold themselves other levels of data.</p>
 </div>
 <div class="paragraph">
-<p>The folder structure:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">- react-forms</span></span>
-<span class="line"><span style="color: #F8F8F2">|-- src</span></span>
-<span class="line"><span style="color: #F8F8F2">|   |-- FormikDemo.tsx</span></span>
-<span class="line"><span style="color: #F8F8F2">|   |-- App.tsx</span></span></code></pre></body></html>
-</div>
+<p>And it&#8217;s also important to state clearly that Redis is a <strong>key-value</strong> store. It&#8217;s not
+relational in nature, and it doesn&#8217;t enforce schemas like SQL databases. It&#8217;s through
+the usage of its own convention in the form of <em>key paths</em> that we will be able to store our documents
+with a clear logical order in mind. It will be through this usage that we will also
+adhere to the <a href="../backend/net-modulith.html" class="xref page">modular monolith</a> architecture pattern,
+specifically on the concern of isolating data between modules.</p>
 </div>
 <div class="paragraph">
-<p>We have the <code>App</code> component that renders a <code>FormikDemo</code>, as the name implies it will
-leverage all the tools that Formik provides to show a demo of how a fully setup form in
-Formik will look and behave like.</p>
+<p>Another important convention we will always aim at adhering to is <strong>to never physically
+delete records</strong>. (Unless a compelling argument arises for doing so). We should always
+have a <code>deleted</code> field with a <code>true</code> representing the record is logically deleted (or not).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cross-cutting-concerns"><a class="anchor" href="#cross-cutting-concerns"></a>Cross Cutting Concerns</h2>
+<h2 id="key-paths"><a class="anchor" href="#key-paths"></a>Key Paths</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>We will hold a structure such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>auth</p>
+<div class="ulist">
+<ul>
+<li>
+<p>user (E.g., <code>auth:user:1</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>finances (E.g., <code>finances:*</code>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>intelligence (E.g., <code>intelligence:*</code>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>users (E.g., <code>users:*</code>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>projection (E.g., <code>projection:*</code>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And it&#8217;s each entry that will correspond to a numeral ID that we will
+have our documents saved to. As you can see the <strong>parent key path</strong> will be of the
+<strong>respective module</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="documents-diagram"><a class="anchor" href="#documents-diagram"></a>Documents diagram</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We will document each module&#8217;s data document structure in isolation (following the idea
+of the <em>Modular Monolith</em> approach), but also for simplicity and readability&#8217;s sake.</p>
+</div>
 <div class="sect2">
-<h3 id="formik"><a class="anchor" href="#formik"></a>Formik</h3>
-<div class="paragraph">
-<p>In Formik&#8217;s case, besides the basic tutorial rundown, it has many other examples
-in the docs about async calls, about instant-feedback on type, API requests for
-other field validations or calculations, besides Material UI&#8217;s integrations. So it
-covers many other use cases that will vary heavily on the requirements of the application.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="react-hook-form"><a class="anchor" href="#react-hook-form"></a>React Hook Form</h3>
-<div class="paragraph">
-<p>React Hook Form adheres to HTML standards for validation, besides accounting for
-performance and integration with multiple validation libraries (besides Yup). It
-also integrates heavily with typescript and allows for a true type safe dev
-experience.</p>
-</div>
-<div class="paragraph">
-<p>Besides this, the library has tons of utility classes that help with type-safety,
-alongside integration with both other UI component libraries, even services that can
-then hit API endpoints. And it also integrates nicely with <strong>React Native</strong>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="extra-notes"><a class="anchor" href="#extra-notes"></a>Extra Notes</h3>
-<div class="paragraph">
-<p>There&#8217;s definitely way more options when it comes to form libraries, each with their
-own quirks, pros/cons. A good video to get a really high level of them would be:</p>
-</div>
-<div class="videoblock">
+<h3 id="authentication-module"><a class="anchor" href="#authentication-module"></a>Authentication Module</h3>
+<div class="imageblock">
 <div class="content">
-<iframe width="640" height="480" src="https://www.youtube.com/embed/HK7X_uqf7YQ?rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+<img src="_images/auth-diagram.jpg" alt="auth diagram">
 </div>
+</div>
+<div class="paragraph text-center">
+<p><em>Figure 1. Authentication module&#8217;s data model</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>users</code> is the heart of this module (<em>aggregate root in DDD</em>), it will save data that Google&#8217;s
+API will provide on the initial <a href="../domain/ubiquitous-language.html#auth-handshake" class="xref page">handshake</a>
+plus storing in a nested document array the different tokens that might be created across the usage
+of the system. <strong><em>BIG NOTE:</em></strong> Each new record on the <code>tokens</code> collection should have
+its <code>value</code> field blanked out the moment it&#8217;s marked as <code>deleted</code> for security purposes
+(plus having that same token revoked on the Google side).<br>
+Also attached to the user we will have a list of different MFA devices in case the
+user configures one.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>When it comes to integrations and performance <strong>React Hook Form</strong> shows that it makes
-great usage of these concerns. (Besides being actively maintained and being the most
-popular form library).</p>
+<p><strong>Extra Note:</strong> One of the most important pieces of information on this module will be
+the <code>email</code> from a user, plus a <code>value</code> from a token attached to the user. It&#8217;s due
+to this very fact that those two values must be <a href="../backend/security.html" class="xref page">encrypted</a>
+and only decrypted at run-time for specific usage of their underlying values.</p>
+</div>
+<div class="paragraph">
+<p>One key part of this whole module&#8217;s data model is the fact that we are using <code>int</code>
+as the ID for each document. This is <em>on purpose</em> to have an easier time tying that
+back to the <em>Redis keypaths</em>, being that if we were to use GUIDs of any nature, the
+readability and ease of search for records would be vastly more challenging. (For other
+use cases, a GUID would be more suited, specially if we know that an <code>int</code> would reach
+its maximum value over time on the system).</p>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="apache-graphs-react.html">Apache Graphs on React</a></span>
-  <span class="next"><a href="formik.html">Formik</a></span>
+  <span class="prev"><a href="../domain/ubiquitous-language.html">Ubiquitous Language</a></span>
+  <span class="next"><a href="../prototypes/index.html">Prototypes</a></span>
 </nav>
 </article>
   </div>
