@@ -138,7 +138,16 @@
     <a class="nav-link" href="git-hooks.html">Git Hooks</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="net-modulith.html">.NET Modulith</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="net-modulith/net-modulith.html">.NET Modulith</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="net-modulith/oauth.html">OAuth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="net-modulith/folder-structure.html">Folder Structure</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
@@ -418,7 +427,7 @@ this in every single project is cumbersome rather than useful. Luckily we have e
 on the framework and IDE levels that help centralize these types of cross-cutting concerns.</p>
 </div>
 <div class="paragraph">
-<p>Hence, there&#8217;s a <a href="net-modulith.html#centralized-build-props" class="xref page">Directory.Build.props</a>
+<p>Hence, there&#8217;s a <a href="net-modulith/net-modulith.html#centralized-build-props" class="xref page">Directory.Build.props</a>
 file at the root of the solution, this is an <code>xml</code> file that will take care of
 setting up the enforcement of specific settings at a solution level. Think of it
 as a super-layer that gets applied to <strong>all solution&#8217;s projects</strong>. When it comes to our
@@ -469,7 +478,7 @@ get installed in all projects:</p>
 </div>
 <div class="paragraph">
 <p>For further information in regards to how packages are being centrally managed,
-you can head down to <a href="net-modulith.html#centralized-nuget-packages" class="xref page">Directory.Packages.props</a>.</p>
+you can head down to <a href="net-modulith/net-modulith.html#centralized-nuget-packages" class="xref page">Directory.Packages.props</a>.</p>
 </div>
 </div>
 <div class="sect2">

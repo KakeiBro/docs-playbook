@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Wireframing :: KakeiBro</title>
-    <link rel="prev" href="../index.html">
-    <link rel="next" href="authentication.html">
+    <title>OAuth :: KakeiBro</title>
+    <link rel="prev" href="net-modulith.html">
+    <link rel="next" href="folder-structure.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/shiki.css">
@@ -132,31 +132,31 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../backend/index.html">Backend</a>
+    <a class="nav-link" href="../index.html">Backend</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../backend/git-hooks.html">Git Hooks</a>
+    <a class="nav-link" href="../git-hooks.html">Git Hooks</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../backend/net-modulith/net-modulith.html">.NET Modulith</a>
+    <a class="nav-link" href="net-modulith.html">.NET Modulith</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../backend/net-modulith/oauth.html">OAuth</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="oauth.html">OAuth</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../backend/net-modulith/folder-structure.html">Folder Structure</a>
+    <a class="nav-link" href="folder-structure.html">Folder Structure</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+    <a class="nav-link" href="../ci-cd-pipelines.html">CI/CD Pipelines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../backend/logging.html">Logging</a>
+    <a class="nav-link" href="../logging.html">Logging</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../backend/security.html">Security</a>
+    <a class="nav-link" href="../security.html">Security</a>
   </li>
 </ul>
   </li>
@@ -166,28 +166,28 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../index.html">Frontend</a>
+    <a class="nav-link" href="../../frontend/index.html">Frontend</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="screens.html">Wireframing</a>
+    <a class="nav-link" href="../../frontend/screens/screens.html">Wireframing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="authentication.html">Authentication Screens</a>
+    <a class="nav-link" href="../../frontend/screens/authentication.html">Authentication Screens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../husky.html">Husky Setup</a>
+    <a class="nav-link" href="../../frontend/husky.html">Husky Setup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+    <a class="nav-link" href="../../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../ci-cd-pipelines.html">CI/CD Pipelines</a>
+    <a class="nav-link" href="../../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../vitest.html">Vitest</a>
+    <a class="nav-link" href="../../frontend/vitest.html">Vitest</a>
   </li>
 </ul>
   </li>
@@ -222,8 +222,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">KakeiBro Docs</a></li>
-    <li><a href="../index.html">Frontend</a></li>
-    <li><a href="screens.html">Wireframing</a></li>
+    <li><a href="../index.html">Backend</a></li>
+    <li><a href="net-modulith.html">.NET Modulith</a></li>
+    <li><a href="oauth.html">OAuth</a></li>
   </ul>
 </nav>
 </div>
@@ -232,100 +233,35 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Wireframing</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">OAuth</h1>
 <div class="paragraph">
-<p>There are tons of tools to make both designs, may they be wireframing, design systems,
-proof of concepts:</p>
+<p>Since we are using <strong><em>Google OAuth</em></strong>, we have to make some configurations on the GCloud
+Console side so that it integrates seamlessly with our application(s).</p>
+</div>
+<div class="paragraph">
+<p>As mentioned in the <a href="../../prototypes/o-auth.html" class="xref page">prototypes section</a>, we will have
+to register <em>Authorized JavaScript origins</em> plus <em>Authorized redirect URIs</em>, and since
+we have setup with CI/CD our domains and services already, we are now 100% sure as
+to what should be registered there. Under the <strong>Google Auth Plataform</strong> section on
+GCloud Console:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Figma</p>
+<p>Frontend URI (Javascript): <code><a href="https://kakeibro.dsbalderrama.top" class="bare">https://kakeibro.dsbalderrama.top</a></code></p>
 </li>
 <li>
-<p>Penpot</p>
-</li>
-<li>
-<p>Excalidraw</p>
-</li>
-<li>
-<p>Draw.io</p>
-</li>
-<li>
-<p>Wireframe.cc</p>
+<p>Backend URI (redirect URIs): <code><a href="https://kakeibro-api.dsbalderrama.top" class="bare">https://kakeibro-api.dsbalderrama.top</a></code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These are <em>web, open source, free, and/or cross-platform</em> solutions. The cross-platform nature
-is something really important for the project, hence we picked from these options (most
-of them are web-based in order to bridge that gap).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="penpot"><a class="anchor" href="#penpot"></a>Penpot.</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://penpot.app/learning-center#wireframing">We picked Penpot.</a></p>
-</div>
-<div class="paragraph">
-<p>This is a great web-based tool that&#8217;s totally free, Open Source and with tutorials and
-good enough tools for our purpose. We will be using it in order to create wireframes
-for our web application.</p>
-</div>
-<div class="paragraph">
-<p><strong>If you want access to the penpot project please shoot an e-mail to <em>the DG</em></strong>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Wireframes are low fidelity and only give us a really high level understanding of
-how a screen would look like, things like placement of elements, accesibility, flow,
-but for actual design this would require some sort of <strong>Design System</strong>. We will take
-inspiration for some of those from these community templates:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.figma.com/community/file/894542039433511203">Financial Dashboard</a></p>
-</li>
-<li>
-<p><a href="https://www.figma.com/community/file/1131279674237419307">Finance web Dashboard</a></p>
-</li>
-<li>
-<p><a href="https://www.figma.com/community/file/1019155319918719973">Web Login Pages</a></p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="wireframing-theory"><a class="anchor" href="#wireframing-theory"></a>Wireframing theory</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Wireframes are low-fidelity skeleton designs focusing on content, interface elements,
-navigation, and layout. They&#8217;re usually grayscale line drawings with no imagery, color,
-or attractive typography. The idea is to focus on the <strong>user experience</strong>, build up
-a kind of interface inventory and hash out the rough layout and hierarchy while not
-getting sidetracked by other design things.</p>
-</div>
-</div>
+<p>We should download <strong><em>the Client&#8217;s JSON secret</em></strong>. And we should start leveraging that
+in order to talk to Google and allow us to start serving OAuth screens.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../index.html">Frontend</a></span>
-  <span class="next"><a href="authentication.html">Authentication Screens</a></span>
+  <span class="prev"><a href="net-modulith.html">.NET Modulith</a></span>
+  <span class="next"><a href="folder-structure.html">Folder Structure</a></span>
 </nav>
 </article>
   </div>

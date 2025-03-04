@@ -138,7 +138,16 @@
     <a class="nav-link" href="../backend/git-hooks.html">Git Hooks</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../backend/net-modulith.html">.NET Modulith</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../backend/net-modulith/net-modulith.html">.NET Modulith</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../backend/net-modulith/oauth.html">OAuth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../backend/net-modulith/folder-structure.html">Folder Structure</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
@@ -600,15 +609,15 @@ the tech stack).</p>
 <div class="paragraph">
 <p>One other concept that was used in order to make the decision was of <strong>Screaming Architecture</strong>.
 The pattern itself focuses on the idea that the code bases we build, extend and maintain
-should constantly be giving queues to the developers about the <em>Domain</em> of the software.
+should constantly be giving cues to the developers about the <em>Domain</em> of the software.
 We add extra buffers and overhead to the development process when trying to separate
 our units of code into technical concerns (BI, Repository, etc). Whereas the way to
 really understand and keep a mental map of the software, is by connecting all of the
-technical implementations <strong>with the actual problem the software solves.</strong>. It is by
+technical implementations <strong>with the actual problem the software solves.</strong> It is by
 doing this that we add more intuitive and extendable choices for a developer.</p>
 </div>
 <div class="paragraph">
-<p>This obviously has to be architected with intent, and not just following like <em>dogma</em>,
+<p>This obviously has to be architected with intent, and not just following a set of rules like <em>dogma</em>,
 every software is different, and tons of variables come into play when coming up with
 the solution, <em>that not always is the best</em>, but we have to get our foot off the starting
 line somehow. We should follow <strong>iterative principles</strong> and always aim at making the
