@@ -147,6 +147,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="net-modulith/folder-structure.html">Folder Structure</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="net-modulith/authentication-module.html">Authentication Module</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -292,10 +295,14 @@ save the commit to VC it will police our changes.</p>
 </tr>
 </table>
 </div>
-<div class="paragraph">
+<div id="hooks" class="paragraph">
 <p>The <strong>pre-commit</strong> hook we have at the <code>git-hooks</code> folder of the repository is <strong>cross-platform</strong>,
 it will run both on <strong><em>Windows and Linux</em></strong>, depending on the OS it will then execute either
 <code>pre-commit.sh</code> or <code>pre-commit.ps1</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>post-commit</strong> hook we have at the <code>git-hooks</code> folder is also cross-platform
+and will execute the respective script based on the OS.</p>
 </div>
 <div class="paragraph">
 <p>The <strong>pre-push</strong> hook we have at the <code>git-hooks</code> folder is also cross-platform and will
@@ -339,6 +346,41 @@ to that CLI are present in here.</p>
 </li>
 <li>
 <p>Running all tests</p>
+</li>
+<li>
+<p>Running <code>appsettings.json</code> OAuth credential sanitization by blanking out sensitive fields,
+and backing up the contents for the <code>post-commit</code> hook to then finish this specific
+flow</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>NOTE</em>: Some links in regards to windows specific issues with jq and passing things with
+double quotes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/67636275/why-jq-does-not-compile-when-i-pass-a-powershell-variable">jq doesn&#8217;t compile</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jqlang/jq/issues/2640">double quote fix</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>post-commit.ps1</code> script takes care of doing the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work in conjunction with the <code>pre-commit.ps1</code> file so that once its backup <code>appsettings.json</code>
+contents are saved in a different file, this then restores all of that into the
+original <code>appsettings.json</code> file and deletes the backup file</p>
 </li>
 </ul>
 </div>

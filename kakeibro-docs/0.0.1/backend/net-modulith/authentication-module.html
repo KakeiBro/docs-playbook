@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Folder Structure :: KakeiBro</title>
-    <link rel="prev" href="oauth.html">
-    <link rel="next" href="authentication-module.html">
+    <title>Authentication Module :: KakeiBro</title>
+    <link rel="prev" href="folder-structure.html">
+    <link rel="next" href="../ci-cd-pipelines.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/shiki.css">
@@ -144,10 +144,10 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="oauth.html">OAuth</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="folder-structure.html">Folder Structure</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="authentication-module.html">Authentication Module</a>
   </li>
 </ul>
@@ -227,7 +227,7 @@
     <li><a href="../../index.html">KakeiBro Docs</a></li>
     <li><a href="../index.html">Backend</a></li>
     <li><a href="net-modulith.html">.NET Modulith</a></li>
-    <li><a href="folder-structure.html">Folder Structure</a></li>
+    <li><a href="authentication-module.html">Authentication Module</a></li>
   </ul>
 </nav>
 </div>
@@ -236,159 +236,71 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Folder Structure</h1>
+<h1 class="page">Authentication Module</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>The folder structure will adhere to <strong>Vertical Slice Architecture</strong> focused around the
-separation of concerns under a <code>Modulith</code> solution. Which means:</p>
+<p>The authentication module specifically will be in charge of all Google Auth work
+plus saving and maintenance of data specific to the users. (LogIn, register, updating).</p>
 </div>
-<div class="admonitionblock note">
+</div>
+</div>
+<div class="sect1">
+<h2 id="google-credentials"><a class="anchor" href="#google-credentials"></a>Google Credentials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From a previous spike that resulted in the <a href="../../prototypes/o-auth.html" class="xref page">Google OAuth Prototype</a>,
+we know that we require some configuration in GCloud Console, however, the one thing we
+need from the credentials <code>.json</code> is a <code>client_id</code>, nothing else. Due to this fact,
+we will simplify the configuration info that the module requires, meaning that the
+configurable aspects we will get are:</p>
+</div>
+<div class="listingblock">
+<div class="title">KakeiBro.API/appsettings.json</div>
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="json" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #E6DB74">"GoogleAuth"</span><span style="color: #F8F8F2">: {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"ClientId"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">""</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"RedirectUri"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">""</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"JavascriptOrigin"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">""</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"AuthorizationEndpoint"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"https://accounts.google.com/o/oauth2/v2/auth"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"TokenEndpoint"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"https://oauth2.googleapis.com/token"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"UserInfoEndpoint"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"https://www.googleapis.com/oauth2/v2/userinfo"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"RevokeTokenEndpoint"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"https://oauth2.googleapis.com/revoke"</span><span style="color: #F8F8F2">,</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">"RefreshTokenEndpoint"</span><span style="color: #F8F8F2">: </span><span style="color: #CFCFC2">"https://oauth2.googleapis.com/token"</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>With its respective configuration POCO on the project, we will leverage the <code>Options</code>
+pattern for configurations. It&#8217;s also worth noting that due to the sensitive nature
+of the information we have applied <a href="../git-hooks.html#hooks" class="xref page">post-commit and pre-commit</a>
+scripts that makes sure to work in conjunction so that they blank out the <code>ClientId</code>,
+<code>RedirectUri</code> and <code>JavascriptOrigin</code> fields every-time we are trying to make a commit.
+(And then also restore whatever values were there initially so that the dev experience
+doesn&#8217;t end up negatively affected).</p>
+</div>
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This isn&#8217;t the full folder structure, but a small representation of how it&#8217;s logically
-ordered.</p>
+<p>In a normal working dev workstation, we should always have the <code>appsettings.json</code>
+file marked as "changed". We should never have it as fully comitted and without
+changes, since for dev purposes we would need the different credentials filled in,
+but never comitted to VC.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>📂 src
-  📂 Common <i class="conum" data-value="1"></i><b>(1)</b>
-    📂 Common.Library <i class="conum" data-value="2"></i><b>(2)</b>
-      📂 Interfaces <i class="conum" data-value="3"></i><b>(3)</b>
-        📄 IEndpointDefinition.cs
-        📄 IModuleInstaller.cs
-        📄 IServiceInstaller
-      📄 EndpointDefinitionExtensions.cs <i class="conum" data-value="4"></i><b>(4)</b>
-      📄 ModuleInstallerExtensions.cs
-      📄 ServiceInstallerExtensions.cs
-  📂 Modules <i class="conum" data-value="5"></i><b>(5)</b>
-    📂 Modules.Authentication <i class="conum" data-value="6"></i><b>(6)</b>
-        📂 GoogleOAuth <i class="conum" data-value="7"></i><b>(7)</b>
-          📄 GoogleAuthEndpoints.cs <i class="conum" data-value="8"></i><b>(8)</b>
-          📄 GoogleAuthRepository.cs <i class="conum" data-value="9"></i><b>(9)</b>
-        📁 LogIn
-          📄 LogInEndpoints.cs
-          📄 LogInRepository.cs
-        📁 Config <i class="conum" data-value="10"></i><b>(10)</b>
-        📁 Data <i class="conum" data-value="11"></i><b>(11)</b>
-        📄 AssemblyReference.cs <i class="conum" data-value="12"></i><b>(12)</b>
-        📄 AuthenticationModuleInstaller.cs <i class="conum" data-value="13"></i><b>(13)</b>
-        📁 ServiceInstallers <i class="conum" data-value="14"></i><b>(14)</b>
-          📄 RepositoryServiceInstaller.cs <i class="conum" data-value="15"></i><b>(15)</b>
-    📂 Modules.Users (and so on...)
-  📁 KakeiBro.API <i class="conum" data-value="16"></i><b>(16)</b></pre>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>We will have a <em>Common</em> type of Class Library that all modules and apps can reference
-with base interfaces, extensions and classes that help us adhere to the rules of how all the
-architecture will be written.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The <code>shared</code> class library will be denominated <code>Common.Library</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Inside of it we will have really high level and foundational interfaces that will
-help us declare the different classes that a module should have in order to declare the
-composition steps that will register both its endpoints, plus its services.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>All the <code>EndpointDefinitionExtensions</code>, <code>ModuleInstallerExtensions</code>, <code>ServiceInstallerExtensions</code>
-are the ones powering <strong><em>assembly scanning</em></strong>, making it possible for us to simply reference the different
-<code>AssemblyReference</code> markers on different modules, and from that one target, we can start composing the whole
-module by registering its services, its endpoints and so on.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>We will have a <code>Modules</code> folder in which all our module&#8217;s will live (as Class
-Libraries completely independent of each other).</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Taking the Authentication Module as an example, we will have created a folder for
-the whole Module Class Library</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>And it&#8217;s inside <em>nested folders</em> that we will have the <strong><em>slices</em></strong> in the form of
-use cases. Each Use Case (user flow) for the module will contain all that it&#8217;s neccesary
-to it (from the endpoint all the way to the database specific concerns).</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>Each Use case will have generic named files, for example for all endpoints related
-to the use case we will be following the pattern <code>&lt;UseCase&gt;Endpoints.cs</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="9"></i><b>9</b></td>
-<td>And just like in the <em>endpoints</em> case we will follow the same idea with a file for
-a repository, <code>&lt;UseCase&gt;Repository.cs</code>. It&#8217;s worth noting that we chose to use the
-name of <code>Repository</code> however this could easily be named something else (such as <code>Service</code>
-or <code>BusinessLogic</code>), we are not leveraging the <em>Repository</em> pattern in its entirety
-mainly because we have no use case (at least for now).</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="10"></i><b>10</b></td>
-<td>In case we might require any sort of module configuration files, and/or classes, we will
-aggregate them under a <code>Config</code> folder.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="11"></i><b>11</b></td>
-<td>Since the module has to deal with its own set of database technical concerns, we will
-have a <em>Generic</em> folder named <code>Data</code> under the module, this wil encapsulate both
-the Entity objects that map to the database, plus migrations and other database centric
-operations.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="12"></i><b>12</b></td>
-<td>Since we will leverage assembly scanning for the registering of many of the components
-that make out our whole module, we should always have an <code>AssemblyReference.cs</code> file there,
-a marker, <strong>WITHOUT ACTUAL FUNCTIONAL CODE</strong>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="13"></i><b>13</b></td>
-<td>An interesting concept that we will also make use of is the concept of a <strong><em>Module Installer</em></strong>,
-since all of our modules will be class libraries at their core, we need for an actual
-application to make use of their functionalities, and so, in order to register the
-module we will use the concept of <strong><em>Install</em></strong>. Which in short means that all the
-interfaces to which an app can hook into this module and register it, all of its
-endpoints, services, database concerns should be <em>injected</em> through these interfaces.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="14"></i><b>14</b></td>
-<td>And in the spirit of keeping things simple, clean and organized, we will also separate
-by technical concern each registration for each different concern under a <code>ServiceInstallers</code>
-folder.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="15"></i><b>15</b></td>
-<td>For example, all repository registration logic should be under a specific <code>RepositoryServiceInstaller.cs</code>
-file.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="16"></i><b>16</b></td>
-<td>It&#8217;s also at the same level of the <code>Modules</code> folder that we will have the actual
-Web API (the app) that will then install of the modules to it through the interfaces that
-we have laid out previously.</td>
-</tr>
-</table>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="oauth.html">OAuth</a></span>
-  <span class="next"><a href="authentication-module.html">Authentication Module</a></span>
+  <span class="prev"><a href="folder-structure.html">Folder Structure</a></span>
+  <span class="next"><a href="../ci-cd-pipelines.html">CI/CD Pipelines</a></span>
 </nav>
 </article>
   </div>
