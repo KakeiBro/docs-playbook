@@ -961,7 +961,7 @@ don&#8217;t have to use <code>USER app</code> but <code>USER $APP_UID</code>. <a
 </div>
 <div class="paragraph">
 <p>It&#8217;s also worth noting that with <a href="net-modulith/net-modulith.html#centralized-nuget-packages" class="xref page">Centralized Package Management</a>.
-`Dockerfile`s have to have some additions to the default structure:</p>
+<code>Dockerfile</code> files have to have some additions to the default structure:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1337,11 +1337,13 @@ it manually.</td>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>GitHub Actions can be configured to run on a CRON manner, great for periodic jobs
 that should run even when we are not there. In our case we will always clean up the
-gcloud artifact registry at midnight, and we will only keep the last 3 tags alive.
+gcloud artifact registry at midnight, and we will only keep the last 2 images alive.
 Remember that <a href="#push-two-tags">we have 2 tags that are the same image</a>,
 meaning that <code>latest</code> will take one space, and the following two will be the latest image&#8217;s
 commit tag and the previous commit&#8217;s tag. So we are keeping in essence a latest and
-one previous version backup.</td>
+one previous version backup. However, since at a physical level, we are not generating
+2 images, if we query through <code>gcloud artifacts docker images list</code> we will only be seeing
+one artifact (but that might have two tags attached to it).</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -1371,36 +1373,34 @@ might come from the <em>secrets</em> vault, we have to assign them like this.</t
 <span class="line"></span>
 <span class="line"><span style="color: #88846F"># Get the list of tags for the specified package, sorted by creation time in descending order</span></span>
 <span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Fetching tags for package..."</span></span>
-<span class="line"><span style="color: #F8F8F2">TAGS</span><span style="color: #F92672">=</span><span style="color: #E6DB74">$(</span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts tags list </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #E6DB74">  </span><span style="color: #AE81FF">--project=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #E6DB74">  </span><span style="color: #AE81FF">--location=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="3"></i><b>(3)</b></span>
-<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--repository</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="4"></i><b>(4)</b></span>
-<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--package</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$IMAGE_NAME</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="5"></i><b>(5)</b></span>
-<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--format</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"value(name)" </span><span style="color: #F92672">|</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">tac</span><span style="color: #E6DB74">)</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">IMAGES</span><span style="color: #F92672">=</span><span style="color: #E6DB74">$(</span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts docker images list </span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--project</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--location</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--format</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"value(DIGEST)" </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--sort-by</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"~CREATE_TIME") </span><i class="conum" data-value="6"></i><b>(6)</b></span>
 <span class="line"></span>
-<span class="line"><span style="color: #88846F"># Convert the list of tags into an array</span></span>
-<span class="line"><span style="color: #F8F8F2">TAGS_ARRAY</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">($TAGS)</span></span>
+<span class="line"><span style="color: #88846F"># Convert the list of digests into an array</span></span>
+<span class="line"><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #F92672">=</span><span style="color: #E6DB74">(</span><span style="color: #F8F8F2">$IMAGES</span><span style="color: #E6DB74">)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #88846F"># Check if there are more than 3 tags</span></span>
-<span class="line"><span style="color: #F92672">if</span><span style="color: #F8F8F2"> [ ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY[@]} </span><span style="color: #F92672">-gt</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2"> ]; </span><span style="color: #F92672">then</span></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Found ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY</span><span style="color: #E6DB74">[@]} tags. Keeping the 3 most recent ones and deleting the rest..."</span></span>
+<span class="line"><span style="color: #88846F"># Check if there are more than 2 images</span></span>
+<span class="line"><span style="color: #F92672">if</span><span style="color: #E6DB74"> [ ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[@]} </span><span style="color: #F92672">-gt</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">2</span><span style="color: #E6DB74"> ]; </span><span style="color: #F92672">then</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #66D9EF">echo</span><span style="color: #E6DB74"> "Found ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[@]} images. Keeping the 2 most recent ones and deleting the rest..."</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #88846F"># Loop through the tags, skipping the first 3 (most recent)</span></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">for</span><span style="color: #F8F8F2"> ((i</span><span style="color: #F92672">=</span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2">; i</span><span style="color: #F92672">&lt;</span><span style="color: #F8F8F2">${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY[@]}; i</span><span style="color: #F92672">++</span><span style="color: #F8F8F2">)); </span><span style="color: #F92672">do</span></span>
-<span class="line"><span style="color: #F8F8F2">    TAG</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">${TAGS_ARRAY[$i]}</span></span>
-<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Deleting tag: </span><span style="color: #F8F8F2">$TAG</span><span style="color: #E6DB74">"</span></span>
-<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">gcloud</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">artifacts</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">tags</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">delete</span><span style="color: #F8F8F2"> $TAG </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--project=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--location=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--repository=</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--package=</span><span style="color: #F8F8F2">$IMAGE_NAME</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #AE81FF">--quiet</span></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">done</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #88846F"># Loop through the tags, skipping the first 2 (most recent)</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F92672">for</span><span style="color: #E6DB74"> ((i</span><span style="color: #F92672">=</span><span style="color: #AE81FF">2</span><span style="color: #E6DB74">; i</span><span style="color: #F92672">&lt;</span><span style="color: #E6DB74">${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[@]}; i</span><span style="color: #F92672">++</span><span style="color: #E6DB74">)); </span><span style="color: #F92672">do</span></span>
+<span class="line"><span style="color: #E6DB74">    </span><span style="color: #F8F8F2">DIGEST</span><span style="color: #F92672">=</span><span style="color: #E6DB74">${</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[$i]}</span></span>
+<span class="line"><span style="color: #E6DB74">    </span><span style="color: #66D9EF">echo</span><span style="color: #E6DB74"> "Deleting image: </span><span style="color: #F8F8F2">$DIGEST</span><span style="color: #E6DB74">"</span></span>
+<span class="line"><span style="color: #E6DB74">    </span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts docker images delete "</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74">@</span><span style="color: #F8F8F2">$DIGEST</span><span style="color: #E6DB74">" </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #E6DB74">      </span><span style="color: #F8F8F2">--project</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #E6DB74">      </span><span style="color: #F8F8F2">--location</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #E6DB74">      </span><span style="color: #A6E22E">--quiet</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
+<span class="line"><span style="color: #E6DB74">      </span><span style="color: #AE81FF">--force-delete-tags</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F92672">done</span></span>
 <span class="line"><span style="color: #F92672">else</span></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Only ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">TAGS_ARRAY</span><span style="color: #E6DB74">[@]} tags found. No cleanup needed."</span></span>
+<span class="line"><span style="color: #E6DB74">  </span><span style="color: #66D9EF">echo</span><span style="color: #E6DB74"> "Only ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[@]} tags found. No cleanup needed."</span></span>
 <span class="line"><span style="color: #F92672">fi</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Cleanup complete!"</span></span></code></pre></body></html>
+<span class="line"><span style="color: #66D9EF">echo</span><span style="color: #E6DB74"> "Cleanup complete!"</span></span></code></pre></body></html>
 </div>
 </div>
 <div class="colist arabic">
@@ -1429,19 +1429,25 @@ we created at the <em>Artifact Registry</em> level.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>And lastly a <strong><em>Package</em></strong> is the name of the image that&#8217;s under the repository.</td>
+<td>Part of glcloud&#8217;s <a href="https://cloud.google.com/sdk/gcloud/reference/artifacts/docker/images/list">docs</a>
+references the idea that we can both just get specific fields of the whole payload, in this case
+we just want the digest to point specifically to it.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>We could use a <code>--sort_by=~create_time</code>, however GCloud always returns in Ascending
-(older first), and so we leverage the CLI to inverse the output we get with <code>tac</code>
-(that&#8217;s the inverse of <code>cat</code>). That way we will have all the output in descending order
-(newer first), and we start from the 3rd newest onwards. (Again, <strong>two tags</strong> refer to
-the <strong>latest build</strong>, and the last one refers to the <strong>previous commit</strong>).
+<td>Part of conventions by gcloud allows for us to feed a sorting field reference and
+with the tilde <code>~</code> we can invert the default <em>ascending</em> so that we start from the 2nd newest onwards.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>And so we will get the digest&#8217;s for each docker image that&#8217;s hosted, and we will only
+keep the last 2 images (the last one that was pushed and that should be on our Cloud Run
+instance and a previous version as a backup). Any other image will be deleted, and no trace
+should be left behind.
 <div class="paragraph">
 <p><em>Note:</em> One small thing to take into account is that layers might be present at the
 registy level, and other things specific to the inner-workings, so you might see
-listed way more artifacts than the titular 3 we decided to keep. But <strong>don&#8217;t try to
+listed way more artifacts than the titular 2 we decided to keep. But <strong>don&#8217;t try to
 delete them manually</strong>, there are alerts for some of them also in place, but if we delete
 things without really knowing what they are, we might break other services. However,
 it&#8217;s worth noting that <a href="#build-push-action-provenance">provenance</a>
