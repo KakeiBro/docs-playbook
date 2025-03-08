@@ -628,6 +628,121 @@ Once you do that, then everything should fall into place, since all the abstract
 general purpose code is already there. And now integrating and extending should be
 a really mechanical process.</p>
 </div>
+<div class="sect2">
+<h3 id="endpoint-versioning"><a class="anchor" href="#endpoint-versioning"></a>Endpoint versioning</h3>
+<div class="paragraph">
+<p>We will leverage <strong>API Versioning</strong> straight out of the <code>Asp.Versioning.Http</code> and
+<code>Asp.Versioning.Mvc.ApiExplorer</code> Nugets. The integration with it is quite simple,
+in the sense that for the time being we can just declare API versioning and work as
+if we didn&#8217;t mind about it, however, if the need to start using versioning arises, we
+can immediately start leveraging the extension methods as we require.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">builder.Services</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">AddApiVersioning</span><span style="color: #F8F8F2">(options </span><span style="color: #F92672">=&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    {</span></span>
+<span class="line"><span style="color: #F8F8F2">        options.DefaultApiVersion </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ApiVersion</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">); </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">        options.ApiVersionReader </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">UrlSegmentApiVersionReader</span><span style="color: #F8F8F2">(); </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    })</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">AddApiExplorer</span><span style="color: #F8F8F2">(options </span><span style="color: #F92672">=&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    {</span></span>
+<span class="line"><span style="color: #F8F8F2">        options.GroupNameFormat </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"'v'V"</span><span style="color: #F8F8F2">; </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        options.SubstituteApiVersionInUrl </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">true</span><span style="color: #F8F8F2">; </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">    });</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We will start with a default <code>v1</code> for our application.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Out of the different versioning schemes that exist, we will use the url segment
+approach, meaning that prefixing each endpoint we will have its version stated <code>/v1/</code>,
+<code>/v2/</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We will then specify how the template for the version will be constructed, in our
+case is a simple <code>v</code> character and then the number of the version right after <code>V</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We will also enable the service to be able to replace the endpoint template with
+the respective version when registering endpoints.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>And due to all the legwork we did with <a href="#module-architecture">assembly scanning</a>
+both for services and endpoints, applying versioning to any other endpoint became
+seamless since we can leverage the same interface in order to swap out the implementation
+with a pre-configured one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #A6E22E; text-decoration: underline">ApiVersionSet</span><span style="color: #F8F8F2"> apiVersionSet </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> app</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">NewApiVersionSet</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">HasApiVersion</span><span style="color: #F8F8F2">(</span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ApiVersion</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">)) </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">ReportApiVersions</span><span style="color: #F8F8F2">() </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">Build</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"><span style="color: #A6E22E; text-decoration: underline">RouteGroupBuilder</span><span style="color: #F8F8F2"> groupBuilder </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> app</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">MapGroup</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"api/v{apiVersion:apiVersion}"</span><span style="color: #F8F8F2">)</span></span>
+<span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">WithApiVersionSet</span><span style="color: #F8F8F2">(apiVersionSet); </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// Add Modules Routes</span></span>
+<span class="line"><span style="color: #F8F8F2">groupBuilder.</span><span style="color: #A6E22E">InstallEndpointsFromAssemblies</span><span style="color: #F8F8F2">( </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">    app.Configuration,</span></span>
+<span class="line"><span style="color: #F8F8F2">    Modules.Authentication.AssemblyReference.Assembly);</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We will only declare a <code>v1</code> for now, this can easily be extended later through
+the fluent pattern.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We will configure our endpoints to have the ability to report back to the clients
+through headers and error messages (in case an invalid version is queried), so that the
+client is aware of deprecations and other available versions.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We are building a <code>RouteGroupBuilder</code> with a prefix, plus the route template
+for versioning pre-configured.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And because we setup our <em>assembly scanning</em> in such an extendable and seamless manner,
+we can simply swap out the previous <code>app</code> instance with the <code>groupBuilder</code> instance and
+now all the endpoints that end up registered will be prefixed with <code>api/v&lt;number&gt;</code>. And
+it&#8217;s that easy.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>One thing to take into consideration is that if you introduce API versioning and you
+have integration tests or further set-up that&#8217;s dependent on the URL of the endpoint,
+those will break, and you will have to manually fix them.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
