@@ -790,6 +790,18 @@ its hosting with the newly built one. <strong>Every detail counts</strong>, the 
 take place if we are pointing to the same name and same configurations, if something
 like the <em>region</em> is different, it will create two services with the same name, but on
 different regions.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This deploy also takes into account environment variables, we build at runtime
+an <code>.env</code> file, and we then add different environment variables to swap out behavior
+accordingly (this follows gcloud&#8217;s specific syntax that&#8217;s akin to <code>KEY_1: "VALUE_1" KEY_2: "VALUE_2"</code>),
+this then is fed to the cloud run deploy command so that it parses them into its
+runtime configuration. We also delete this temporary <code>.env</code> file once the deploy
+is done.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1366,6 +1378,7 @@ might come from the <em>secrets</em> vault, we have to assign them like this.</t
 <span class="line"><span style="color: #F8F8F2">PROJECT_ID</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$PROJECT_ID</span></span>
 <span class="line"><span style="color: #F8F8F2">REPOSITORY_NAME</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span></span>
 <span class="line"><span style="color: #F8F8F2">IMAGE_NAME</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$IMAGE_NAME</span></span>
+<span class="line"><span style="color: #F8F8F2">ARTIFACT_REGISTRY</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$ARTIFACT_REGISTRY</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #88846F"># Authenticate to Google Cloud (already done in the workflow, but included for completeness)</span></span>
 <span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Authenticating to Google Cloud..."</span></span>
@@ -1373,9 +1386,9 @@ might come from the <em>secrets</em> vault, we have to assign them like this.</t
 <span class="line"></span>
 <span class="line"><span style="color: #88846F"># Get the list of tags for the specified package, sorted by creation time in descending order</span></span>
 <span class="line"><span style="color: #66D9EF">echo</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">"Fetching tags for package..."</span></span>
-<span class="line"><span style="color: #F8F8F2">IMAGES</span><span style="color: #F92672">=</span><span style="color: #E6DB74">$(</span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts docker images list </span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">FULL_NAME</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"</span><span style="color: #F8F8F2">$ARTIFACT_REGISTRY</span><span style="color: #E6DB74">/</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74">/</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74">/</span><span style="color: #F8F8F2">$IMAGE_NAME</span><span style="color: #E6DB74">"</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">IMAGES</span><span style="color: #F92672">=</span><span style="color: #E6DB74">$(</span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts docker images list </span><span style="color: #F8F8F2">$FULL_NAME</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="4"></i><b>(4)</b></span>
 <span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--project</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--location</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #E6DB74"> </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="3"></i><b>(3)</b></span>
 <span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--format</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"value(DIGEST)" </span><span style="color: #A6E22E">\</span><span style="color: #E6DB74"> </span><i class="conum" data-value="5"></i><b>(5)</b></span>
 <span class="line"><span style="color: #E6DB74">  </span><span style="color: #F8F8F2">--sort-by</span><span style="color: #F92672">=</span><span style="color: #E6DB74">"~CREATE_TIME") </span><i class="conum" data-value="6"></i><b>(6)</b></span>
 <span class="line"></span>
@@ -1390,11 +1403,10 @@ might come from the <em>secrets</em> vault, we have to assign them like this.</t
 <span class="line"><span style="color: #E6DB74">  </span><span style="color: #F92672">for</span><span style="color: #E6DB74"> ((i</span><span style="color: #F92672">=</span><span style="color: #AE81FF">2</span><span style="color: #E6DB74">; i</span><span style="color: #F92672">&lt;</span><span style="color: #E6DB74">${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[@]}; i</span><span style="color: #F92672">++</span><span style="color: #E6DB74">)); </span><span style="color: #F92672">do</span></span>
 <span class="line"><span style="color: #E6DB74">    </span><span style="color: #F8F8F2">DIGEST</span><span style="color: #F92672">=</span><span style="color: #E6DB74">${</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[$i]}</span></span>
 <span class="line"><span style="color: #E6DB74">    </span><span style="color: #66D9EF">echo</span><span style="color: #E6DB74"> "Deleting image: </span><span style="color: #F8F8F2">$DIGEST</span><span style="color: #E6DB74">"</span></span>
-<span class="line"><span style="color: #E6DB74">    </span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts docker images delete "</span><span style="color: #F8F8F2">$REPOSITORY_NAME</span><span style="color: #E6DB74">@</span><span style="color: #F8F8F2">$DIGEST</span><span style="color: #E6DB74">" </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #E6DB74">    </span><span style="color: #A6E22E">gcloud</span><span style="color: #E6DB74"> artifacts docker images delete "</span><span style="color: #F8F8F2">$FULL_NAME</span><span style="color: #E6DB74">@</span><span style="color: #F8F8F2">$DIGEST</span><span style="color: #E6DB74">" </span><span style="color: #AE81FF">\ </span><i class="conum" data-value="7"></i><b>(7)</b></span>
 <span class="line"><span style="color: #E6DB74">      </span><span style="color: #F8F8F2">--project</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$PROJECT_ID</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #E6DB74">      </span><span style="color: #F8F8F2">--location</span><span style="color: #F92672">=</span><span style="color: #F8F8F2">$REGION</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
 <span class="line"><span style="color: #E6DB74">      </span><span style="color: #A6E22E">--quiet</span><span style="color: #E6DB74"> </span><span style="color: #AE81FF">\</span></span>
-<span class="line"><span style="color: #E6DB74">      </span><span style="color: #AE81FF">--force-delete-tags</span></span>
+<span class="line"><span style="color: #E6DB74">      </span><span style="color: #AE81FF">--delete-tags</span></span>
 <span class="line"><span style="color: #E6DB74">  </span><span style="color: #F92672">done</span></span>
 <span class="line"><span style="color: #F92672">else</span></span>
 <span class="line"><span style="color: #E6DB74">  </span><span style="color: #66D9EF">echo</span><span style="color: #E6DB74"> "Only ${</span><span style="color: #F92672">#</span><span style="color: #F8F8F2">IMAGE_ARRAY</span><span style="color: #E6DB74">[@]} tags found. No cleanup needed."</span></span>
@@ -1419,13 +1431,14 @@ trying to run this script)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Unlike the <code>$ARTIFACT_REGISTRY</code> value that references both the region plus the
-actual domain, this is simply the region section of that.</td>
+<td>We build the full path to the image at the repository level (notice how this is the same
+path that we use when pushing an image on the <code>master-push</code> action).</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>The same repository name that we have under <em>secrets</em>, this is the root that
-we created at the <em>Artifact Registry</em> level.</td>
+we created at the <em>Artifact Registry</em> level, from there on we have to build the path all the way to
+the specific image that will be used by Cloud Run to spin up an instance.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
@@ -1436,7 +1449,10 @@ we just want the digest to point specifically to it.</td>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
 <td>Part of conventions by gcloud allows for us to feed a sorting field reference and
-with the tilde <code>~</code> we can invert the default <em>ascending</em> so that we start from the 2nd newest onwards.</td>
+with the tilde <code>~</code> we can invert the default <em>ascending</em> so that we start from the 2nd newest onwards.
+<em>Also,</em> the <code>gcloud</code> command outputs two lines before the digests, or well <em>it seems like it</em>, but we don&#8217;t
+have to worry about that, if we try to pipe anything to the output it will only output the digests separated
+by new lines.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>

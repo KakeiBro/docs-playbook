@@ -327,6 +327,25 @@ specifically on the concern of isolating data between modules.</p>
 delete records</strong>. (Unless a compelling argument arises for doing so). We should always
 have a <code>deleted</code> field with a <code>true</code> representing the record is logically deleted (or not).</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The conventions on field names and document names will apply mostly for diagram and
+theoretical purposes (this is an extra overhead, and we will assume that). However,
+on the physical system, we will be using Microsoft&#8217;s convention since it will map directly
+from class and property field names (Pascal Case). This is mostly due to the fact that
+<code>Redis.OM</code> doesn&#8217;t have a direct way to do a re-mapping of the fields as we would on something
+like <code>EF</code>, and so the exact same names are parsed into the Redis instance for the documents.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">

@@ -290,11 +290,177 @@ doesn&#8217;t end up negatively affected).</p>
 <p>In a normal working dev workstation, we should always have the <code>appsettings.json</code>
 file marked as "changed". We should never have it as fully comitted and without
 changes, since for dev purposes we would need the different credentials filled in,
-but never comitted to VC.</p>
+but never comitted to VC when making a commit (and the git hooks help with that).</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="oauth-flow"><a class="anchor" href="#oauth-flow"></a>OAuth Flow</h2>
+<div class="sectionbody">
+<div class="imageblock plantuml">
+<div class="content">
+<img src="../_images/oauth-flow-diagram.svg" alt="oauth-flow-diagram">
+</div>
+</div>
+<div class="paragraph text-center">
+<p><em>Figure 1. OAuth Flow Sequence Diagram</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="redis"><a class="anchor" href="#redis"></a>Redis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to get a Docker instance with the neccesary instance of Redis running you can
+run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">docker run -d --name redis-stack -p 6379:6379 redis/redis-stack-server:latest</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This will just spin of an instance that you can consume straight away, but for our
+persistence purposes we will run a different command that will bind to a config file
+plus stating the name of a mounted file that will represent the state of the database.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>First of all, based on the <a href="../../database/index.html#authentication-module" class="xref page">document
+diagram</a>, we can immediately identify two main things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>User</code> document is a <strong>root document</strong>, embedded to it we will have <code>Token</code> and
+<code>MfaDevice</code>. When it comes to working with <code>Redis.OM</code>, we should mark under an index
+all the <strong>root documents</strong> (Hence, we don&#8217;t index the other mapping classes besides <code>User</code>).</p>
+</li>
+<li>
+<p>We are leveraging <code>int</code> for the Id fields, we could leverage something else such as
+Guid v7 which has a timestamp component added to it, functionality that is analogous
+to a ULID (something Redis uses by default). And so will be leveraging <em>through code</em>
+and a small index field to keep track of the latest id field when inserting new documents.
+It&#8217;s also worth noting that when seeding values, we can leverage <code>f.IndexFaker + 1</code> when
+calculating a hard-set id for a record. We do the <code>+ 1</code> because the index starts at <code>0</code>,
+and if we try to send such a value as an Id for Redis it will take it as <code>null</code> and try
+to auto-generate an ULID on its own and it will fail since it will try to save it in
+an <code>int</code> field.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Note:</em> If you need to check for the indexes that are present in the Redis instance,
+you can head into the container and introduce: <code>redis-cli &gt; FT._LIST</code></p>
+</div>
+<div class="paragraph">
+<p>A really important service we have to disclose is <code>DataServicesInstaller</code>, this takes care
+of leveraging everything that&#8217;s under the <code>Data</code> folder, it will both register necessary
+services in order to talk to Redis (both from the <code>Redis.OM</code> and <code>Microsoft.Extensions.Caching.StackExchangeRedis</code> packages),
+and it will also initiate a <code>IHostedService</code> (RedisMigrator) that will be in charge of migrating
+neccesary indexes and other things that the database needs and in case a change takes place it will try
+to run idempotent methods in order to get the database up to speed (loose structure integrity).<br>
+Plus also having the ability to seed data in case the right configuration is in place, the moment
+the app is shutdown it also has a configurable behavior that will attempt to wipe the Redis instance
+clean of the things specific to the Auth Module.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="nuget-and-configurations"><a class="anchor" href="#nuget-and-configurations"></a>NuGet and Configurations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When it comes to the NuGet packages that the auth module will leverage, we will copy
+the same cross cutting concern ones (static analyzers, loggers). Plus Redis dependencies
+and a faker library that can help us with seeding <code>Bogus</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="xml" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #F92672">ItemGroup</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #88846F">&lt;!--Cross-Cutting Concerns--&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"SonarAnalyzer.CSharp"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"StyleCop.Analyzers"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Serilog.AspNetCore"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Serilog.Enrichers.Environment"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Serilog.Enrichers.Thread"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Serilog.Sinks.Async"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #88846F">&lt;!--Redis Dependencies--&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Microsoft.Extensions.Caching.StackExchangeRedis"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Redis.OM"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #88846F">&lt;!--Faker--&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        &lt;</span><span style="color: #F92672">PackageReference</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Include</span><span style="color: #F8F8F2">=</span><span style="color: #E6DB74">"Bogus"</span><span style="color: #F8F8F2">/&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #F92672">ItemGroup</span><span style="color: #F8F8F2">&gt;</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also worth noting that there is a really important service called
+<code>ConfigurationServicesInstaller</code>, this takes care of leveraging the <code>Options&lt;T&gt;</code> pattern
+so that we register any type of configuration instance that needs to be registered by
+being fed from the API&#8217;s configuration instance.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="notes"><a class="anchor" href="#notes"></a>Notes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Most of the design decisions behind the usage of interfaces for collections plus making
+them init-only come from static analyzer suggestions</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2227">CA2227</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1002">CA1002</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When logging, there&#8217;s a way to micro-optimize even further, specially with high-troughput
+logging scenarios, by avoiding boxing and reducing garbage by coding predefined templates
+for different logging events, this however will impose a much higher cognitive overhead
+since this is pushing logging towards a much more structured and complex design, and
+indirectly strays away from really ad-hoc/sporadic logging messages and introducing the
+need for pre-defined logging events and metadata assigned to them.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1848">CA1848</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/high-performance-logging">High Performance Logging</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/logger-message-generator">Logger Message Generator</a></p>
+</li>
+<li>
+<p><strong>IMPORTANT: </strong> For our use case, we won&#8217;t incur in such high level of design,
+hence this specific static analyzer error has been turned off.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
