@@ -309,6 +309,13 @@ but never comitted to VC when making a commit (and the git hooks help with that)
 <div class="paragraph text-center">
 <p><em>Figure 1. OAuth Flow Sequence Diagram</em></p>
 </div>
+<div class="paragraph">
+<p>The diagram is pretty self-explanatory, we will always greet the user with the Login
+screen, and we will then request the API for the Google OAuth URI, so that the frontend
+can then launch the flow on a minimized new window, the moment the user finishes the flow
+another request will be sent to the backend so that it takes all the information it can
+take and start persisting data may it be for a sign-up or a login.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
