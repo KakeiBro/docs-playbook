@@ -21,6 +21,8 @@ antora:
         - yaml
         - xml
         - bash
+        - ts
+        - cs
       register_languages:
         - id: 'typescript'
           scope_name: 'source.ts'

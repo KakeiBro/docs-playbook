@@ -235,4 +235,7 @@ can be used to write in code blocks as the identifier for what language and gram
 to use, however `alias` can be used to add different identifiers that will be matched 
 to the same grammar. E.g: If you put an alias such as `great`, and that is under 
 the language for `typescript` if you write in a code block `[source, great]`, then 
-the highlighting will be of `typescript`.
+the highlighting will be of `typescript`, but the key step to enable this is to **add the 
+alias name under `languages`**. If you don't add it, then the mapping will fail, 
+however, be aware of something **_Never add the id of the register_language under languages_**. 
+Only aliases are valid.
