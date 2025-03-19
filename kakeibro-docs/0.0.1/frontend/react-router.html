@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Users Module :: KakeiBro</title>
-    <link rel="prev" href="authentication-module.html">
-    <link rel="next" href="finances-module.html">
+    <title>React Router :: KakeiBro</title>
+    <link rel="prev" href="vitest.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/shiki.css">
@@ -69,22 +68,22 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Domain</a>
+    <a class="nav-link" href="../domain/index.html">Domain</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="authentication-module.html">Authentication Module</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="users-module.html">Users Module</a>
+    <a class="nav-link" href="../domain/authentication-module.html">Authentication Module</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="finances-module.html">Finances Module</a>
+    <a class="nav-link" href="../domain/users-module.html">Users Module</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="intelligence-module.html">Intelligence Module</a>
+    <a class="nav-link" href="../domain/finances-module.html">Finances Module</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="ubiquitous-language.html">Ubiquitous Language</a>
+    <a class="nav-link" href="../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../domain/ubiquitous-language.html">Ubiquitous Language</a>
   </li>
 </ul>
   </li>
@@ -169,31 +168,31 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../frontend/index.html">Frontend</a>
+    <a class="nav-link" href="index.html">Frontend</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../frontend/screens/screens.html">Wireframing</a>
+    <a class="nav-link" href="screens/screens.html">Wireframing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../frontend/screens/authentication.html">Authentication Screens</a>
+    <a class="nav-link" href="screens/authentication.html">Authentication Screens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
+    <a class="nav-link" href="husky.html">Husky Setup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+    <a class="nav-link" href="ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../frontend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+    <a class="nav-link" href="ci-cd-pipelines.html">CI/CD Pipelines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
+    <a class="nav-link" href="vitest.html">Vitest</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../frontend/react-router.html">React Router</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="react-router.html">React Router</a>
   </li>
 </ul>
   </li>
@@ -228,8 +227,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">KakeiBro Docs</a></li>
-    <li><a href="index.html">Domain</a></li>
-    <li><a href="users-module.html">Users Module</a></li>
+    <li><a href="index.html">Frontend</a></li>
+    <li><a href="react-router.html">React Router</a></li>
   </ul>
 </nav>
 </div>
@@ -238,20 +237,94 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Users Module</h1>
+<h1 class="page">React Router</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>While this is indeed called <strong>Users Module</strong>, we have to get something out the way.
-The <strong><em>basic user</em></strong>, the one that is key in order for the whole system to function and actually generate value is the <strong>BOOKKEEPER</strong>. This is the one user that can manage all the data that goes into the system that will then power charts, reports, and everything else.</p>
+<p>Reference: <a href="https://reactrouter.com/home">React Router Website</a></p>
 </div>
 <div class="paragraph">
-<p>The module in concept is pretty simple, only cares about CRUD operations in regards
-to bookkeepers, there are <em>"super users"</em> in charge of this called <strong>SysAdmin</strong>.
-These users have to be created manually (by the hands of a developer), although
-there are <a href="../backend/net-modulith/net-modulith.html" class="xref page">automations</a> around it.</p>
+<p>React Router is the most famous library focused specifically on routing needs for SPA
+applications, it has <a href="https://reactrouter.com/home">54.3K</a> stars on GitHub and more than
+<strong>10.5K</strong> forks.</p>
+</div>
+<div class="paragraph">
+<p>We will use this library for our routing needs, specifically on its <code>Data</code> mode.
+However, it&#8217;s worth noting that there are three modes to pick:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Framework Mode</p>
+</li>
+<li>
+<p>Data Mode</p>
+</li>
+<li>
+<p>Declarative Mode</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There&#8217;s a <a href="https://reactrouter.com/start/modes">reference</a> on which one to pick, we could&#8217;ve
+gone for <code>Framework Mode</code> but this is (as its name implies) pretty opinionated and the
+documentation itself just tells us to use a template so that we have an already setup project
+created with <code>vite</code>. We don&#8217;t want to go that far, and so we will use the next best thing,
+which is akin to <em>Angular&#8217;s</em> approach, which is more programatic in nature with files
+defining the routes.</p>
+</div>
+<div class="paragraph">
+<p>First of all, docs are not that great since they default to simply using templates,
+but so that we install only the things that we ran the following commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">pnpm i react-router</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a brief description of the different libraries that we installed:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">react-router</dt>
+<dd>
+<p>The core library for React Router. It provides routing logic, components, and hooks
+necessary for client-side and server-side routing.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="react-router-conventions"><a class="anchor" href="#react-router-conventions"></a>React Router Conventions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Following the <a href="ui-folder-structure-patterns.html" class="xref page">folder structure conventions</a>,
+we will have a <code>features</code> folder in which, based on the domain, all components, pages,
+will be saved. E.g., Under <code>features/auth/pages/Login.tsx</code> we will have a component
+that renders a page that is tied to a route from React Router. At the root of the app
+<code>src/router.ts</code> we have declared all the different routes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>And it is also worth noting that on <code>main.tsx</code> we have imported the object that&#8217;s
+created at the previously <code>router.ts</code> module.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="authentication-module.html">Authentication Module</a></span>
-  <span class="next"><a href="finances-module.html">Finances Module</a></span>
+  <span class="prev"><a href="vitest.html">Vitest</a></span>
 </nav>
 </article>
   </div>

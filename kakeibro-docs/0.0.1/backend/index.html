@@ -192,6 +192,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../frontend/vitest.html">Vitest</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frontend/react-router.html">React Router</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -562,6 +565,76 @@ is enforced by the <code>charset = utf-8</code> setting). If we get an error on 
 or "unexpected character", we might have to save the file that&#8217;s failing the check
 <em>without BOM</em>.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cors"><a class="anchor" href="#cors"></a>CORS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cross-Origin Resource Sharing is a mechanism to safely bypass the same-origin policy,
+that is, it allows a web page to access restricted resources from a server on a different
+domain than the domain that served the web page. <em>By default</em> HTTP is configured to
+only allow "same-origin" requests, in an effort to add more security, CORS allows for
+the developer to configure what type of interactions will be allowed and from which
+domains.</p>
+</div>
+<div class="paragraph">
+<p>In our specific use case we will configure CORS (in prod/demo) to have specific policies
+that would only allow specific shapes of requests. However, for dev purposes we have
+configured the CORS middleware to accept any request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (builder.Environment.</span><span style="color: #A6E22E">IsDevelopment</span><span style="color: #F8F8F2">())</span></span>
+<span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">    builder.Services.</span><span style="color: #A6E22E">AddCors</span><span style="color: #F8F8F2">(options </span><span style="color: #F92672">=&gt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    {</span></span>
+<span class="line"><span style="color: #F8F8F2">        options.</span><span style="color: #A6E22E">AddPolicy</span><span style="color: #F8F8F2">( </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #E6DB74">"AllowAll"</span><span style="color: #F8F8F2">, </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">            policy </span><span style="color: #F92672">=&gt;</span><span style="color: #F8F8F2"> policy</span></span>
+<span class="line"><span style="color: #F8F8F2">                .</span><span style="color: #A6E22E">AllowAnyOrigin</span><span style="color: #F8F8F2">() </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">                .</span><span style="color: #A6E22E">AllowAnyMethod</span><span style="color: #F8F8F2">()</span></span>
+<span class="line"><span style="color: #F8F8F2">                .</span><span style="color: #A6E22E">AllowAnyHeader</span><span style="color: #F8F8F2">());</span></span>
+<span class="line"><span style="color: #F8F8F2">    });</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #88846F">// ...more code</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (builder.Environment.</span><span style="color: #A6E22E">IsDevelopment</span><span style="color: #F8F8F2">())</span></span>
+<span class="line"><span style="color: #F8F8F2">{</span></span>
+<span class="line"><span style="color: #F8F8F2">    app.</span><span style="color: #A6E22E">UseCors</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"AllowAll"</span><span style="color: #F8F8F2">); </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>As you can see on the <code>builder</code> side of the app we can configure CORS with the
+<code>AddCors()</code> extension method.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>To the parameter of the delegate that the extension method receives we can use another
+extension method called <code>AddPolicy()</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We can add multiple policies that can abstract a specific domain or set of rules
+we might want to add to the CORS middleware, we use names to differentiate them.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>And through a delegate on the extension method we leverage the fluent pattern
+to start the composition of the rules that the policy will add to the middleware.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>And when configuring the HTTP pipeline we have to use the <code>UseCors()</code> extension
+method and call the respective policy so that it&#8217;s applied to the pipeline.</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
