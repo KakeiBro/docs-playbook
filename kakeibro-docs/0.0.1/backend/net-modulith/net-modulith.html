@@ -184,6 +184,15 @@
     <a class="nav-link" href="../../frontend/husky.html">Husky Setup</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../frontend/modules.html">Modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../frontend/modules/auth-module.html">Authentication Module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -504,7 +513,7 @@ important calls there:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">builder.Services.</span><span style="color: #A6E22E">InstallModulesFromAssemblies</span><span style="color: #F8F8F2">( </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">builder.Services.</span><span style="color: #A6E22E">InstallModulesFromAssemblies</span><span style="color: #F8F8F2">( </span><i class="conum" data-value="1"></i><b>(1)</b></span>
 <span class="line"><span style="color: #F8F8F2">    builder.Configuration,</span></span>
 <span class="line"><span style="color: #F8F8F2">    Modules.Authentication.AssemblyReference.Assembly);</span></span>
 <span class="line"></span>
@@ -537,7 +546,7 @@ interface to then kickstart further registrations.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Common</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Library</span><span style="color: #F8F8F2">;</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Common</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Library</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Common</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Library</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Interfaces</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Microsoft</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Extensions</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Configuration</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Microsoft</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Extensions</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">DependencyInjection</span><span style="color: #F8F8F2">;</span></span>
@@ -577,7 +586,7 @@ the respective method specific to a <code>IServiceInstaller</code>.</td>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Common</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Library</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Interfaces</span><span style="color: #F8F8F2">;</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Common</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Library</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Interfaces</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Microsoft</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Extensions</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Configuration</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Microsoft</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Extensions</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">DependencyInjection</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F92672">using</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">Modules</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">Authentication</span><span style="color: #F8F8F2">.</span><span style="color: #A6E22E; text-decoration: underline">GoogleOAuth</span><span style="color: #F8F8F2">;</span></span>
@@ -642,7 +651,7 @@ can immediately start leveraging the extension methods as we require.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">builder.Services</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">builder.Services</span></span>
 <span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">AddApiVersioning</span><span style="color: #F8F8F2">(options </span><span style="color: #F92672">=&gt;</span></span>
 <span class="line"><span style="color: #F8F8F2">    {</span></span>
 <span class="line"><span style="color: #F8F8F2">        options.DefaultApiVersion </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ApiVersion</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">); </span><i class="conum" data-value="1"></i><b>(1)</b></span>
@@ -687,7 +696,7 @@ with a pre-configured one:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #A6E22E; text-decoration: underline">ApiVersionSet</span><span style="color: #F8F8F2"> apiVersionSet </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> app</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #A6E22E; text-decoration: underline">ApiVersionSet</span><span style="color: #F8F8F2"> apiVersionSet </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> app</span></span>
 <span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">NewApiVersionSet</span><span style="color: #F8F8F2">()</span></span>
 <span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">HasApiVersion</span><span style="color: #F8F8F2">(</span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E; text-decoration: underline">ApiVersion</span><span style="color: #F8F8F2">(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">)) </span><i class="conum" data-value="1"></i><b>(1)</b></span>
 <span class="line"><span style="color: #F8F8F2">    .</span><span style="color: #A6E22E">ReportApiVersions</span><span style="color: #F8F8F2">() </span><i class="conum" data-value="2"></i><b>(2)</b></span>

@@ -184,6 +184,15 @@
     <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/modules.html">Modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/modules/auth-module.html">Authentication Module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -319,7 +328,7 @@ through <code>appsettings.json</code> is :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #88846F">// Logging</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #88846F">// Logging</span></span>
 <span class="line"><span style="color: #F8F8F2">builder.Host.</span><span style="color: #A6E22E">UseSerilog</span><span style="color: #F8F8F2">((context, configuration) </span><span style="color: #F92672">=&gt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
 <span class="line"><span style="color: #F8F8F2">{</span></span>
 <span class="line"><span style="color: #F8F8F2">    configuration.ReadFrom.</span><span style="color: #A6E22E">Configuration</span><span style="color: #F8F8F2">(context.Configuration); </span><i class="conum" data-value="2"></i><b>(2)</b></span>
@@ -588,7 +597,7 @@ wherever they provide value. This means:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">public</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">void</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ProcessOrder</span><span style="color: #F8F8F2">(</span><span style="color: #A6E22E; text-decoration: underline">Order</span><span style="color: #F8F8F2"> order)</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">public</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">void</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">ProcessOrder</span><span style="color: #F8F8F2">(</span><span style="color: #A6E22E; text-decoration: underline">Order</span><span style="color: #F8F8F2"> order)</span></span>
 <span class="line"><span style="color: #F8F8F2">{</span></span>
 <span class="line"><span style="color: #F8F8F2">    Log.</span><span style="color: #A6E22E">Verbose</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Starting to process order {@Order}"</span><span style="color: #F8F8F2">, order); </span><span style="color: #88846F">// Detailed tracing</span></span>
 <span class="line"><span style="color: #F8F8F2">    Log.</span><span style="color: #A6E22E">Debug</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">"Order total: {Total}"</span><span style="color: #F8F8F2">, order.Total); </span><span style="color: #88846F">// Debugging info</span></span>

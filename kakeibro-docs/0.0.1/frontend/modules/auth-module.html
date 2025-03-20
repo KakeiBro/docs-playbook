@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Authentication Module :: KakeiBro</title>
+    <link rel="prev" href="../modules.html">
+    <link rel="next" href="../ui-folder-structure-patterns.html">
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/shiki.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">KakeiBro</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/orgs/KakeiBro/repositories" target="_blank">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="github" role="img" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="kakeibro-docs" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../index.html">KakeiBro Docs</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../onboarding/index.html">Onboarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../onboarding/backend.html">.NET Solution</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../ci-cd.html">CI/CD</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../domain/index.html">Domain</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../domain/authentication-module.html">Authentication Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../domain/users-module.html">Users Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../domain/finances-module.html">Finances Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../domain/intelligence-module.html">Intelligence Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../domain/ubiquitous-language.html">Ubiquitous Language</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../database/index.html">Database</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../prototypes/index.html">Prototypes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../prototypes/o-auth.html">Google OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../prototypes/mfa.html">Multi Factor Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../prototypes/apache-graphs-react.html">Apache Graphs on React</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../prototypes/forms.html">Form Libraries for React</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../prototypes/formik.html">Formik</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../prototypes/react-hook-form.html">React Hook Form</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../backend/index.html">Backend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backend/git-hooks.html">Git Hooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../backend/net-modulith/net-modulith.html">.NET Modulith</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../backend/net-modulith/oauth.html">OAuth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../backend/net-modulith/folder-structure.html">Folder Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../backend/net-modulith/authentication-module.html">Authentication Module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backend/ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backend/logging.html">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backend/security.html">Security</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Frontend</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../screens/screens.html">Wireframing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../screens/authentication.html">Authentication Screens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../husky.html">Husky Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../modules.html">Modules</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="auth-module.html">Authentication Module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ci-cd-pipelines.html">CI/CD Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vitest.html">Vitest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../react-router.html">React Router</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">KakeiBro Docs</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../index.html">KakeiBro Docs</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">KakeiBro Docs</a></li>
+    <li><a href="../index.html">Frontend</a></li>
+    <li><a href="../modules.html">Modules</a></li>
+    <li><a href="auth-module.html">Authentication Module</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Authentication Module</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The authentication module code is under <code>src/features/auth/*</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="oauth"><a class="anchor" href="#oauth"></a>OAuth</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We have a bigger picture of the whole flow (that includes backend) at
+<a href="../../backend/net-modulith/authentication-module.html#oauth-flow" class="xref page">the backend documentation</a>.
+However, on this specific page, we will explain the flow of how the frontend
+communicates through a pop-up between two windows to provide a seamless user experience
+when login-in/registering a user on the system.</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="../_images/oauth-popup-flow-diagram.svg" alt="oauth-popup-flow-diagram">
+</div>
+</div>
+<div class="paragraph text-center">
+<p><em>Figure 1. OAuth Popup Sequence Diagram</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Starting off the idea that the API returns the OAuth URI computed for us, the UI
+should immediately trigger the opening of a new window with a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open">popup nature</a>.</p>
+</li>
+<li>
+<p>In this popup we will run the OAuth flow (the user will take care of that)</p>
+</li>
+<li>
+<p>By the end of the popup flow, a callback (that&#8217;s provided to the OAuth flow at the beginning)
+is called (this is specific for the <em>code</em> type of flow we also set at the beginning),
+this callback will be of the frontend specifically.</p>
+</li>
+<li>
+<p>The callback and frontend uri is run at the popup level, and we extract through query
+params the <code>code</code> that&#8217;s the piece of data we need to continue further, we then send
+this to the parent through a <code>postMessage()</code> method that the browser&#8217;s API exposes, right
+after that the popup self-closes.</p>
+</li>
+<li>
+<p>Once the parent receives the code that the popup provided sent, it can then run
+a request to a backend endpoint so that the backend starts <em>under the hood</em> the whole
+process of login/register and finally responding to the frontend with the
+result, <em>in case of a success:</em> We immediately should be greeted with the <code>Home Screen</code>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It&#8217;s extremely important to state that we need to have configured the <strong>callback uri</strong>
+at the GCloud side, on the specific OAuth client. This has to correspond to both dev
+and prod environments also. Failing to have the callback uri registered will result
+in the OAuth screen to show an error and having no ability to run the authentication
+flow.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="routing-on-the-frontend"><a class="anchor" href="#routing-on-the-frontend"></a>Routing on the frontend</h3>
+<div class="paragraph">
+<p>We will always receive specifically at the <code>Login</code> screen. Regardless of a user already
+signing-in before, this is a <strong>security-measure</strong>, due to the sensitivy of the information
+the system holds.</p>
+</div>
+<div class="paragraph">
+<p>At this screen we will ask the user to sign-up or login, regardless of which option is
+picked, we will always throw the user towards a Google OAuth popup, the login screen
+will remain open for the whole duration, and the moment the OAuth screen succeeds it will
+hit a <code>/redirect-success</code> route, that has a <em>blank</em> component in charge of extracting
+the <code>code</code> query param to then send a message back to the parent component.</p>
+</div>
+<div class="paragraph">
+<p>The way to open the popup will be with the following code (demo code only):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="ts" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">async</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">startOAuth</span><span style="color: #F8F8F2">() {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> url </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'http://localhost:5214/api/v1/auth/o-auth-uri/'</span><span style="color: #F8F8F2">; </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> response </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">await</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">fetch</span><span style="color: #F8F8F2">(url);</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> responseBody </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">await</span><span style="color: #F8F8F2"> response.</span><span style="color: #A6E22E">json</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> width </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">450</span><span style="color: #F8F8F2">; </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> height </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">600</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> left </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (window.screen.width </span><span style="color: #F92672">-</span><span style="color: #F8F8F2"> width) </span><span style="color: #F92672">/</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> top </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> (window.screen.height </span><span style="color: #F92672">-</span><span style="color: #F8F8F2"> height) </span><span style="color: #F92672">/</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">; </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">    window.</span><span style="color: #A6E22E">open</span><span style="color: #F8F8F2">(</span></span>
+<span class="line"><span style="color: #F8F8F2">        responseBody.uri, </span><span style="color: #88846F">// URL to open </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #E6DB74">'GoogleAuth'</span><span style="color: #F8F8F2">, </span><span style="color: #88846F">// Window name </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #E6DB74">`width=</span><span style="color: #F92672">${</span><span style="color: #F8F8F2">width</span><span style="color: #F92672">}</span><span style="color: #E6DB74">,height=</span><span style="color: #F92672">${</span><span style="color: #F8F8F2">height</span><span style="color: #F92672">}</span><span style="color: #E6DB74">,top=</span><span style="color: #F92672">${</span><span style="color: #F8F8F2">top</span><span style="color: #F92672">}</span><span style="color: #E6DB74">,left=</span><span style="color: #F92672">${</span><span style="color: #F8F8F2">left</span><span style="color: #F92672">}</span><span style="color: #E6DB74">,popup`</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">    );</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We will have an endpoint on the backend in charge of composing the OAuth url
+that a browser can open.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We are starting with a small screen size for the pop that will open-up.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We want to open the popup at the middle of the screen, hence we calculate the
+coordinates for the left and top by diving the total width and height of the screen.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open">API Reference</a>. In
+order to open a popup we should leverage the <code>window.open</code> function with three key
+arguments. The first one is the <code>uri</code> to open up.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>A good practice is to give an identifier to this new browsing context, we could
+just do a <code>_blank</code>, but for our instance, giving it a specific name will allow for us
+to target with an <code>&lt;a&gt;</code> and <code>&lt;form&gt;</code> elements if we need so.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Following the different <code>windowFeatures</code> we can grant this new window size and position,
+plus the special <code>popup</code> feature that has minimum features (based on the browser&#8217;s own
+implementation). This is so that the popup window doesn&#8217;t look as bloated to the user.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the Google OAuth flow finishes, it will try to hit <code>/redirect-success</code> on the
+frontend, and this route is mapped to this blank component in charge of extracting the
+code that&#8217;s on a query param and sending it back to the parent:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="tsx" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">RedirectSuccess</span><span style="color: #F8F8F2">() {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> params </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">URLSearchParams</span><span style="color: #F8F8F2">(window.location.search); </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> authCode </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> params.</span><span style="color: #A6E22E">get</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'code'</span><span style="color: #F8F8F2">); </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (</span><span style="color: #F92672">!</span><span style="color: #F8F8F2">window.opener) { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">return</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  window.opener.</span><span style="color: #A6E22E">postMessage</span><span style="color: #F8F8F2">(</span></span>
+<span class="line"><span style="color: #F8F8F2">    { event: </span><span style="color: #E6DB74">'OAuth'</span><span style="color: #F8F8F2">, authCode }, </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">    window.opener.location.origin </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">  );</span></span>
+<span class="line"><span style="color: #F8F8F2">  window.</span><span style="color: #A6E22E">close</span><span style="color: #F8F8F2">(); </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> &lt;</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;&lt;/</span><span style="color: #F92672">div</span><span style="color: #F8F8F2">&gt;;</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F92672">export</span><span style="color: #F8F8F2"> { RedirectSuccess };</span></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We can get access to a url query string (including the <code>?</code> sign) by accessing the
+<code>window.location.search</code> property. We leverage this so that we get a string that can be
+put into a <code>URLSearchParams</code> constructor so that we get a much comfortable interface
+to extract query params.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>With the <code>URLSearchParams</code> instance we can easily access the value from a set query
+param name.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Just to avoid useless messages, in case this component doesn&#8217;t have a parent attached to
+it, we won&#8217;t do anything and we will short-circuit the flow immediately.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We can post to the parent of the popup a message, in our case it will be a javascript
+object, with an event identifier (since many messages can be listened to and an identifier
+makes it easier for us to recognize a message from a popup child).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">postMessage API</a>
+So that we get access to the current url, we can leverage the <em>read-only</em>
+<code>window.location.origin</code> property, this returns the <code>&lt;protocol&gt;&lt;hostname&gt;:&lt;port&gt;</code> string.
+This is a security measure, since in here we specify what <code>origin</code> the target recipient
+of the message mush have to receive the event. In order for the event to be dispatched
+the origin must match exactly. Hence we are feeding the <code>opener&#8217;s</code> origin.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>After dispatching the message we self-close the pop-up window.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>And at the parent side, we will simply declare a listener for messages, so that the moment
+we receive the <code>OAuth</code> message, we can kick off further logic:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="ts" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> [message, setMessage] </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useState</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">''</span><span style="color: #F8F8F2">);</span></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> [eventList, setEventList] </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useState</span><span style="color: #F8F8F2">(</span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Array</span><span style="color: #F8F8F2">&lt;</span><span style="color: #66D9EF; font-style: italic">string</span><span style="color: #F8F8F2">&gt;());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> messageCallback </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">useCallback</span><span style="color: #F8F8F2">( </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #88846F">// eslint-disable-next-line @typescript-eslint/no-explicit-any</span></span>
+<span class="line"><span style="color: #F8F8F2">    (</span><span style="color: #FD971F; font-style: italic">event</span><span style="color: #F92672">:</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">any</span><span style="color: #F8F8F2">) </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (event.origin </span><span style="color: #F92672">!==</span><span style="color: #F8F8F2"> window.location.origin) { </span><i class="conum" data-value="5"></i><b>(5)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">return</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (event.data?.event </span><span style="color: #F92672">!==</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">'OAuth'</span><span style="color: #F8F8F2">) { </span><i class="conum" data-value="6"></i><b>(6)</b></span>
+<span class="line"><span style="color: #F8F8F2">            </span><span style="color: #F92672">return</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> newEventList </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> [</span><span style="color: #F92672">...</span><span style="color: #F8F8F2">eventList, event.data]; </span><i class="conum" data-value="7"></i><b>(7)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">setEventList</span><span style="color: #F8F8F2">(newEventList);</span></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">setMessage</span><span style="color: #F8F8F2">(JSON.</span><span style="color: #A6E22E">stringify</span><span style="color: #F8F8F2">(newEventList));</span></span>
+<span class="line"><span style="color: #F8F8F2">    },</span></span>
+<span class="line"><span style="color: #F8F8F2">    [eventList]</span></span>
+<span class="line"><span style="color: #F8F8F2">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6E22E">useEffect</span><span style="color: #F8F8F2">(() </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    window.</span><span style="color: #A6E22E">addEventListener</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'message'</span><span style="color: #F8F8F2">, messageCallback); </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">return</span><span style="color: #F8F8F2"> () </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">        window.</span><span style="color: #A6E22E">removeEventListener</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'message'</span><span style="color: #F8F8F2">, messageCallback); </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">    };</span></span>
+<span class="line"><span style="color: #F8F8F2">}, [messageCallback]); </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We are leveraging <a href="https://react.dev/reference/react/useCallback">the useCallback hook</a>,
+so that we can cache a function definition between re-renders, this optimizes rendering,
+and we are using it here specifically since the same function definition must be passed
+to an <code>addEventListener</code> and <code>removeEventListener</code> to subscribe and unsubscribe once the
+component unmounts (we don&#8217;t want to have a leak there).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>So that we can hear messages that are posted with <code>postMessage</code>, we can subscribe
+to the <code>message</code> events, and feed a callback for that specific event.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>And when unsubscribing we have to feed the same function definition (a really bad design
+choice).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We are aiming at running the subscription only once after mounting, (but due to the
+dependency to the <code>messageCallback</code> function that talks to state we are adding it as
+a dependency).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>This is double security, since from our previous example on the posting side,
+the event should never get here, unless the origin is the same, however, on the consumer
+side we are also making a validation so that if the event that came back doesn&#8217;t have
+the same origin as the current parent window we will return early.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>And also, since many other events can end up getting posted, we will focus on the
+<code>OAuth</code> events solely, in case another event type comes in, we return early.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Lastly, since this is <strong><em>demo code</em></strong> we are applying the specific logic that helps
+us post as state an array and a stringified json from said array to the component. Then
+we can access these properties to render them on the screen. (In a real use case we would
+post this to some store or directly call the API to continue with the OAuth flow).</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../modules.html">Modules</a></span>
+  <span class="next"><a href="../ui-folder-structure-patterns.html">UI Folder Structure Patterns</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

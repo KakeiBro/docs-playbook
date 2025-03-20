@@ -184,6 +184,15 @@
     <a class="nav-link" href="../frontend/husky.html">Husky Setup</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frontend/modules.html">Modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../frontend/modules/auth-module.html">Authentication Module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../frontend/ui-folder-structure-patterns.html">UI Folder Structure Patterns</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -586,7 +595,7 @@ configured the CORS middleware to accept any request:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="csharp" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (builder.Environment.</span><span style="color: #A6E22E">IsDevelopment</span><span style="color: #F8F8F2">())</span></span>
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="cs" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (builder.Environment.</span><span style="color: #A6E22E">IsDevelopment</span><span style="color: #F8F8F2">())</span></span>
 <span class="line"><span style="color: #F8F8F2">{</span></span>
 <span class="line"><span style="color: #F8F8F2">    builder.Services.</span><span style="color: #A6E22E">AddCors</span><span style="color: #F8F8F2">(options </span><span style="color: #F92672">=&gt;</span><span style="color: #F8F8F2"> </span><i class="conum" data-value="1"></i><b>(1)</b></span>
 <span class="line"><span style="color: #F8F8F2">    {</span></span>
