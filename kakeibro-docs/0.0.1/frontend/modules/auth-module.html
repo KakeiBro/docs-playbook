@@ -547,6 +547,116 @@ post this to some store or directly call the API to continue with the OAuth flow
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="talking-to-the-backend"><a class="anchor" href="#talking-to-the-backend"></a>Talking to the backend</h3>
+<div class="paragraph">
+<p>It&#8217;s once the parent screen receives the code from OAuth, that we will send that to
+the backend so that it can do everything on its own, and we wait for a response back:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code data-lang="ts" class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #A6E22E">useEffect</span><span style="color: #F8F8F2">(() </span><span style="color: #66D9EF; font-style: italic">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">async</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">postAuthCode</span><span style="color: #F8F8F2">() {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> url </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">new</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">URL</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'http://localhost:5214/api/v1/auth/o-auth-code/'</span><span style="color: #F8F8F2">);</span></span>
+<span class="line"><span style="color: #F8F8F2">      url.searchParams.</span><span style="color: #A6E22E">set</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'code'</span><span style="color: #F8F8F2">, eventList[eventList.length </span><span style="color: #F92672">-</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">]); </span><i class="conum" data-value="1"></i><b>(1)</b></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> response </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">await</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">fetch</span><span style="color: #F8F8F2">(url, { method: </span><span style="color: #E6DB74">'POST'</span><span style="color: #F8F8F2"> }); </span><i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #66D9EF; font-style: italic">const</span><span style="color: #F8F8F2"> responseBody </span><span style="color: #F92672">=</span><span style="color: #F8F8F2"> </span><span style="color: #F92672">await</span><span style="color: #F8F8F2"> response.</span><span style="color: #A6E22E">json</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (response.status </span><span style="color: #F92672">===</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">200</span><span style="color: #F8F8F2">) { </span><i class="conum" data-value="3"></i><b>(3)</b></span>
+<span class="line"><span style="color: #F8F8F2">        </span><span style="color: #A6E22E">navigate</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">'/login'</span><span style="color: #F8F8F2">, { state: { code: responseBody.code } }); </span><i class="conum" data-value="4"></i><b>(4)</b></span>
+<span class="line"><span style="color: #F8F8F2">      }</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #F92672">if</span><span style="color: #F8F8F2"> (eventList.length </span><span style="color: #F92672">&lt;</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">) {</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #F92672">return</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">    </span><span style="color: #A6E22E">postAuthCode</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"><span style="color: #F8F8F2">  }, [eventList]);</span></span></code></pre></body></html>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Always use APIs that are already there to make your life easier, do not hard wire
+or re-invent the wheel.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We make a post to the specific backend endpoint in order to send the code from
+OAuth.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>In case the backend responds with a success, we will redirect the user to the home
+screen</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We make use of the <code>useNavigate()</code> hook to work with React Router&#8217;s navigation.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="anchor" href="#notes"></a>Notes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>When consuming React Router hooks plus other utilities, tests easily break due to the
+fact that we almost never test from <code>main.tsx</code> component that holds the wrapper context.
+It is for this reason that we have to hydrate our components with the correct React Router
+context through a clever usage of re-exports and wrappers</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Under <code>src/test-utils/testing-library-utils.tsx</code> you can have a look at how we
+swap out our router for a <code>MemoryRouter</code>, this interface enables us to have the consumers
+feeding all properties that you can normally feed to a router and a <code>render()</code> function, plus wrapping a component
+(facade pattern), however under the hood we are changing the router implementation.</p>
+</li>
+<li>
+<p>When testing a component that requires for us to have a router context, we can
+import this module instead: <code>import { render, screen } from 'testing-library-utils';</code></p>
+</li>
+<li>
+<p>In order for typescript and vitest to resolve all the remaps correctly we have to edit
+two places:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On the <code>tsconfig.app.json</code> or <code>tsconfig.json</code> file we have to add:</p>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">"paths": {</span></span>
+<span class="line"><span style="color: #F8F8F2">  "testing-library-utils": ["./src/test-utils/testing-library-utils.tsx"]</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span></code></pre></body></html>
+</div>
+</div>
+</li>
+<li>
+<p>And on the <code>vitest.config.ts</code> side we have to also add:</p>
+<div class="listingblock">
+<div class="content">
+<html><head></head><body><pre class="shiki highlight monokai" style="--shiki-background-color: #272822; --shiki-conum-bg-color: #d2d2cd; --shiki-conum-fg-color: #000000;"><code class="shiki has-line-numbers override-conums" style="--shiki-line-number-start: 1; --shiki-line-number-color: #757866;"><span class="line"><span style="color: #F8F8F2">resolve: {</span></span>
+<span class="line"><span style="color: #F8F8F2">  alias: {</span></span>
+<span class="line"><span style="color: #F8F8F2">    'testing-library-utils': '/src/test-utils/testing-library-utils.tsx',</span></span>
+<span class="line"><span style="color: #F8F8F2">    src: '/src',</span></span>
+<span class="line"><span style="color: #F8F8F2">  },</span></span>
+<span class="line"><span style="color: #F8F8F2">},</span></span></code></pre></body></html>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
