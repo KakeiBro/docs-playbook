@@ -1,5 +1,7 @@
 # Docs Playbook
 
+You can review the docs at: [KakeiBro Docs](https://www.kakeibro.docs.dsbalderrama.top)
+
 Following best practices for the usage of Antora Docs, this is a repository solely 
 focused on configurations and playbook material that later comes together in order 
 to generate a static site containing all the documentation in regards to the KakeiBro 
